@@ -167,6 +167,14 @@
             this.boxIgnoreList = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabGear = new System.Windows.Forms.TabPage();
+            this.dropdownMpFood = new System.Windows.Forms.ComboBox();
+            this.dropDownHPFood = new System.Windows.Forms.ComboBox();
+            this.dropdownSmallMpPotion = new System.Windows.Forms.ComboBox();
+            this.dropdownBigMpPotion = new System.Windows.Forms.ComboBox();
+            this.dropdownSmallHpPotion = new System.Windows.Forms.ComboBox();
+            this.dropdownBigHpPotion = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -228,14 +236,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tooltips = new System.Windows.Forms.ToolTip(this.components);
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.dropdownBigHpPotion = new System.Windows.Forms.ComboBox();
-            this.dropdownSmallHpPotion = new System.Windows.Forms.ComboBox();
-            this.dropdownBigMpPotion = new System.Windows.Forms.ComboBox();
-            this.dropdownSmallMpPotion = new System.Windows.Forms.ComboBox();
-            this.dropDownHPFood = new System.Windows.Forms.ComboBox();
-            this.dropdownMpFood = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tabMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUnknownItems)).BeginInit();
@@ -310,6 +310,7 @@
             // 
             // tabMain
             // 
+            this.tabMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabMain.Controls.Add(this.pictureUnknownItems);
             this.tabMain.Controls.Add(this.pictureDragonBoneChip);
             this.tabMain.Controls.Add(this.pictureScratchedSafe);
@@ -362,14 +363,13 @@
             this.tabMain.Controls.Add(this.lootConviction);
             this.tabMain.Controls.Add(this.lootCompassion);
             this.tabMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMain.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabMain.ForeColor = System.Drawing.Color.White;
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
             this.tabMain.Size = new System.Drawing.Size(613, 480);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Loot";
-            this.tabMain.UseVisualStyleBackColor = true;
             // 
             // pictureUnknownItems
             // 
@@ -578,10 +578,10 @@
             // Version
             // 
             this.Version.AutoSize = true;
-            this.Version.Font = new System.Drawing.Font("Mistral", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Version.Location = new System.Drawing.Point(497, 461);
+            this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Version.Location = new System.Drawing.Point(468, 461);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(108, 16);
+            this.Version.Size = new System.Drawing.Size(142, 16);
             this.Version.TabIndex = 114;
             this.Version.Text = "Version B E T A 0.0.0.4";
             // 
@@ -708,12 +708,14 @@
             // 
             // btnLoot
             // 
+            this.btnLoot.BackColor = System.Drawing.Color.White;
+            this.btnLoot.ForeColor = System.Drawing.Color.Black;
             this.btnLoot.Location = new System.Drawing.Point(343, 431);
             this.btnLoot.Name = "btnLoot";
             this.btnLoot.Size = new System.Drawing.Size(42, 23);
             this.btnLoot.TabIndex = 13;
             this.btnLoot.Text = "OFF";
-            this.btnLoot.UseVisualStyleBackColor = true;
+            this.btnLoot.UseVisualStyleBackColor = false;
             this.btnLoot.Click += new System.EventHandler(this.btnLoot_Click);
             // 
             // label2
@@ -844,6 +846,7 @@
             // 
             // tabCombat
             // 
+            this.tabCombat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabCombat.Controls.Add(this.chkCrazyEnigmatist);
             this.tabCombat.Controls.Add(this.label32);
             this.tabCombat.Controls.Add(this.label33);
@@ -884,12 +887,11 @@
             this.tabCombat.Size = new System.Drawing.Size(613, 480);
             this.tabCombat.TabIndex = 7;
             this.tabCombat.Text = "Combat";
-            this.tabCombat.UseVisualStyleBackColor = true;
             // 
             // chkCrazyEnigmatist
             // 
             this.chkCrazyEnigmatist.AutoSize = true;
-            this.chkCrazyEnigmatist.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkCrazyEnigmatist.ForeColor = System.Drawing.Color.White;
             this.chkCrazyEnigmatist.Location = new System.Drawing.Point(293, 54);
             this.chkCrazyEnigmatist.Name = "chkCrazyEnigmatist";
             this.chkCrazyEnigmatist.Size = new System.Drawing.Size(125, 17);
@@ -900,7 +902,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label32.ForeColor = System.Drawing.Color.White;
             this.label32.Location = new System.Drawing.Point(122, 367);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(100, 13);
@@ -910,7 +912,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label33.ForeColor = System.Drawing.Color.White;
             this.label33.Location = new System.Drawing.Point(21, 367);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(57, 13);
@@ -919,7 +921,7 @@
             // 
             // textMinHPplayDead
             // 
-            this.textMinHPplayDead.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinHPplayDead.ForeColor = System.Drawing.Color.Black;
             this.textMinHPplayDead.Location = new System.Drawing.Point(85, 364);
             this.textMinHPplayDead.Name = "textMinHPplayDead";
             this.textMinHPplayDead.Size = new System.Drawing.Size(31, 20);
@@ -928,7 +930,7 @@
             // chkPlayDeadHP
             // 
             this.chkPlayDeadHP.AutoSize = true;
-            this.chkPlayDeadHP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkPlayDeadHP.ForeColor = System.Drawing.Color.White;
             this.chkPlayDeadHP.Location = new System.Drawing.Point(3, 347);
             this.chkPlayDeadHP.Name = "chkPlayDeadHP";
             this.chkPlayDeadHP.Size = new System.Drawing.Size(146, 17);
@@ -940,7 +942,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label31.ForeColor = System.Drawing.Color.White;
             this.label31.Location = new System.Drawing.Point(6, 277);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(143, 24);
@@ -951,7 +953,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label30.ForeColor = System.Drawing.Color.White;
             this.label30.Location = new System.Drawing.Point(388, 9);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(114, 25);
@@ -961,7 +963,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label28.ForeColor = System.Drawing.Color.White;
             this.label28.Location = new System.Drawing.Point(122, 324);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(100, 13);
@@ -985,7 +987,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label29.ForeColor = System.Drawing.Color.White;
             this.label29.Location = new System.Drawing.Point(21, 324);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(58, 13);
@@ -994,7 +996,7 @@
             // 
             // textMinMPplayDead
             // 
-            this.textMinMPplayDead.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinMPplayDead.ForeColor = System.Drawing.Color.Black;
             this.textMinMPplayDead.Location = new System.Drawing.Point(85, 321);
             this.textMinMPplayDead.Name = "textMinMPplayDead";
             this.textMinMPplayDead.Size = new System.Drawing.Size(31, 20);
@@ -1003,7 +1005,7 @@
             // chkPlayDeadMana
             // 
             this.chkPlayDeadMana.AutoSize = true;
-            this.chkPlayDeadMana.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkPlayDeadMana.ForeColor = System.Drawing.Color.White;
             this.chkPlayDeadMana.Location = new System.Drawing.Point(3, 304);
             this.chkPlayDeadMana.Name = "chkPlayDeadMana";
             this.chkPlayDeadMana.Size = new System.Drawing.Size(160, 17);
@@ -1014,7 +1016,7 @@
             // chkOpenScratchedSafe
             // 
             this.chkOpenScratchedSafe.AutoSize = true;
-            this.chkOpenScratchedSafe.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkOpenScratchedSafe.ForeColor = System.Drawing.Color.White;
             this.chkOpenScratchedSafe.Location = new System.Drawing.Point(137, 114);
             this.chkOpenScratchedSafe.Name = "chkOpenScratchedSafe";
             this.chkOpenScratchedSafe.Size = new System.Drawing.Size(86, 17);
@@ -1025,7 +1027,7 @@
             // chkOpenStolenBag
             // 
             this.chkOpenStolenBag.AutoSize = true;
-            this.chkOpenStolenBag.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkOpenStolenBag.ForeColor = System.Drawing.Color.White;
             this.chkOpenStolenBag.Location = new System.Drawing.Point(9, 114);
             this.chkOpenStolenBag.Name = "chkOpenStolenBag";
             this.chkOpenStolenBag.Size = new System.Drawing.Size(122, 17);
@@ -1036,7 +1038,7 @@
             // chkAutoCombat
             // 
             this.chkAutoCombat.AutoSize = true;
-            this.chkAutoCombat.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkAutoCombat.ForeColor = System.Drawing.Color.White;
             this.chkAutoCombat.Location = new System.Drawing.Point(22, 235);
             this.chkAutoCombat.Name = "chkAutoCombat";
             this.chkAutoCombat.Size = new System.Drawing.Size(157, 17);
@@ -1047,7 +1049,7 @@
             // chkAssist
             // 
             this.chkAssist.AutoSize = true;
-            this.chkAssist.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkAssist.ForeColor = System.Drawing.Color.White;
             this.chkAssist.Location = new System.Drawing.Point(137, 137);
             this.chkAssist.Name = "chkAssist";
             this.chkAssist.Size = new System.Drawing.Size(94, 17);
@@ -1058,7 +1060,7 @@
             // labelMinHP
             // 
             this.labelMinHP.AutoSize = true;
-            this.labelMinHP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelMinHP.ForeColor = System.Drawing.Color.White;
             this.labelMinHP.Location = new System.Drawing.Point(7, 168);
             this.labelMinHP.Name = "labelMinHP";
             this.labelMinHP.Size = new System.Drawing.Size(57, 13);
@@ -1067,7 +1069,7 @@
             // 
             // textMinHP
             // 
-            this.textMinHP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinHP.ForeColor = System.Drawing.Color.Black;
             this.textMinHP.Location = new System.Drawing.Point(70, 165);
             this.textMinHP.Name = "textMinHP";
             this.textMinHP.Size = new System.Drawing.Size(31, 20);
@@ -1076,7 +1078,7 @@
             // labelMinMP
             // 
             this.labelMinMP.AutoSize = true;
-            this.labelMinMP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelMinMP.ForeColor = System.Drawing.Color.White;
             this.labelMinMP.Location = new System.Drawing.Point(132, 168);
             this.labelMinMP.Name = "labelMinMP";
             this.labelMinMP.Size = new System.Drawing.Size(58, 13);
@@ -1085,7 +1087,7 @@
             // 
             // textMinMP
             // 
-            this.textMinMP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinMP.ForeColor = System.Drawing.Color.Black;
             this.textMinMP.Location = new System.Drawing.Point(196, 165);
             this.textMinMP.Name = "textMinMP";
             this.textMinMP.Size = new System.Drawing.Size(31, 20);
@@ -1094,7 +1096,7 @@
             // chkOpenPurses
             // 
             this.chkOpenPurses.AutoSize = true;
-            this.chkOpenPurses.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkOpenPurses.ForeColor = System.Drawing.Color.White;
             this.chkOpenPurses.Location = new System.Drawing.Point(9, 91);
             this.chkOpenPurses.Name = "chkOpenPurses";
             this.chkOpenPurses.Size = new System.Drawing.Size(98, 17);
@@ -1105,7 +1107,7 @@
             // chkLoot
             // 
             this.chkLoot.AutoSize = true;
-            this.chkLoot.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkLoot.ForeColor = System.Drawing.Color.White;
             this.chkLoot.Location = new System.Drawing.Point(137, 68);
             this.chkLoot.Name = "chkLoot";
             this.chkLoot.Size = new System.Drawing.Size(99, 17);
@@ -1116,7 +1118,7 @@
             // chkUseCC
             // 
             this.chkUseCC.AutoSize = true;
-            this.chkUseCC.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkUseCC.ForeColor = System.Drawing.Color.White;
             this.chkUseCC.Location = new System.Drawing.Point(137, 91);
             this.chkUseCC.Name = "chkUseCC";
             this.chkUseCC.Size = new System.Drawing.Size(68, 17);
@@ -1127,7 +1129,7 @@
             // chkHealerMode
             // 
             this.chkHealerMode.AutoSize = true;
-            this.chkHealerMode.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkHealerMode.ForeColor = System.Drawing.Color.White;
             this.chkHealerMode.Location = new System.Drawing.Point(9, 137);
             this.chkHealerMode.Name = "chkHealerMode";
             this.chkHealerMode.Size = new System.Drawing.Size(98, 17);
@@ -1138,7 +1140,7 @@
             // chkFastTag
             // 
             this.chkFastTag.AutoSize = true;
-            this.chkFastTag.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkFastTag.ForeColor = System.Drawing.Color.White;
             this.chkFastTag.Location = new System.Drawing.Point(9, 68);
             this.chkFastTag.Name = "chkFastTag";
             this.chkFastTag.Size = new System.Drawing.Size(100, 17);
@@ -1149,7 +1151,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(174, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(16, 13);
@@ -1158,7 +1160,7 @@
             // 
             // textCombatRange
             // 
-            this.textCombatRange.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textCombatRange.ForeColor = System.Drawing.Color.Black;
             this.textCombatRange.Location = new System.Drawing.Point(115, 35);
             this.textCombatRange.Name = "textCombatRange";
             this.textCombatRange.Size = new System.Drawing.Size(53, 20);
@@ -1167,7 +1169,7 @@
             // labelCombatRange
             // 
             this.labelCombatRange.AutoSize = true;
-            this.labelCombatRange.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelCombatRange.ForeColor = System.Drawing.Color.White;
             this.labelCombatRange.Location = new System.Drawing.Point(19, 38);
             this.labelCombatRange.Name = "labelCombatRange";
             this.labelCombatRange.Size = new System.Drawing.Size(90, 13);
@@ -1177,7 +1179,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(174, 12);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
@@ -1186,7 +1188,7 @@
             // 
             // textZoneRadius
             // 
-            this.textZoneRadius.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textZoneRadius.ForeColor = System.Drawing.Color.Black;
             this.textZoneRadius.Location = new System.Drawing.Point(115, 9);
             this.textZoneRadius.Name = "textZoneRadius";
             this.textZoneRadius.Size = new System.Drawing.Size(53, 20);
@@ -1195,7 +1197,7 @@
             // labelZoneRadius
             // 
             this.labelZoneRadius.AutoSize = true;
-            this.labelZoneRadius.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelZoneRadius.ForeColor = System.Drawing.Color.White;
             this.labelZoneRadius.Location = new System.Drawing.Point(30, 12);
             this.labelZoneRadius.Name = "labelZoneRadius";
             this.labelZoneRadius.Size = new System.Drawing.Size(79, 13);
@@ -1204,20 +1206,21 @@
             // 
             // btnCombat
             // 
-            this.btnCombat.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCombat.BackColor = System.Drawing.Color.White;
+            this.btnCombat.ForeColor = System.Drawing.Color.Black;
             this.btnCombat.Location = new System.Drawing.Point(137, 206);
             this.btnCombat.Name = "btnCombat";
             this.btnCombat.Size = new System.Drawing.Size(42, 23);
             this.btnCombat.TabIndex = 117;
             this.btnCombat.Text = "OFF";
-            this.btnCombat.UseVisualStyleBackColor = true;
+            this.btnCombat.UseVisualStyleBackColor = false;
             this.btnCombat.Click += new System.EventHandler(this.btnCombat_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(6, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 24);
@@ -1226,6 +1229,7 @@
             // 
             // tabBuff
             // 
+            this.tabBuff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabBuff.Controls.Add(this.label19);
             this.tabBuff.Controls.Add(this.chkGreedyGR);
             this.tabBuff.Controls.Add(this.chkZealGR);
@@ -1272,14 +1276,13 @@
             this.tabBuff.Controls.Add(this.chkVocationExpertiseTonic);
             this.tabBuff.Controls.Add(this.chkTyrenosIndex);
             this.tabBuff.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabBuff.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabBuff.ForeColor = System.Drawing.Color.White;
             this.tabBuff.Location = new System.Drawing.Point(4, 22);
             this.tabBuff.Name = "tabBuff";
             this.tabBuff.Padding = new System.Windows.Forms.Padding(3);
             this.tabBuff.Size = new System.Drawing.Size(613, 480);
             this.tabBuff.TabIndex = 6;
             this.tabBuff.Text = "Buff Items";
-            this.tabBuff.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
@@ -1691,22 +1694,23 @@
             // 
             // tabIgnore
             // 
+            this.tabIgnore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabIgnore.Controls.Add(this.boxIgnoreList);
             this.tabIgnore.Controls.Add(this.label1);
             this.tabIgnore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabIgnore.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabIgnore.ForeColor = System.Drawing.Color.White;
             this.tabIgnore.Location = new System.Drawing.Point(4, 22);
             this.tabIgnore.Name = "tabIgnore";
             this.tabIgnore.Padding = new System.Windows.Forms.Padding(3);
             this.tabIgnore.Size = new System.Drawing.Size(613, 480);
             this.tabIgnore.TabIndex = 2;
             this.tabIgnore.Text = "Ignored Mobs";
-            this.tabIgnore.UseVisualStyleBackColor = true;
             // 
             // boxIgnoreList
             // 
+            this.boxIgnoreList.BackColor = System.Drawing.Color.Gray;
             this.boxIgnoreList.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.boxIgnoreList.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.boxIgnoreList.ForeColor = System.Drawing.Color.White;
             this.boxIgnoreList.Location = new System.Drawing.Point(3, 23);
             this.boxIgnoreList.Name = "boxIgnoreList";
             this.boxIgnoreList.Size = new System.Drawing.Size(607, 454);
@@ -1724,6 +1728,7 @@
             // 
             // tabGear
             // 
+            this.tabGear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabGear.Controls.Add(this.dropdownMpFood);
             this.tabGear.Controls.Add(this.dropDownHPFood);
             this.tabGear.Controls.Add(this.dropdownSmallMpPotion);
@@ -1764,14 +1769,85 @@
             this.tabGear.Controls.Add(this.labelLute);
             this.tabGear.Controls.Add(this.labelFlute);
             this.tabGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabGear.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabGear.ForeColor = System.Drawing.Color.White;
             this.tabGear.Location = new System.Drawing.Point(4, 22);
             this.tabGear.Name = "tabGear";
             this.tabGear.Padding = new System.Windows.Forms.Padding(3);
             this.tabGear.Size = new System.Drawing.Size(613, 480);
             this.tabGear.TabIndex = 4;
             this.tabGear.Text = "Gear/Consumables";
-            this.tabGear.UseVisualStyleBackColor = true;
+            // 
+            // dropdownMpFood
+            // 
+            this.dropdownMpFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownMpFood.FormattingEnabled = true;
+            this.dropdownMpFood.Location = new System.Drawing.Point(166, 388);
+            this.dropdownMpFood.Name = "dropdownMpFood";
+            this.dropdownMpFood.Size = new System.Drawing.Size(121, 21);
+            this.dropdownMpFood.TabIndex = 157;
+            // 
+            // dropDownHPFood
+            // 
+            this.dropDownHPFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownHPFood.FormattingEnabled = true;
+            this.dropDownHPFood.Location = new System.Drawing.Point(166, 361);
+            this.dropDownHPFood.Name = "dropDownHPFood";
+            this.dropDownHPFood.Size = new System.Drawing.Size(121, 21);
+            this.dropDownHPFood.TabIndex = 156;
+            // 
+            // dropdownSmallMpPotion
+            // 
+            this.dropdownSmallMpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownSmallMpPotion.FormattingEnabled = true;
+            this.dropdownSmallMpPotion.Location = new System.Drawing.Point(166, 334);
+            this.dropdownSmallMpPotion.Name = "dropdownSmallMpPotion";
+            this.dropdownSmallMpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownSmallMpPotion.TabIndex = 155;
+            // 
+            // dropdownBigMpPotion
+            // 
+            this.dropdownBigMpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownBigMpPotion.FormattingEnabled = true;
+            this.dropdownBigMpPotion.Location = new System.Drawing.Point(166, 307);
+            this.dropdownBigMpPotion.Name = "dropdownBigMpPotion";
+            this.dropdownBigMpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownBigMpPotion.TabIndex = 154;
+            // 
+            // dropdownSmallHpPotion
+            // 
+            this.dropdownSmallHpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownSmallHpPotion.FormattingEnabled = true;
+            this.dropdownSmallHpPotion.Location = new System.Drawing.Point(166, 279);
+            this.dropdownSmallHpPotion.Name = "dropdownSmallHpPotion";
+            this.dropdownSmallHpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownSmallHpPotion.TabIndex = 153;
+            // 
+            // dropdownBigHpPotion
+            // 
+            this.dropdownBigHpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownBigHpPotion.FormattingEnabled = true;
+            this.dropdownBigHpPotion.Location = new System.Drawing.Point(166, 249);
+            this.dropdownBigHpPotion.Name = "dropdownBigHpPotion";
+            this.dropdownBigHpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownBigHpPotion.TabIndex = 152;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(9, 337);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(137, 13);
+            this.label37.TabIndex = 151;
+            this.label37.Text = "small MP Potion Name:";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(8, 282);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(136, 13);
+            this.label36.TabIndex = 150;
+            this.label36.Text = "small HP Potion Name:";
             // 
             // label35
             // 
@@ -1814,7 +1890,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(225, 219);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(114, 25);
@@ -1831,6 +1907,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(386, 171);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 13);
@@ -1847,6 +1924,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(386, 146);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(54, 13);
@@ -1863,6 +1941,7 @@
             // labelFoodCooldown
             // 
             this.labelFoodCooldown.AutoSize = true;
+            this.labelFoodCooldown.ForeColor = System.Drawing.Color.White;
             this.labelFoodCooldown.Location = new System.Drawing.Point(229, 171);
             this.labelFoodCooldown.Name = "labelFoodCooldown";
             this.labelFoodCooldown.Size = new System.Drawing.Size(97, 13);
@@ -1872,6 +1951,7 @@
             // labelPotionCooldown
             // 
             this.labelPotionCooldown.AutoSize = true;
+            this.labelPotionCooldown.ForeColor = System.Drawing.Color.White;
             this.labelPotionCooldown.Location = new System.Drawing.Point(227, 146);
             this.labelPotionCooldown.Name = "labelPotionCooldown";
             this.labelPotionCooldown.Size = new System.Drawing.Size(105, 13);
@@ -1881,6 +1961,7 @@
             // labelQtyFoodMP
             // 
             this.labelQtyFoodMP.AutoSize = true;
+            this.labelQtyFoodMP.ForeColor = System.Drawing.Color.White;
             this.labelQtyFoodMP.Location = new System.Drawing.Point(454, 93);
             this.labelQtyFoodMP.Name = "labelQtyFoodMP";
             this.labelQtyFoodMP.Size = new System.Drawing.Size(57, 13);
@@ -1891,6 +1972,7 @@
             // labelQtyFoodHP
             // 
             this.labelQtyFoodHP.AutoSize = true;
+            this.labelQtyFoodHP.ForeColor = System.Drawing.Color.White;
             this.labelQtyFoodHP.Location = new System.Drawing.Point(454, 70);
             this.labelQtyFoodHP.Name = "labelQtyFoodHP";
             this.labelQtyFoodHP.Size = new System.Drawing.Size(57, 13);
@@ -1901,6 +1983,7 @@
             // labelQtyPotionMP
             // 
             this.labelQtyPotionMP.AutoSize = true;
+            this.labelQtyPotionMP.ForeColor = System.Drawing.Color.White;
             this.labelQtyPotionMP.Location = new System.Drawing.Point(454, 46);
             this.labelQtyPotionMP.Name = "labelQtyPotionMP";
             this.labelQtyPotionMP.Size = new System.Drawing.Size(57, 13);
@@ -1911,6 +1994,7 @@
             // labelQtyPotionHP
             // 
             this.labelQtyPotionHP.AutoSize = true;
+            this.labelQtyPotionHP.ForeColor = System.Drawing.Color.White;
             this.labelQtyPotionHP.Location = new System.Drawing.Point(454, 22);
             this.labelQtyPotionHP.Name = "labelQtyPotionHP";
             this.labelQtyPotionHP.Size = new System.Drawing.Size(57, 13);
@@ -1945,6 +2029,7 @@
             // labelFoodMP
             // 
             this.labelFoodMP.AutoSize = true;
+            this.labelFoodMP.ForeColor = System.Drawing.Color.White;
             this.labelFoodMP.Location = new System.Drawing.Point(229, 93);
             this.labelFoodMP.Name = "labelFoodMP";
             this.labelFoodMP.Size = new System.Drawing.Size(97, 13);
@@ -1954,6 +2039,7 @@
             // labelFoodHP
             // 
             this.labelFoodHP.AutoSize = true;
+            this.labelFoodHP.ForeColor = System.Drawing.Color.White;
             this.labelFoodHP.Location = new System.Drawing.Point(229, 70);
             this.labelFoodHP.Name = "labelFoodHP";
             this.labelFoodHP.Size = new System.Drawing.Size(96, 13);
@@ -1977,6 +2063,7 @@
             // labelPotionMP
             // 
             this.labelPotionMP.AutoSize = true;
+            this.labelPotionMP.ForeColor = System.Drawing.Color.White;
             this.labelPotionMP.Location = new System.Drawing.Point(223, 46);
             this.labelPotionMP.Name = "labelPotionMP";
             this.labelPotionMP.Size = new System.Drawing.Size(105, 13);
@@ -1986,6 +2073,7 @@
             // labelPotionHP
             // 
             this.labelPotionHP.AutoSize = true;
+            this.labelPotionHP.ForeColor = System.Drawing.Color.White;
             this.labelPotionHP.Location = new System.Drawing.Point(224, 22);
             this.labelPotionHP.Name = "labelPotionHP";
             this.labelPotionHP.Size = new System.Drawing.Size(104, 13);
@@ -2022,6 +2110,7 @@
             // labelPet
             // 
             this.labelPet.AutoSize = true;
+            this.labelPet.ForeColor = System.Drawing.Color.White;
             this.labelPet.Location = new System.Drawing.Point(8, 102);
             this.labelPet.Name = "labelPet";
             this.labelPet.Size = new System.Drawing.Size(26, 13);
@@ -2031,6 +2120,7 @@
             // labelLute
             // 
             this.labelLute.AutoSize = true;
+            this.labelLute.ForeColor = System.Drawing.Color.White;
             this.labelLute.Location = new System.Drawing.Point(8, 51);
             this.labelLute.Name = "labelLute";
             this.labelLute.Size = new System.Drawing.Size(32, 13);
@@ -2040,6 +2130,7 @@
             // labelFlute
             // 
             this.labelFlute.AutoSize = true;
+            this.labelFlute.ForeColor = System.Drawing.Color.White;
             this.labelFlute.Location = new System.Drawing.Point(8, 22);
             this.labelFlute.Name = "labelFlute";
             this.labelFlute.Size = new System.Drawing.Size(35, 13);
@@ -2059,6 +2150,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
@@ -2083,7 +2175,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelPetTotal, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -2291,6 +2383,7 @@
             // 
             // tabHelp
             // 
+            this.tabHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabHelp.Controls.Add(this.label27);
             this.tabHelp.Controls.Add(this.label26);
             this.tabHelp.Controls.Add(this.chkDebugBuffs);
@@ -2307,13 +2400,12 @@
             this.tabHelp.Size = new System.Drawing.Size(613, 480);
             this.tabHelp.TabIndex = 3;
             this.tabHelp.Text = "Help/About";
-            this.tabHelp.UseVisualStyleBackColor = true;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label27.ForeColor = System.Drawing.Color.White;
             this.label27.Location = new System.Drawing.Point(4, 63);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(167, 15);
@@ -2324,7 +2416,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(4, 48);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(315, 15);
@@ -2334,20 +2426,21 @@
             // chkDebugBuffs
             // 
             this.chkDebugBuffs.AutoSize = true;
+            this.chkDebugBuffs.BackColor = System.Drawing.Color.Red;
             this.chkDebugBuffs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDebugBuffs.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkDebugBuffs.ForeColor = System.Drawing.Color.White;
             this.chkDebugBuffs.Location = new System.Drawing.Point(14, 91);
             this.chkDebugBuffs.Name = "chkDebugBuffs";
             this.chkDebugBuffs.Size = new System.Drawing.Size(117, 19);
             this.chkDebugBuffs.TabIndex = 6;
             this.chkDebugBuffs.Text = "Debug Buffs\' IDs";
-            this.chkDebugBuffs.UseVisualStyleBackColor = true;
+            this.chkDebugBuffs.UseVisualStyleBackColor = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(4, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(479, 15);
@@ -2359,7 +2452,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(11, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(308, 16);
@@ -2369,12 +2462,12 @@
             // linkDonate
             // 
             this.linkDonate.AutoSize = true;
-            this.linkDonate.Location = new System.Drawing.Point(8, 180);
+            this.linkDonate.Location = new System.Drawing.Point(6, 213);
             this.linkDonate.Name = "linkDonate";
-            this.linkDonate.Size = new System.Drawing.Size(306, 13);
+            this.linkDonate.Size = new System.Drawing.Size(258, 13);
             this.linkDonate.TabIndex = 3;
             this.linkDonate.TabStop = true;
-            this.linkDonate.Text = "Liking the plugin a lot? You can donate to support development";
+            this.linkDonate.Text = "Liking the plugin a lot? You can Help Develop it Here";
             this.linkDonate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkDonate_LinkClicked);
             // 
             // linkForum
@@ -2392,7 +2485,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(4, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(511, 15);
@@ -2404,92 +2497,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(4, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(305, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "- Settings are saved whenever you start Loot or Combat";
             // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(8, 282);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(136, 13);
-            this.label36.TabIndex = 150;
-            this.label36.Text = "small HP Potion Name:";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(9, 337);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(137, 13);
-            this.label37.TabIndex = 151;
-            this.label37.Text = "small MP Potion Name:";
-            // 
-            // dropdownBigHpPotion
-            // 
-            this.dropdownBigHpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownBigHpPotion.FormattingEnabled = true;
-            this.dropdownBigHpPotion.Location = new System.Drawing.Point(166, 249);
-            this.dropdownBigHpPotion.Name = "dropdownBigHpPotion";
-            this.dropdownBigHpPotion.Size = new System.Drawing.Size(121, 21);
-            this.dropdownBigHpPotion.TabIndex = 152;
-            // 
-            // dropdownSmallHpPotion
-            // 
-            this.dropdownSmallHpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownSmallHpPotion.FormattingEnabled = true;
-            this.dropdownSmallHpPotion.Location = new System.Drawing.Point(166, 279);
-            this.dropdownSmallHpPotion.Name = "dropdownSmallHpPotion";
-            this.dropdownSmallHpPotion.Size = new System.Drawing.Size(121, 21);
-            this.dropdownSmallHpPotion.TabIndex = 153;
-            // 
-            // dropdownBigMpPotion
-            // 
-            this.dropdownBigMpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownBigMpPotion.FormattingEnabled = true;
-            this.dropdownBigMpPotion.Location = new System.Drawing.Point(166, 307);
-            this.dropdownBigMpPotion.Name = "dropdownBigMpPotion";
-            this.dropdownBigMpPotion.Size = new System.Drawing.Size(121, 21);
-            this.dropdownBigMpPotion.TabIndex = 154;
-            // 
-            // dropdownSmallMpPotion
-            // 
-            this.dropdownSmallMpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownSmallMpPotion.FormattingEnabled = true;
-            this.dropdownSmallMpPotion.Location = new System.Drawing.Point(166, 334);
-            this.dropdownSmallMpPotion.Name = "dropdownSmallMpPotion";
-            this.dropdownSmallMpPotion.Size = new System.Drawing.Size(121, 21);
-            this.dropdownSmallMpPotion.TabIndex = 155;
-            // 
-            // dropDownHPFood
-            // 
-            this.dropDownHPFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropDownHPFood.FormattingEnabled = true;
-            this.dropDownHPFood.Location = new System.Drawing.Point(166, 361);
-            this.dropDownHPFood.Name = "dropDownHPFood";
-            this.dropDownHPFood.Size = new System.Drawing.Size(121, 21);
-            this.dropDownHPFood.TabIndex = 156;
-            // 
-            // dropdownMpFood
-            // 
-            this.dropdownMpFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownMpFood.FormattingEnabled = true;
-            this.dropdownMpFood.Location = new System.Drawing.Point(166, 388);
-            this.dropdownMpFood.Name = "dropdownMpFood";
-            this.dropdownMpFood.Size = new System.Drawing.Size(121, 21);
-            this.dropdownMpFood.TabIndex = 157;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(621, 506);
             this.Controls.Add(this.tabControl);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormMain";
             this.Text = "ArcheGrinder";

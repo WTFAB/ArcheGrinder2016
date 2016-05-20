@@ -821,11 +821,11 @@ namespace ArcheGrinder
 
         private void linkForum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.thebuddyforum.com/archebuddy-forum/archebuddy-plugins/grinding/214473-haslaassistant-2-3-mob-grinder-hasla-features.html#post1950778");
+            System.Diagnostics.Process.Start("https://www.thebuddyforum.com/archebuddy-forum/archebuddy-plugins/plugins-in-development/246220-plugin-ann-return-archegrinder-developer-wtfab.html#post2203416");
         }
         private void linkDonate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8HR9ESD2LXFWA");
+            System.Diagnostics.Process.Start("https://github.com/WTFAB/ArcheGrinder2016");
         }
 
 
