@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ArcheGrinder</RootNamespace>
-    <AssemblyName>ArcheGrinder</AssemblyName>
+    <AssemblyName>ArcheGrinder[Alpha] 1.0.1.2</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
