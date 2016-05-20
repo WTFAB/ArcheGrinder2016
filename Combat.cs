@@ -678,17 +678,14 @@ namespace ArcheGrinder
                 ChannelSkill(_MEDIDATE, true, true);
             }
             
-            if (GetAggroCount() == 0 && prefs.PlayDeadRegMana && core.mpp() < prefs.MinMPplayDead) //Aktiviert PlayDead um mana zu regenerieren wenn man außerhalb des kampfes ist
+            if (GetAggroCount() == 0 && prefs.PlayDeadRegMana && core.mpp() < prefs.MinMPplayDead)
             {
                 PlayDead();
             }
 
-            if (GetAggroCount() == 0 && prefs.PlayDeadRegHP && core.hpp() < prefs.MinHPplayDead) //Aktiviert PlayDead um hp zu regenerieren wenn man außerhalb des kampfes ist
-            {
-                PlayDead();
-            }
-
-
+            if (GetAggroCount() == 0 && prefs.PlayDeadRegHP && core.hpp() < prefs.MinHPplayDead)
+        
+            
             // check food
             if (useFoodHP && core.hpp() < Math.Max(20, prefs.minHP - 5))
             {
@@ -698,7 +695,7 @@ namespace ArcheGrinder
                     useFoodHP = false;
                     core.Log("WARNING: You ran out of HP food!", System.Drawing.Color.Red);
                 }
-                else if ((DateTime.UtcNow - lastFoodUsed).TotalSeconds >= core.itemCooldown(foodHP.id)) //item cooldown test
+                else if ((DateTime.UtcNow - lastFoodUsed).TotalSeconds >= prefs.foodCooldown)
                 {
                     UseItemAndWait(foodHP.id);
                     core.Log("Using some " + foodHP.name + " to regain health", System.Drawing.Color.Green);
@@ -713,7 +710,7 @@ namespace ArcheGrinder
                     useFoodMP = false;
                     core.Log("WARNING: You ran out of Mana food!", System.Drawing.Color.Red);
                 }
-                else if ((DateTime.UtcNow - lastFoodUsed).TotalSeconds >= core.itemCooldown(foodMP.id)) //item cooldown test
+                else if ((DateTime.UtcNow - lastFoodUsed).TotalSeconds >= prefs.foodCooldown)
                 {
                     UseItemAndWait(foodMP.id);
                     core.Log("Using some " + foodMP.name + " to regain mana");
@@ -1640,11 +1637,8 @@ namespace ArcheGrinder
             }
 
             // combat escape if everything else failed
-            if (core.hpp() < prefs.HPplayDeadCombat && !prefs.healerMode && CanCast(_PLAY_DEAD, true))
-            {
+            if (core.hpp() < 15 && !prefs.healerMode && CanCast(_PLAY_DEAD, true))
                 PlayDead();
-                GetBestNearestMob();
-            }
             else if (core.hpp() < 10 && !prefs.healerMode && CanCast(_INVINCIBILITY, true))
                 ChannelSkill(_INVINCIBILITY, true, false);
             else if (core.hpp() < 10 && !prefs.healerMode && CanCast(_STEALTH, true))

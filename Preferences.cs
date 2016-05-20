@@ -95,7 +95,6 @@ namespace ArcheGrinder
 
         public int MinMPplayDead;
         public int MinHPplayDead;
-        public int HPplayDeadCombat;
 
         public string potionHP, potionMP, foodMP, foodHP;
         public int potionCooldown, foodCooldown;

@@ -83,15 +83,16 @@
             this.lootConviction = new System.Windows.Forms.CheckBox();
             this.lootCompassion = new System.Windows.Forms.CheckBox();
             this.tabCombat = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textPlayDeadHPcombat = new System.Windows.Forms.TextBox();
+            this.chkCrazyEnigmatist = new System.Windows.Forms.CheckBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.textMinHPplayDead = new System.Windows.Forms.TextBox();
             this.chkPlayDeadHP = new System.Windows.Forms.CheckBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.nuralsTrennleistebenutzt = new System.Windows.Forms.ProgressBar();
+            this.nuralsTrennleistebenutzt2 = new System.Windows.Forms.ProgressBar();
             this.label29 = new System.Windows.Forms.Label();
             this.textMinMPplayDead = new System.Windows.Forms.TextBox();
             this.chkPlayDeadMana = new System.Windows.Forms.CheckBox();
@@ -166,6 +167,18 @@
             this.boxIgnoreList = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabGear = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textFoodCooldown = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textPotionCooldown = new System.Windows.Forms.TextBox();
+            this.labelFoodCooldown = new System.Windows.Forms.Label();
+            this.labelPotionCooldown = new System.Windows.Forms.Label();
             this.labelQtyFoodMP = new System.Windows.Forms.Label();
             this.labelQtyFoodHP = new System.Windows.Forms.Label();
             this.labelQtyPotionMP = new System.Windows.Forms.Label();
@@ -205,7 +218,6 @@
             this.labelPetHour = new System.Windows.Forms.Label();
             this.labelPetTotal = new System.Windows.Forms.Label();
             this.tabHelp = new System.Windows.Forms.TabPage();
-            this.label20 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.chkDebugBuffs = new System.Windows.Forms.CheckBox();
@@ -216,7 +228,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tooltips = new System.Windows.Forms.ToolTip(this.components);
-            this.label22 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.dropdownBigHpPotion = new System.Windows.Forms.ComboBox();
+            this.dropdownSmallHpPotion = new System.Windows.Forms.ComboBox();
+            this.dropdownBigMpPotion = new System.Windows.Forms.ComboBox();
+            this.dropdownSmallMpPotion = new System.Windows.Forms.ComboBox();
+            this.dropDownHPFood = new System.Windows.Forms.ComboBox();
+            this.dropdownMpFood = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tabMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUnknownItems)).BeginInit();
@@ -282,16 +301,15 @@
             this.tabControl.Controls.Add(this.tabStats);
             this.tabControl.Controls.Add(this.tabHelp);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(621, 545);
+            this.tabControl.Size = new System.Drawing.Size(621, 506);
             this.tabControl.TabIndex = 0;
             // 
             // tabMain
             // 
-            this.tabMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabMain.Controls.Add(this.pictureUnknownItems);
             this.tabMain.Controls.Add(this.pictureDragonBoneChip);
             this.tabMain.Controls.Add(this.pictureScratchedSafe);
@@ -344,202 +362,203 @@
             this.tabMain.Controls.Add(this.lootConviction);
             this.tabMain.Controls.Add(this.lootCompassion);
             this.tabMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabMain.ForeColor = System.Drawing.Color.White;
-            this.tabMain.Location = new System.Drawing.Point(4, 23);
+            this.tabMain.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMain.Size = new System.Drawing.Size(613, 518);
+            this.tabMain.Size = new System.Drawing.Size(613, 480);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Loot";
+            this.tabMain.UseVisualStyleBackColor = true;
             // 
             // pictureUnknownItems
             // 
-            this.pictureUnknownItems.Location = new System.Drawing.Point(411, 337);
+            this.pictureUnknownItems.Location = new System.Drawing.Point(411, 313);
             this.pictureUnknownItems.Name = "pictureUnknownItems";
-            this.pictureUnknownItems.Size = new System.Drawing.Size(40, 43);
+            this.pictureUnknownItems.Size = new System.Drawing.Size(40, 40);
             this.pictureUnknownItems.TabIndex = 209;
             this.pictureUnknownItems.TabStop = false;
             // 
             // pictureDragonBoneChip
             // 
-            this.pictureDragonBoneChip.Location = new System.Drawing.Point(215, 337);
+            this.pictureDragonBoneChip.Location = new System.Drawing.Point(215, 313);
             this.pictureDragonBoneChip.Name = "pictureDragonBoneChip";
-            this.pictureDragonBoneChip.Size = new System.Drawing.Size(40, 43);
+            this.pictureDragonBoneChip.Size = new System.Drawing.Size(40, 40);
             this.pictureDragonBoneChip.TabIndex = 208;
             this.pictureDragonBoneChip.TabStop = false;
             // 
             // pictureScratchedSafe
             // 
-            this.pictureScratchedSafe.Location = new System.Drawing.Point(411, 387);
+            this.pictureScratchedSafe.Location = new System.Drawing.Point(411, 359);
             this.pictureScratchedSafe.Name = "pictureScratchedSafe";
-            this.pictureScratchedSafe.Size = new System.Drawing.Size(40, 43);
+            this.pictureScratchedSafe.Size = new System.Drawing.Size(40, 40);
             this.pictureScratchedSafe.TabIndex = 207;
             this.pictureScratchedSafe.TabStop = false;
             // 
             // pictureStolenBag
             // 
-            this.pictureStolenBag.Location = new System.Drawing.Point(215, 387);
+            this.pictureStolenBag.Location = new System.Drawing.Point(215, 359);
             this.pictureStolenBag.Name = "pictureStolenBag";
-            this.pictureStolenBag.Size = new System.Drawing.Size(40, 43);
+            this.pictureStolenBag.Size = new System.Drawing.Size(40, 40);
             this.pictureStolenBag.TabIndex = 206;
             this.pictureStolenBag.TabStop = false;
             // 
             // pictureCoinpurses
             // 
-            this.pictureCoinpurses.Location = new System.Drawing.Point(8, 387);
+            this.pictureCoinpurses.Location = new System.Drawing.Point(8, 359);
             this.pictureCoinpurses.Name = "pictureCoinpurses";
-            this.pictureCoinpurses.Size = new System.Drawing.Size(40, 43);
+            this.pictureCoinpurses.Size = new System.Drawing.Size(40, 40);
             this.pictureCoinpurses.TabIndex = 205;
             this.pictureCoinpurses.TabStop = false;
             // 
             // pictureUnidentifiedEquipment
             // 
-            this.pictureUnidentifiedEquipment.Location = new System.Drawing.Point(8, 337);
+            this.pictureUnidentifiedEquipment.Location = new System.Drawing.Point(8, 313);
             this.pictureUnidentifiedEquipment.Name = "pictureUnidentifiedEquipment";
-            this.pictureUnidentifiedEquipment.Size = new System.Drawing.Size(40, 43);
+            this.pictureUnidentifiedEquipment.Size = new System.Drawing.Size(40, 40);
             this.pictureUnidentifiedEquipment.TabIndex = 204;
             this.pictureUnidentifiedEquipment.TabStop = false;
             // 
             // pictureDesignScrap
             // 
-            this.pictureDesignScrap.Location = new System.Drawing.Point(331, 280);
+            this.pictureDesignScrap.Location = new System.Drawing.Point(331, 260);
             this.pictureDesignScrap.Name = "pictureDesignScrap";
-            this.pictureDesignScrap.Size = new System.Drawing.Size(40, 43);
+            this.pictureDesignScrap.Size = new System.Drawing.Size(40, 40);
             this.pictureDesignScrap.TabIndex = 203;
             this.pictureDesignScrap.TabStop = false;
             // 
             // pictureEnchantedSkein
             // 
-            this.pictureEnchantedSkein.Location = new System.Drawing.Point(86, 280);
+            this.pictureEnchantedSkein.Location = new System.Drawing.Point(86, 260);
             this.pictureEnchantedSkein.Name = "pictureEnchantedSkein";
-            this.pictureEnchantedSkein.Size = new System.Drawing.Size(40, 43);
+            this.pictureEnchantedSkein.Size = new System.Drawing.Size(40, 40);
             this.pictureEnchantedSkein.TabIndex = 202;
             this.pictureEnchantedSkein.TabStop = false;
             // 
             // pictureEternalLibraryWeapon
             // 
-            this.pictureEternalLibraryWeapon.Location = new System.Drawing.Point(411, 230);
+            this.pictureEternalLibraryWeapon.Location = new System.Drawing.Point(411, 214);
             this.pictureEternalLibraryWeapon.Name = "pictureEternalLibraryWeapon";
-            this.pictureEternalLibraryWeapon.Size = new System.Drawing.Size(40, 43);
+            this.pictureEternalLibraryWeapon.Size = new System.Drawing.Size(40, 40);
             this.pictureEternalLibraryWeapon.TabIndex = 201;
             this.pictureEternalLibraryWeapon.TabStop = false;
             // 
             // pictureEternalLibraryArmor
             // 
-            this.pictureEternalLibraryArmor.Location = new System.Drawing.Point(215, 230);
+            this.pictureEternalLibraryArmor.Location = new System.Drawing.Point(215, 214);
             this.pictureEternalLibraryArmor.Name = "pictureEternalLibraryArmor";
-            this.pictureEternalLibraryArmor.Size = new System.Drawing.Size(40, 43);
+            this.pictureEternalLibraryArmor.Size = new System.Drawing.Size(40, 40);
             this.pictureEternalLibraryArmor.TabIndex = 200;
             this.pictureEternalLibraryArmor.TabStop = false;
             // 
             // pictureEternalLibraryTome
             // 
-            this.pictureEternalLibraryTome.Location = new System.Drawing.Point(8, 230);
+            this.pictureEternalLibraryTome.Location = new System.Drawing.Point(8, 214);
             this.pictureEternalLibraryTome.Name = "pictureEternalLibraryTome";
-            this.pictureEternalLibraryTome.Size = new System.Drawing.Size(40, 43);
+            this.pictureEternalLibraryTome.Size = new System.Drawing.Size(40, 40);
             this.pictureEternalLibraryTome.TabIndex = 199;
             this.pictureEternalLibraryTome.TabStop = false;
             // 
             // pictureDivineClothGear
             // 
-            this.pictureDivineClothGear.Location = new System.Drawing.Point(8, 181);
+            this.pictureDivineClothGear.Location = new System.Drawing.Point(8, 168);
             this.pictureDivineClothGear.Name = "pictureDivineClothGear";
-            this.pictureDivineClothGear.Size = new System.Drawing.Size(40, 43);
+            this.pictureDivineClothGear.Size = new System.Drawing.Size(40, 40);
             this.pictureDivineClothGear.TabIndex = 198;
             this.pictureDivineClothGear.TabStop = false;
             // 
             // pictureDivineLeatherGear
             // 
-            this.pictureDivineLeatherGear.Location = new System.Drawing.Point(215, 181);
+            this.pictureDivineLeatherGear.Location = new System.Drawing.Point(215, 168);
             this.pictureDivineLeatherGear.Name = "pictureDivineLeatherGear";
-            this.pictureDivineLeatherGear.Size = new System.Drawing.Size(40, 43);
+            this.pictureDivineLeatherGear.Size = new System.Drawing.Size(40, 40);
             this.pictureDivineLeatherGear.TabIndex = 197;
             this.pictureDivineLeatherGear.TabStop = false;
             // 
             // pictureDivinePlatGear
             // 
-            this.pictureDivinePlatGear.Location = new System.Drawing.Point(411, 181);
+            this.pictureDivinePlatGear.Location = new System.Drawing.Point(411, 168);
             this.pictureDivinePlatGear.Name = "pictureDivinePlatGear";
-            this.pictureDivinePlatGear.Size = new System.Drawing.Size(40, 43);
+            this.pictureDivinePlatGear.Size = new System.Drawing.Size(40, 40);
             this.pictureDivinePlatGear.TabIndex = 196;
             this.pictureDivinePlatGear.TabStop = false;
             // 
             // pictureLoyalty
             // 
-            this.pictureLoyalty.Location = new System.Drawing.Point(8, 131);
+            this.pictureLoyalty.Location = new System.Drawing.Point(8, 122);
             this.pictureLoyalty.Name = "pictureLoyalty";
-            this.pictureLoyalty.Size = new System.Drawing.Size(40, 43);
+            this.pictureLoyalty.Size = new System.Drawing.Size(40, 40);
             this.pictureLoyalty.TabIndex = 195;
             this.pictureLoyalty.TabStop = false;
             // 
             // pictureHauntedChest
             // 
-            this.pictureHauntedChest.Location = new System.Drawing.Point(411, 131);
+            this.pictureHauntedChest.Location = new System.Drawing.Point(411, 122);
             this.pictureHauntedChest.Name = "pictureHauntedChest";
-            this.pictureHauntedChest.Size = new System.Drawing.Size(40, 43);
+            this.pictureHauntedChest.Size = new System.Drawing.Size(40, 40);
             this.pictureHauntedChest.TabIndex = 194;
             this.pictureHauntedChest.TabStop = false;
             // 
             // pictureDisciplesTear
             // 
-            this.pictureDisciplesTear.Location = new System.Drawing.Point(215, 131);
+            this.pictureDisciplesTear.Location = new System.Drawing.Point(215, 122);
             this.pictureDisciplesTear.Name = "pictureDisciplesTear";
-            this.pictureDisciplesTear.Size = new System.Drawing.Size(40, 43);
+            this.pictureDisciplesTear.Size = new System.Drawing.Size(40, 40);
             this.pictureDisciplesTear.TabIndex = 193;
             this.pictureDisciplesTear.TabStop = false;
             // 
             // pictureCourage
             // 
-            this.pictureCourage.Location = new System.Drawing.Point(411, 82);
+            this.pictureCourage.Location = new System.Drawing.Point(411, 76);
             this.pictureCourage.Name = "pictureCourage";
-            this.pictureCourage.Size = new System.Drawing.Size(40, 43);
+            this.pictureCourage.Size = new System.Drawing.Size(40, 40);
             this.pictureCourage.TabIndex = 192;
             this.pictureCourage.TabStop = false;
             // 
             // pictureFortitude
             // 
-            this.pictureFortitude.Location = new System.Drawing.Point(411, 32);
+            this.pictureFortitude.Location = new System.Drawing.Point(411, 30);
             this.pictureFortitude.Name = "pictureFortitude";
-            this.pictureFortitude.Size = new System.Drawing.Size(40, 43);
+            this.pictureFortitude.Size = new System.Drawing.Size(40, 40);
             this.pictureFortitude.TabIndex = 191;
             this.pictureFortitude.TabStop = false;
             // 
             // pictureSacrifice
             // 
-            this.pictureSacrifice.Location = new System.Drawing.Point(215, 82);
+            this.pictureSacrifice.Location = new System.Drawing.Point(215, 76);
             this.pictureSacrifice.Name = "pictureSacrifice";
-            this.pictureSacrifice.Size = new System.Drawing.Size(40, 43);
+            this.pictureSacrifice.Size = new System.Drawing.Size(40, 40);
             this.pictureSacrifice.TabIndex = 190;
             this.pictureSacrifice.TabStop = false;
             // 
             // pictureHonor
             // 
-            this.pictureHonor.Location = new System.Drawing.Point(215, 32);
+            this.pictureHonor.Location = new System.Drawing.Point(215, 30);
             this.pictureHonor.Name = "pictureHonor";
-            this.pictureHonor.Size = new System.Drawing.Size(40, 43);
+            this.pictureHonor.Size = new System.Drawing.Size(40, 40);
             this.pictureHonor.TabIndex = 189;
             this.pictureHonor.TabStop = false;
             // 
             // pictureConviction
             // 
-            this.pictureConviction.Location = new System.Drawing.Point(8, 82);
+            this.pictureConviction.Location = new System.Drawing.Point(8, 76);
             this.pictureConviction.Name = "pictureConviction";
-            this.pictureConviction.Size = new System.Drawing.Size(40, 43);
+            this.pictureConviction.Size = new System.Drawing.Size(40, 40);
             this.pictureConviction.TabIndex = 188;
             this.pictureConviction.TabStop = false;
             // 
             // pictureCompassion
             // 
-            this.pictureCompassion.Location = new System.Drawing.Point(8, 32);
+            this.pictureCompassion.Location = new System.Drawing.Point(8, 30);
             this.pictureCompassion.Name = "pictureCompassion";
-            this.pictureCompassion.Size = new System.Drawing.Size(40, 43);
+            this.pictureCompassion.Size = new System.Drawing.Size(40, 40);
             this.pictureCompassion.TabIndex = 187;
             this.pictureCompassion.TabStop = false;
             // 
             // lootDisciplesTear
             // 
             this.lootDisciplesTear.AutoSize = true;
-            this.lootDisciplesTear.Location = new System.Drawing.Point(261, 145);
+            this.lootDisciplesTear.Location = new System.Drawing.Point(261, 135);
             this.lootDisciplesTear.Name = "lootDisciplesTear";
             this.lootDisciplesTear.Size = new System.Drawing.Size(110, 17);
             this.lootDisciplesTear.TabIndex = 116;
@@ -549,7 +568,7 @@
             // lootEnchantedSkein
             // 
             this.lootEnchantedSkein.AutoSize = true;
-            this.lootEnchantedSkein.Location = new System.Drawing.Point(132, 293);
+            this.lootEnchantedSkein.Location = new System.Drawing.Point(132, 272);
             this.lootEnchantedSkein.Name = "lootEnchantedSkein";
             this.lootEnchantedSkein.Size = new System.Drawing.Size(123, 17);
             this.lootEnchantedSkein.TabIndex = 115;
@@ -559,18 +578,17 @@
             // Version
             // 
             this.Version.AutoSize = true;
-            this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Version.Location = new System.Drawing.Point(476, 495);
+            this.Version.Font = new System.Drawing.Font("Mistral", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Version.Location = new System.Drawing.Point(497, 461);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(134, 20);
+            this.Version.Size = new System.Drawing.Size(108, 16);
             this.Version.TabIndex = 114;
-            this.Version.Text = "VERSION 1.0.1.1";
+            this.Version.Text = "Version B E T A 0.0.0.4";
             // 
             // lootScratchedSafe
             // 
             this.lootScratchedSafe.AutoSize = true;
-            this.lootScratchedSafe.Location = new System.Drawing.Point(457, 398);
+            this.lootScratchedSafe.Location = new System.Drawing.Point(457, 370);
             this.lootScratchedSafe.Name = "lootScratchedSafe";
             this.lootScratchedSafe.Size = new System.Drawing.Size(114, 17);
             this.lootScratchedSafe.TabIndex = 111;
@@ -580,7 +598,7 @@
             // lootStolenBag
             // 
             this.lootStolenBag.AutoSize = true;
-            this.lootStolenBag.Location = new System.Drawing.Point(261, 398);
+            this.lootStolenBag.Location = new System.Drawing.Point(261, 370);
             this.lootStolenBag.Name = "lootStolenBag";
             this.lootStolenBag.Size = new System.Drawing.Size(88, 17);
             this.lootStolenBag.TabIndex = 110;
@@ -590,7 +608,7 @@
             // lootAyanad
             // 
             this.lootAyanad.AutoSize = true;
-            this.lootAyanad.Location = new System.Drawing.Point(377, 293);
+            this.lootAyanad.Location = new System.Drawing.Point(377, 272);
             this.lootAyanad.Name = "lootAyanad";
             this.lootAyanad.Size = new System.Drawing.Size(148, 17);
             this.lootAyanad.TabIndex = 107;
@@ -600,7 +618,7 @@
             // lootEternalLibraryTome
             // 
             this.lootEternalLibraryTome.AutoSize = true;
-            this.lootEternalLibraryTome.Location = new System.Drawing.Point(54, 241);
+            this.lootEternalLibraryTome.Location = new System.Drawing.Point(54, 224);
             this.lootEternalLibraryTome.Name = "lootEternalLibraryTome";
             this.lootEternalLibraryTome.Size = new System.Drawing.Size(143, 17);
             this.lootEternalLibraryTome.TabIndex = 106;
@@ -610,7 +628,7 @@
             // lootEternalLibraryArmor
             // 
             this.lootEternalLibraryArmor.AutoSize = true;
-            this.lootEternalLibraryArmor.Location = new System.Drawing.Point(261, 241);
+            this.lootEternalLibraryArmor.Location = new System.Drawing.Point(261, 224);
             this.lootEternalLibraryArmor.Name = "lootEternalLibraryArmor";
             this.lootEternalLibraryArmor.Size = new System.Drawing.Size(144, 17);
             this.lootEternalLibraryArmor.TabIndex = 105;
@@ -620,7 +638,7 @@
             // lootEternalLibraryWeapon
             // 
             this.lootEternalLibraryWeapon.AutoSize = true;
-            this.lootEternalLibraryWeapon.Location = new System.Drawing.Point(457, 241);
+            this.lootEternalLibraryWeapon.Location = new System.Drawing.Point(457, 224);
             this.lootEternalLibraryWeapon.Name = "lootEternalLibraryWeapon";
             this.lootEternalLibraryWeapon.Size = new System.Drawing.Size(159, 17);
             this.lootEternalLibraryWeapon.TabIndex = 104;
@@ -630,7 +648,7 @@
             // lootHauntedChest
             // 
             this.lootHauntedChest.AutoSize = true;
-            this.lootHauntedChest.Location = new System.Drawing.Point(457, 145);
+            this.lootHauntedChest.Location = new System.Drawing.Point(457, 135);
             this.lootHauntedChest.Name = "lootHauntedChest";
             this.lootHauntedChest.Size = new System.Drawing.Size(110, 17);
             this.lootHauntedChest.TabIndex = 103;
@@ -640,7 +658,7 @@
             // lootDivinePlateGear
             // 
             this.lootDivinePlateGear.AutoSize = true;
-            this.lootDivinePlateGear.Location = new System.Drawing.Point(457, 193);
+            this.lootDivinePlateGear.Location = new System.Drawing.Point(457, 179);
             this.lootDivinePlateGear.Name = "lootDivinePlateGear";
             this.lootDivinePlateGear.Size = new System.Drawing.Size(126, 17);
             this.lootDivinePlateGear.TabIndex = 102;
@@ -650,7 +668,7 @@
             // lootDivineLeatherGear
             // 
             this.lootDivineLeatherGear.AutoSize = true;
-            this.lootDivineLeatherGear.Location = new System.Drawing.Point(261, 193);
+            this.lootDivineLeatherGear.Location = new System.Drawing.Point(261, 179);
             this.lootDivineLeatherGear.Name = "lootDivineLeatherGear";
             this.lootDivineLeatherGear.Size = new System.Drawing.Size(140, 17);
             this.lootDivineLeatherGear.TabIndex = 101;
@@ -660,7 +678,7 @@
             // lootDivineClothGear
             // 
             this.lootDivineClothGear.AutoSize = true;
-            this.lootDivineClothGear.Location = new System.Drawing.Point(53, 193);
+            this.lootDivineClothGear.Location = new System.Drawing.Point(53, 179);
             this.lootDivineClothGear.Name = "lootDivineClothGear";
             this.lootDivineClothGear.Size = new System.Drawing.Size(126, 17);
             this.lootDivineClothGear.TabIndex = 100;
@@ -672,7 +690,6 @@
             this.label21.AccessibleDescription = "Auroria";
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Lime;
             this.label21.Location = new System.Drawing.Point(211, 3);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(130, 24);
@@ -682,7 +699,7 @@
             // chkAutoLoot
             // 
             this.chkAutoLoot.AutoSize = true;
-            this.chkAutoLoot.Location = new System.Drawing.Point(215, 490);
+            this.chkAutoLoot.Location = new System.Drawing.Point(215, 455);
             this.chkAutoLoot.Name = "chkAutoLoot";
             this.chkAutoLoot.Size = new System.Drawing.Size(154, 17);
             this.chkAutoLoot.TabIndex = 32;
@@ -691,10 +708,9 @@
             // 
             // btnLoot
             // 
-            this.btnLoot.ForeColor = System.Drawing.Color.Black;
-            this.btnLoot.Location = new System.Drawing.Point(343, 464);
+            this.btnLoot.Location = new System.Drawing.Point(343, 431);
             this.btnLoot.Name = "btnLoot";
-            this.btnLoot.Size = new System.Drawing.Size(42, 25);
+            this.btnLoot.Size = new System.Drawing.Size(42, 23);
             this.btnLoot.TabIndex = 13;
             this.btnLoot.Text = "OFF";
             this.btnLoot.UseVisualStyleBackColor = true;
@@ -704,8 +720,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Lime;
-            this.label2.Location = new System.Drawing.Point(214, 461);
+            this.label2.Location = new System.Drawing.Point(214, 428);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 24);
             this.label2.TabIndex = 11;
@@ -714,7 +729,7 @@
             // lootUnknown
             // 
             this.lootUnknown.AutoSize = true;
-            this.lootUnknown.Location = new System.Drawing.Point(457, 348);
+            this.lootUnknown.Location = new System.Drawing.Point(457, 323);
             this.lootUnknown.Name = "lootUnknown";
             this.lootUnknown.Size = new System.Drawing.Size(113, 17);
             this.lootUnknown.TabIndex = 10;
@@ -726,7 +741,7 @@
             this.lootDragonChip.AutoSize = true;
             this.lootDragonChip.Checked = true;
             this.lootDragonChip.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lootDragonChip.Location = new System.Drawing.Point(261, 348);
+            this.lootDragonChip.Location = new System.Drawing.Point(261, 323);
             this.lootDragonChip.Name = "lootDragonChip";
             this.lootDragonChip.Size = new System.Drawing.Size(129, 17);
             this.lootDragonChip.TabIndex = 9;
@@ -738,7 +753,7 @@
             this.lootUnid.AutoSize = true;
             this.lootUnid.Checked = true;
             this.lootUnid.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lootUnid.Location = new System.Drawing.Point(54, 348);
+            this.lootUnid.Location = new System.Drawing.Point(54, 323);
             this.lootUnid.Name = "lootUnid";
             this.lootUnid.Size = new System.Drawing.Size(157, 17);
             this.lootUnid.TabIndex = 8;
@@ -750,7 +765,7 @@
             this.lootPurses.AutoSize = true;
             this.lootPurses.Checked = true;
             this.lootPurses.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lootPurses.Location = new System.Drawing.Point(54, 398);
+            this.lootPurses.Location = new System.Drawing.Point(54, 370);
             this.lootPurses.Name = "lootPurses";
             this.lootPurses.Size = new System.Drawing.Size(88, 17);
             this.lootPurses.TabIndex = 7;
@@ -760,7 +775,7 @@
             // lootSacrifice
             // 
             this.lootSacrifice.AutoSize = true;
-            this.lootSacrifice.Location = new System.Drawing.Point(261, 95);
+            this.lootSacrifice.Location = new System.Drawing.Point(261, 88);
             this.lootSacrifice.Name = "lootSacrifice";
             this.lootSacrifice.Size = new System.Drawing.Size(113, 17);
             this.lootSacrifice.TabIndex = 6;
@@ -770,7 +785,7 @@
             // lootLoyalty
             // 
             this.lootLoyalty.AutoSize = true;
-            this.lootLoyalty.Location = new System.Drawing.Point(54, 145);
+            this.lootLoyalty.Location = new System.Drawing.Point(54, 135);
             this.lootLoyalty.Name = "lootLoyalty";
             this.lootLoyalty.Size = new System.Drawing.Size(94, 17);
             this.lootLoyalty.TabIndex = 5;
@@ -780,7 +795,7 @@
             // lootHonor
             // 
             this.lootHonor.AutoSize = true;
-            this.lootHonor.Location = new System.Drawing.Point(261, 43);
+            this.lootHonor.Location = new System.Drawing.Point(261, 40);
             this.lootHonor.Name = "lootHonor";
             this.lootHonor.Size = new System.Drawing.Size(88, 17);
             this.lootHonor.TabIndex = 4;
@@ -790,7 +805,7 @@
             // lootFortitude
             // 
             this.lootFortitude.AutoSize = true;
-            this.lootFortitude.Location = new System.Drawing.Point(457, 43);
+            this.lootFortitude.Location = new System.Drawing.Point(457, 40);
             this.lootFortitude.Name = "lootFortitude";
             this.lootFortitude.Size = new System.Drawing.Size(123, 17);
             this.lootFortitude.TabIndex = 3;
@@ -800,7 +815,7 @@
             // lootCourage
             // 
             this.lootCourage.AutoSize = true;
-            this.lootCourage.Location = new System.Drawing.Point(457, 95);
+            this.lootCourage.Location = new System.Drawing.Point(457, 88);
             this.lootCourage.Name = "lootCourage";
             this.lootCourage.Size = new System.Drawing.Size(109, 17);
             this.lootCourage.TabIndex = 2;
@@ -810,7 +825,7 @@
             // lootConviction
             // 
             this.lootConviction.AutoSize = true;
-            this.lootConviction.Location = new System.Drawing.Point(54, 95);
+            this.lootConviction.Location = new System.Drawing.Point(54, 88);
             this.lootConviction.Name = "lootConviction";
             this.lootConviction.Size = new System.Drawing.Size(125, 17);
             this.lootConviction.TabIndex = 1;
@@ -820,7 +835,7 @@
             // lootCompassion
             // 
             this.lootCompassion.AutoSize = true;
-            this.lootCompassion.Location = new System.Drawing.Point(54, 43);
+            this.lootCompassion.Location = new System.Drawing.Point(54, 40);
             this.lootCompassion.Name = "lootCompassion";
             this.lootCompassion.Size = new System.Drawing.Size(130, 17);
             this.lootCompassion.TabIndex = 0;
@@ -829,16 +844,16 @@
             // 
             // tabCombat
             // 
-            this.tabCombat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabCombat.Controls.Add(this.label10);
-            this.tabCombat.Controls.Add(this.label9);
-            this.tabCombat.Controls.Add(this.textPlayDeadHPcombat);
+            this.tabCombat.Controls.Add(this.chkCrazyEnigmatist);
             this.tabCombat.Controls.Add(this.label32);
             this.tabCombat.Controls.Add(this.label33);
             this.tabCombat.Controls.Add(this.textMinHPplayDead);
             this.tabCombat.Controls.Add(this.chkPlayDeadHP);
             this.tabCombat.Controls.Add(this.label31);
+            this.tabCombat.Controls.Add(this.label30);
             this.tabCombat.Controls.Add(this.label28);
+            this.tabCombat.Controls.Add(this.nuralsTrennleistebenutzt);
+            this.tabCombat.Controls.Add(this.nuralsTrennleistebenutzt2);
             this.tabCombat.Controls.Add(this.label29);
             this.tabCombat.Controls.Add(this.textMinMPplayDead);
             this.tabCombat.Controls.Add(this.chkPlayDeadMana);
@@ -863,72 +878,49 @@
             this.tabCombat.Controls.Add(this.labelZoneRadius);
             this.tabCombat.Controls.Add(this.btnCombat);
             this.tabCombat.Controls.Add(this.label3);
-            this.tabCombat.Location = new System.Drawing.Point(4, 23);
+            this.tabCombat.Location = new System.Drawing.Point(4, 22);
             this.tabCombat.Name = "tabCombat";
             this.tabCombat.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCombat.Size = new System.Drawing.Size(613, 518);
+            this.tabCombat.Size = new System.Drawing.Size(613, 480);
             this.tabCombat.TabIndex = 7;
             this.tabCombat.Text = "Combat";
-            this.tabCombat.Click += new System.EventHandler(this.tabCombat_Click);
+            this.tabCombat.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // chkCrazyEnigmatist
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(113, 24);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(152, 14);
-            this.label10.TabIndex = 153;
-            this.label10.Text = "use PlayDead in Combat at";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(343, 24);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 14);
-            this.label9.TabIndex = 152;
-            this.label9.Text = "% or less";
-            // 
-            // textPlayDeadHPcombat
-            // 
-            this.textPlayDeadHPcombat.BackColor = System.Drawing.Color.White;
-            this.textPlayDeadHPcombat.ForeColor = System.Drawing.Color.Black;
-            this.textPlayDeadHPcombat.Location = new System.Drawing.Point(279, 20);
-            this.textPlayDeadHPcombat.Name = "textPlayDeadHPcombat";
-            this.textPlayDeadHPcombat.Size = new System.Drawing.Size(53, 20);
-            this.textPlayDeadHPcombat.TabIndex = 150;
+            this.chkCrazyEnigmatist.AutoSize = true;
+            this.chkCrazyEnigmatist.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkCrazyEnigmatist.Location = new System.Drawing.Point(293, 54);
+            this.chkCrazyEnigmatist.Name = "chkCrazyEnigmatist";
+            this.chkCrazyEnigmatist.Size = new System.Drawing.Size(125, 17);
+            this.chkCrazyEnigmatist.TabIndex = 150;
+            this.chkCrazyEnigmatist.Text = "Enigmatist combo";
+            this.chkCrazyEnigmatist.UseVisualStyleBackColor = true;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(286, 434);
+            this.label32.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label32.Location = new System.Drawing.Point(122, 367);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(94, 14);
+            this.label32.Size = new System.Drawing.Size(100, 13);
             this.label32.TabIndex = 149;
             this.label32.Text = "to use PlayDead";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(185, 434);
+            this.label33.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label33.Location = new System.Drawing.Point(21, 367);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(53, 14);
+            this.label33.Size = new System.Drawing.Size(57, 13);
             this.label33.TabIndex = 148;
             this.label33.Text = "Min HP%";
             // 
             // textMinHPplayDead
             // 
-            this.textMinHPplayDead.BackColor = System.Drawing.Color.White;
-            this.textMinHPplayDead.ForeColor = System.Drawing.Color.Black;
-            this.textMinHPplayDead.Location = new System.Drawing.Point(249, 431);
+            this.textMinHPplayDead.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinHPplayDead.Location = new System.Drawing.Point(85, 364);
             this.textMinHPplayDead.Name = "textMinHPplayDead";
             this.textMinHPplayDead.Size = new System.Drawing.Size(31, 20);
             this.textMinHPplayDead.TabIndex = 147;
@@ -936,54 +928,74 @@
             // chkPlayDeadHP
             // 
             this.chkPlayDeadHP.AutoSize = true;
-            this.chkPlayDeadHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkPlayDeadHP.ForeColor = System.Drawing.Color.White;
-            this.chkPlayDeadHP.Location = new System.Drawing.Point(167, 412);
+            this.chkPlayDeadHP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkPlayDeadHP.Location = new System.Drawing.Point(3, 347);
             this.chkPlayDeadHP.Name = "chkPlayDeadHP";
-            this.chkPlayDeadHP.Size = new System.Drawing.Size(135, 18);
+            this.chkPlayDeadHP.Size = new System.Drawing.Size(146, 17);
             this.chkPlayDeadHP.TabIndex = 146;
             this.chkPlayDeadHP.Text = "Use PlayDead for HP";
-            this.chkPlayDeadHP.UseVisualStyleBackColor = false;
+            this.chkPlayDeadHP.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(170, 337);
+            this.label31.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label31.Location = new System.Drawing.Point(6, 277);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(143, 24);
             this.label31.TabIndex = 145;
             this.label31.Text = "Out of Combat";
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label30.Location = new System.Drawing.Point(388, 9);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(114, 25);
+            this.label30.TabIndex = 144;
+            this.label30.Text = "Test Area";
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(286, 388);
+            this.label28.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label28.Location = new System.Drawing.Point(122, 324);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(94, 14);
+            this.label28.Size = new System.Drawing.Size(100, 13);
             this.label28.TabIndex = 143;
             this.label28.Text = "to use PlayDead";
+            // 
+            // nuralsTrennleistebenutzt
+            // 
+            this.nuralsTrennleistebenutzt.Location = new System.Drawing.Point(269, 0);
+            this.nuralsTrennleistebenutzt.Name = "nuralsTrennleistebenutzt";
+            this.nuralsTrennleistebenutzt.Size = new System.Drawing.Size(18, 484);
+            this.nuralsTrennleistebenutzt.TabIndex = 142;
+            // 
+            // nuralsTrennleistebenutzt2
+            // 
+            this.nuralsTrennleistebenutzt2.Location = new System.Drawing.Point(-4, 258);
+            this.nuralsTrennleistebenutzt2.Name = "nuralsTrennleistebenutzt2";
+            this.nuralsTrennleistebenutzt2.Size = new System.Drawing.Size(276, 16);
+            this.nuralsTrennleistebenutzt2.TabIndex = 141;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(185, 388);
+            this.label29.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label29.Location = new System.Drawing.Point(21, 324);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(56, 14);
+            this.label29.Size = new System.Drawing.Size(58, 13);
             this.label29.TabIndex = 140;
             this.label29.Text = "Min MP%";
             // 
             // textMinMPplayDead
             // 
-            this.textMinMPplayDead.BackColor = System.Drawing.Color.White;
-            this.textMinMPplayDead.ForeColor = System.Drawing.Color.Black;
-            this.textMinMPplayDead.Location = new System.Drawing.Point(249, 384);
+            this.textMinMPplayDead.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinMPplayDead.Location = new System.Drawing.Point(85, 321);
             this.textMinMPplayDead.Name = "textMinMPplayDead";
             this.textMinMPplayDead.Size = new System.Drawing.Size(31, 20);
             this.textMinMPplayDead.TabIndex = 139;
@@ -991,79 +1003,72 @@
             // chkPlayDeadMana
             // 
             this.chkPlayDeadMana.AutoSize = true;
-            this.chkPlayDeadMana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkPlayDeadMana.ForeColor = System.Drawing.Color.White;
-            this.chkPlayDeadMana.Location = new System.Drawing.Point(167, 366);
+            this.chkPlayDeadMana.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkPlayDeadMana.Location = new System.Drawing.Point(3, 304);
             this.chkPlayDeadMana.Name = "chkPlayDeadMana";
-            this.chkPlayDeadMana.Size = new System.Drawing.Size(150, 18);
+            this.chkPlayDeadMana.Size = new System.Drawing.Size(160, 17);
             this.chkPlayDeadMana.TabIndex = 137;
             this.chkPlayDeadMana.Text = "Use PlayDead for Mana";
-            this.chkPlayDeadMana.UseVisualStyleBackColor = false;
+            this.chkPlayDeadMana.UseVisualStyleBackColor = true;
             // 
             // chkOpenScratchedSafe
             // 
             this.chkOpenScratchedSafe.AutoSize = true;
-            this.chkOpenScratchedSafe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkOpenScratchedSafe.ForeColor = System.Drawing.Color.White;
-            this.chkOpenScratchedSafe.Location = new System.Drawing.Point(301, 162);
+            this.chkOpenScratchedSafe.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkOpenScratchedSafe.Location = new System.Drawing.Point(137, 114);
             this.chkOpenScratchedSafe.Name = "chkOpenScratchedSafe";
-            this.chkOpenScratchedSafe.Size = new System.Drawing.Size(82, 18);
+            this.chkOpenScratchedSafe.Size = new System.Drawing.Size(86, 17);
             this.chkOpenScratchedSafe.TabIndex = 136;
             this.chkOpenScratchedSafe.Text = "Open Safe";
-            this.chkOpenScratchedSafe.UseVisualStyleBackColor = false;
+            this.chkOpenScratchedSafe.UseVisualStyleBackColor = true;
             // 
             // chkOpenStolenBag
             // 
             this.chkOpenStolenBag.AutoSize = true;
-            this.chkOpenStolenBag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkOpenStolenBag.ForeColor = System.Drawing.Color.White;
-            this.chkOpenStolenBag.Location = new System.Drawing.Point(173, 162);
+            this.chkOpenStolenBag.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkOpenStolenBag.Location = new System.Drawing.Point(9, 114);
             this.chkOpenStolenBag.Name = "chkOpenStolenBag";
-            this.chkOpenStolenBag.Size = new System.Drawing.Size(116, 18);
+            this.chkOpenStolenBag.Size = new System.Drawing.Size(122, 17);
             this.chkOpenStolenBag.TabIndex = 135;
             this.chkOpenStolenBag.Text = "Open Stolen Bag";
-            this.chkOpenStolenBag.UseVisualStyleBackColor = false;
+            this.chkOpenStolenBag.UseVisualStyleBackColor = true;
             // 
             // chkAutoCombat
             // 
             this.chkAutoCombat.AutoSize = true;
-            this.chkAutoCombat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkAutoCombat.ForeColor = System.Drawing.Color.White;
-            this.chkAutoCombat.Location = new System.Drawing.Point(186, 292);
+            this.chkAutoCombat.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkAutoCombat.Location = new System.Drawing.Point(22, 235);
             this.chkAutoCombat.Name = "chkAutoCombat";
-            this.chkAutoCombat.Size = new System.Drawing.Size(152, 18);
+            this.chkAutoCombat.Size = new System.Drawing.Size(157, 17);
             this.chkAutoCombat.TabIndex = 134;
             this.chkAutoCombat.Text = "Enable combat on start";
-            this.chkAutoCombat.UseVisualStyleBackColor = false;
+            this.chkAutoCombat.UseVisualStyleBackColor = true;
             // 
             // chkAssist
             // 
             this.chkAssist.AutoSize = true;
-            this.chkAssist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkAssist.ForeColor = System.Drawing.Color.White;
-            this.chkAssist.Location = new System.Drawing.Point(301, 186);
+            this.chkAssist.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkAssist.Location = new System.Drawing.Point(137, 137);
             this.chkAssist.Name = "chkAssist";
-            this.chkAssist.Size = new System.Drawing.Size(96, 18);
+            this.chkAssist.Size = new System.Drawing.Size(94, 17);
             this.chkAssist.TabIndex = 133;
             this.chkAssist.Text = "Assist Mode";
-            this.chkAssist.UseVisualStyleBackColor = false;
+            this.chkAssist.UseVisualStyleBackColor = true;
             // 
             // labelMinHP
             // 
             this.labelMinHP.AutoSize = true;
-            this.labelMinHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelMinHP.ForeColor = System.Drawing.Color.White;
-            this.labelMinHP.Location = new System.Drawing.Point(171, 220);
+            this.labelMinHP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelMinHP.Location = new System.Drawing.Point(7, 168);
             this.labelMinHP.Name = "labelMinHP";
-            this.labelMinHP.Size = new System.Drawing.Size(53, 14);
+            this.labelMinHP.Size = new System.Drawing.Size(57, 13);
             this.labelMinHP.TabIndex = 132;
             this.labelMinHP.Text = "Min HP%";
             // 
             // textMinHP
             // 
-            this.textMinHP.BackColor = System.Drawing.Color.White;
-            this.textMinHP.ForeColor = System.Drawing.Color.Black;
-            this.textMinHP.Location = new System.Drawing.Point(234, 216);
+            this.textMinHP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinHP.Location = new System.Drawing.Point(70, 165);
             this.textMinHP.Name = "textMinHP";
             this.textMinHP.Size = new System.Drawing.Size(31, 20);
             this.textMinHP.TabIndex = 131;
@@ -1071,19 +1076,17 @@
             // labelMinMP
             // 
             this.labelMinMP.AutoSize = true;
-            this.labelMinMP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelMinMP.ForeColor = System.Drawing.Color.White;
-            this.labelMinMP.Location = new System.Drawing.Point(296, 220);
+            this.labelMinMP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelMinMP.Location = new System.Drawing.Point(132, 168);
             this.labelMinMP.Name = "labelMinMP";
-            this.labelMinMP.Size = new System.Drawing.Size(56, 14);
+            this.labelMinMP.Size = new System.Drawing.Size(58, 13);
             this.labelMinMP.TabIndex = 130;
             this.labelMinMP.Text = "Min MP%";
             // 
             // textMinMP
             // 
-            this.textMinMP.BackColor = System.Drawing.Color.White;
-            this.textMinMP.ForeColor = System.Drawing.Color.Black;
-            this.textMinMP.Location = new System.Drawing.Point(360, 216);
+            this.textMinMP.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textMinMP.Location = new System.Drawing.Point(196, 165);
             this.textMinMP.Name = "textMinMP";
             this.textMinMP.Size = new System.Drawing.Size(31, 20);
             this.textMinMP.TabIndex = 129;
@@ -1091,79 +1094,72 @@
             // chkOpenPurses
             // 
             this.chkOpenPurses.AutoSize = true;
-            this.chkOpenPurses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkOpenPurses.ForeColor = System.Drawing.Color.White;
-            this.chkOpenPurses.Location = new System.Drawing.Point(173, 137);
+            this.chkOpenPurses.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkOpenPurses.Location = new System.Drawing.Point(9, 91);
             this.chkOpenPurses.Name = "chkOpenPurses";
-            this.chkOpenPurses.Size = new System.Drawing.Size(98, 18);
+            this.chkOpenPurses.Size = new System.Drawing.Size(98, 17);
             this.chkOpenPurses.TabIndex = 128;
             this.chkOpenPurses.Text = "Open Purses";
-            this.chkOpenPurses.UseVisualStyleBackColor = false;
+            this.chkOpenPurses.UseVisualStyleBackColor = true;
             // 
             // chkLoot
             // 
             this.chkLoot.AutoSize = true;
-            this.chkLoot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkLoot.ForeColor = System.Drawing.Color.White;
-            this.chkLoot.Location = new System.Drawing.Point(301, 112);
+            this.chkLoot.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkLoot.Location = new System.Drawing.Point(137, 68);
             this.chkLoot.Name = "chkLoot";
-            this.chkLoot.Size = new System.Drawing.Size(100, 18);
+            this.chkLoot.Size = new System.Drawing.Size(99, 17);
             this.chkLoot.TabIndex = 127;
             this.chkLoot.Text = "Loot corpses";
-            this.chkLoot.UseVisualStyleBackColor = false;
+            this.chkLoot.UseVisualStyleBackColor = true;
             // 
             // chkUseCC
             // 
             this.chkUseCC.AutoSize = true;
-            this.chkUseCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkUseCC.ForeColor = System.Drawing.Color.White;
-            this.chkUseCC.Location = new System.Drawing.Point(301, 137);
+            this.chkUseCC.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkUseCC.Location = new System.Drawing.Point(137, 91);
             this.chkUseCC.Name = "chkUseCC";
-            this.chkUseCC.Size = new System.Drawing.Size(66, 18);
+            this.chkUseCC.Size = new System.Drawing.Size(68, 17);
             this.chkUseCC.TabIndex = 126;
             this.chkUseCC.Text = "Use CC";
-            this.chkUseCC.UseVisualStyleBackColor = false;
+            this.chkUseCC.UseVisualStyleBackColor = true;
             // 
             // chkHealerMode
             // 
             this.chkHealerMode.AutoSize = true;
-            this.chkHealerMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkHealerMode.ForeColor = System.Drawing.Color.White;
-            this.chkHealerMode.Location = new System.Drawing.Point(173, 186);
+            this.chkHealerMode.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkHealerMode.Location = new System.Drawing.Point(9, 137);
             this.chkHealerMode.Name = "chkHealerMode";
-            this.chkHealerMode.Size = new System.Drawing.Size(95, 18);
+            this.chkHealerMode.Size = new System.Drawing.Size(98, 17);
             this.chkHealerMode.TabIndex = 125;
             this.chkHealerMode.Text = "Healer Mode";
-            this.chkHealerMode.UseVisualStyleBackColor = false;
+            this.chkHealerMode.UseVisualStyleBackColor = true;
             // 
             // chkFastTag
             // 
             this.chkFastTag.AutoSize = true;
-            this.chkFastTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkFastTag.ForeColor = System.Drawing.Color.White;
-            this.chkFastTag.Location = new System.Drawing.Point(173, 112);
+            this.chkFastTag.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkFastTag.Location = new System.Drawing.Point(9, 68);
             this.chkFastTag.Name = "chkFastTag";
-            this.chkFastTag.Size = new System.Drawing.Size(95, 18);
+            this.chkFastTag.Size = new System.Drawing.Size(100, 17);
             this.chkFastTag.TabIndex = 124;
             this.chkFastTag.Text = "Fast Tagging";
-            this.chkFastTag.UseVisualStyleBackColor = false;
+            this.chkFastTag.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(338, 80);
+            this.label8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label8.Location = new System.Drawing.Point(174, 38);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 14);
+            this.label8.Size = new System.Drawing.Size(16, 13);
             this.label8.TabIndex = 123;
             this.label8.Text = "m";
             // 
             // textCombatRange
             // 
-            this.textCombatRange.BackColor = System.Drawing.Color.White;
-            this.textCombatRange.ForeColor = System.Drawing.Color.Black;
-            this.textCombatRange.Location = new System.Drawing.Point(279, 76);
+            this.textCombatRange.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textCombatRange.Location = new System.Drawing.Point(115, 35);
             this.textCombatRange.Name = "textCombatRange";
             this.textCombatRange.Size = new System.Drawing.Size(53, 20);
             this.textCombatRange.TabIndex = 122;
@@ -1171,30 +1167,27 @@
             // labelCombatRange
             // 
             this.labelCombatRange.AutoSize = true;
-            this.labelCombatRange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelCombatRange.ForeColor = System.Drawing.Color.White;
-            this.labelCombatRange.Location = new System.Drawing.Point(183, 80);
+            this.labelCombatRange.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelCombatRange.Location = new System.Drawing.Point(19, 38);
             this.labelCombatRange.Name = "labelCombatRange";
-            this.labelCombatRange.Size = new System.Drawing.Size(87, 14);
+            this.labelCombatRange.Size = new System.Drawing.Size(90, 13);
             this.labelCombatRange.TabIndex = 121;
             this.labelCombatRange.Text = "Combat Range";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(338, 52);
+            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label7.Location = new System.Drawing.Point(174, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 14);
+            this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 120;
             this.label7.Text = "m";
             // 
             // textZoneRadius
             // 
-            this.textZoneRadius.BackColor = System.Drawing.Color.White;
-            this.textZoneRadius.ForeColor = System.Drawing.Color.Black;
-            this.textZoneRadius.Location = new System.Drawing.Point(279, 48);
+            this.textZoneRadius.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.textZoneRadius.Location = new System.Drawing.Point(115, 9);
             this.textZoneRadius.Name = "textZoneRadius";
             this.textZoneRadius.Size = new System.Drawing.Size(53, 20);
             this.textZoneRadius.TabIndex = 119;
@@ -1202,33 +1195,30 @@
             // labelZoneRadius
             // 
             this.labelZoneRadius.AutoSize = true;
-            this.labelZoneRadius.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelZoneRadius.ForeColor = System.Drawing.Color.White;
-            this.labelZoneRadius.Location = new System.Drawing.Point(194, 52);
+            this.labelZoneRadius.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.labelZoneRadius.Location = new System.Drawing.Point(30, 12);
             this.labelZoneRadius.Name = "labelZoneRadius";
-            this.labelZoneRadius.Size = new System.Drawing.Size(75, 14);
+            this.labelZoneRadius.Size = new System.Drawing.Size(79, 13);
             this.labelZoneRadius.TabIndex = 118;
             this.labelZoneRadius.Text = "Zone Radius";
             // 
             // btnCombat
             // 
-            this.btnCombat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCombat.ForeColor = System.Drawing.Color.White;
-            this.btnCombat.Location = new System.Drawing.Point(301, 261);
+            this.btnCombat.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCombat.Location = new System.Drawing.Point(137, 206);
             this.btnCombat.Name = "btnCombat";
-            this.btnCombat.Size = new System.Drawing.Size(42, 25);
+            this.btnCombat.Size = new System.Drawing.Size(42, 23);
             this.btnCombat.TabIndex = 117;
             this.btnCombat.Text = "OFF";
-            this.btnCombat.UseVisualStyleBackColor = false;
+            this.btnCombat.UseVisualStyleBackColor = true;
             this.btnCombat.Click += new System.EventHandler(this.btnCombat_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(170, 261);
+            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label3.Location = new System.Drawing.Point(6, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 24);
             this.label3.TabIndex = 116;
@@ -1236,7 +1226,6 @@
             // 
             // tabBuff
             // 
-            this.tabBuff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabBuff.Controls.Add(this.label19);
             this.tabBuff.Controls.Add(this.chkGreedyGR);
             this.tabBuff.Controls.Add(this.chkZealGR);
@@ -1283,19 +1272,19 @@
             this.tabBuff.Controls.Add(this.chkVocationExpertiseTonic);
             this.tabBuff.Controls.Add(this.chkTyrenosIndex);
             this.tabBuff.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabBuff.ForeColor = System.Drawing.Color.White;
-            this.tabBuff.Location = new System.Drawing.Point(4, 23);
+            this.tabBuff.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabBuff.Location = new System.Drawing.Point(4, 22);
             this.tabBuff.Name = "tabBuff";
             this.tabBuff.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBuff.Size = new System.Drawing.Size(613, 518);
+            this.tabBuff.Size = new System.Drawing.Size(613, 480);
             this.tabBuff.TabIndex = 6;
             this.tabBuff.Text = "Buff Items";
+            this.tabBuff.UseVisualStyleBackColor = true;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label19.Location = new System.Drawing.Point(74, 350);
+            this.label19.Location = new System.Drawing.Point(74, 325);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(456, 13);
             this.label19.TabIndex = 202;
@@ -1305,418 +1294,375 @@
             // chkGreedyGR
             // 
             this.chkGreedyGR.AutoSize = true;
-            this.chkGreedyGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkGreedyGR.Location = new System.Drawing.Point(252, 477);
+            this.chkGreedyGR.Location = new System.Drawing.Point(252, 443);
             this.chkGreedyGR.Name = "chkGreedyGR";
             this.chkGreedyGR.Size = new System.Drawing.Size(116, 17);
             this.chkGreedyGR.TabIndex = 201;
             this.chkGreedyGR.Text = "Greedy Grimoire";
-            this.chkGreedyGR.UseVisualStyleBackColor = false;
+            this.chkGreedyGR.UseVisualStyleBackColor = true;
             // 
             // chkZealGR
             // 
             this.chkZealGR.AutoSize = true;
-            this.chkZealGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkZealGR.Location = new System.Drawing.Point(451, 428);
+            this.chkZealGR.Location = new System.Drawing.Point(451, 397);
             this.chkZealGR.Name = "chkZealGR";
             this.chkZealGR.Size = new System.Drawing.Size(101, 17);
             this.chkZealGR.TabIndex = 200;
             this.chkZealGR.Text = "Zeal Grimoire";
-            this.chkZealGR.UseVisualStyleBackColor = false;
+            this.chkZealGR.UseVisualStyleBackColor = true;
             // 
             // chkWardGR
             // 
             this.chkWardGR.AutoSize = true;
-            this.chkWardGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkWardGR.Location = new System.Drawing.Point(252, 428);
+            this.chkWardGR.Location = new System.Drawing.Point(252, 397);
             this.chkWardGR.Name = "chkWardGR";
             this.chkWardGR.Size = new System.Drawing.Size(106, 17);
             this.chkWardGR.TabIndex = 199;
             this.chkWardGR.Text = "Ward Grimoire";
-            this.chkWardGR.UseVisualStyleBackColor = false;
+            this.chkWardGR.UseVisualStyleBackColor = true;
             // 
             // chkPromiseGR
             // 
             this.chkPromiseGR.AutoSize = true;
-            this.chkPromiseGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkPromiseGR.Location = new System.Drawing.Point(49, 428);
+            this.chkPromiseGR.Location = new System.Drawing.Point(49, 397);
             this.chkPromiseGR.Name = "chkPromiseGR";
             this.chkPromiseGR.Size = new System.Drawing.Size(120, 17);
             this.chkPromiseGR.TabIndex = 198;
             this.chkPromiseGR.Text = "Promise Grimoire";
-            this.chkPromiseGR.UseVisualStyleBackColor = false;
+            this.chkPromiseGR.UseVisualStyleBackColor = true;
             // 
             // chkHasteGR
             // 
             this.chkHasteGR.AutoSize = true;
-            this.chkHasteGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkHasteGR.Location = new System.Drawing.Point(451, 378);
+            this.chkHasteGR.Location = new System.Drawing.Point(451, 351);
             this.chkHasteGR.Name = "chkHasteGR";
             this.chkHasteGR.Size = new System.Drawing.Size(109, 17);
             this.chkHasteGR.TabIndex = 197;
             this.chkHasteGR.Text = "Haste Grimoire";
-            this.chkHasteGR.UseVisualStyleBackColor = false;
+            this.chkHasteGR.UseVisualStyleBackColor = true;
             // 
             // chkFrenzyGR
             // 
             this.chkFrenzyGR.AutoSize = true;
-            this.chkFrenzyGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkFrenzyGR.Location = new System.Drawing.Point(253, 378);
+            this.chkFrenzyGR.Location = new System.Drawing.Point(253, 351);
             this.chkFrenzyGR.Name = "chkFrenzyGR";
             this.chkFrenzyGR.Size = new System.Drawing.Size(113, 17);
             this.chkFrenzyGR.TabIndex = 196;
             this.chkFrenzyGR.Text = "Frenzy Grimoire";
-            this.chkFrenzyGR.UseVisualStyleBackColor = false;
+            this.chkFrenzyGR.UseVisualStyleBackColor = true;
             // 
             // chkExperienceGR
             // 
             this.chkExperienceGR.AutoSize = true;
-            this.chkExperienceGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkExperienceGR.Location = new System.Drawing.Point(49, 378);
+            this.chkExperienceGR.Location = new System.Drawing.Point(49, 351);
             this.chkExperienceGR.Name = "chkExperienceGR";
             this.chkExperienceGR.Size = new System.Drawing.Size(139, 17);
             this.chkExperienceGR.TabIndex = 195;
             this.chkExperienceGR.Text = "Experience Grimoire";
-            this.chkExperienceGR.UseVisualStyleBackColor = false;
+            this.chkExperienceGR.UseVisualStyleBackColor = true;
             // 
             // pictureGreedyGR
             // 
-            this.pictureGreedyGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureGreedyGR.Location = new System.Drawing.Point(206, 466);
+            this.pictureGreedyGR.Location = new System.Drawing.Point(206, 433);
             this.pictureGreedyGR.Name = "pictureGreedyGR";
-            this.pictureGreedyGR.Size = new System.Drawing.Size(40, 43);
+            this.pictureGreedyGR.Size = new System.Drawing.Size(40, 40);
             this.pictureGreedyGR.TabIndex = 194;
             this.pictureGreedyGR.TabStop = false;
             // 
             // pictureZealGR
             // 
-            this.pictureZealGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureZealGR.Location = new System.Drawing.Point(405, 417);
+            this.pictureZealGR.Location = new System.Drawing.Point(405, 387);
             this.pictureZealGR.Name = "pictureZealGR";
-            this.pictureZealGR.Size = new System.Drawing.Size(40, 43);
+            this.pictureZealGR.Size = new System.Drawing.Size(40, 40);
             this.pictureZealGR.TabIndex = 193;
             this.pictureZealGR.TabStop = false;
             // 
             // pictureWardGR
             // 
-            this.pictureWardGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureWardGR.Location = new System.Drawing.Point(206, 417);
+            this.pictureWardGR.Location = new System.Drawing.Point(206, 387);
             this.pictureWardGR.Name = "pictureWardGR";
-            this.pictureWardGR.Size = new System.Drawing.Size(40, 43);
+            this.pictureWardGR.Size = new System.Drawing.Size(40, 40);
             this.pictureWardGR.TabIndex = 192;
             this.pictureWardGR.TabStop = false;
             // 
             // picturePromiseGR
             // 
-            this.picturePromiseGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.picturePromiseGR.Location = new System.Drawing.Point(3, 417);
+            this.picturePromiseGR.Location = new System.Drawing.Point(3, 387);
             this.picturePromiseGR.Name = "picturePromiseGR";
-            this.picturePromiseGR.Size = new System.Drawing.Size(40, 43);
+            this.picturePromiseGR.Size = new System.Drawing.Size(40, 40);
             this.picturePromiseGR.TabIndex = 190;
             this.picturePromiseGR.TabStop = false;
             // 
             // pictureHasteGR
             // 
-            this.pictureHasteGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureHasteGR.Location = new System.Drawing.Point(405, 367);
+            this.pictureHasteGR.Location = new System.Drawing.Point(405, 341);
             this.pictureHasteGR.Name = "pictureHasteGR";
-            this.pictureHasteGR.Size = new System.Drawing.Size(40, 43);
+            this.pictureHasteGR.Size = new System.Drawing.Size(40, 40);
             this.pictureHasteGR.TabIndex = 189;
             this.pictureHasteGR.TabStop = false;
             // 
             // pictureFrenzyGR
             // 
-            this.pictureFrenzyGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureFrenzyGR.Location = new System.Drawing.Point(206, 367);
+            this.pictureFrenzyGR.Location = new System.Drawing.Point(206, 341);
             this.pictureFrenzyGR.Name = "pictureFrenzyGR";
-            this.pictureFrenzyGR.Size = new System.Drawing.Size(40, 43);
+            this.pictureFrenzyGR.Size = new System.Drawing.Size(40, 40);
             this.pictureFrenzyGR.TabIndex = 188;
             this.pictureFrenzyGR.TabStop = false;
             // 
             // pictureExperienceGR
             // 
-            this.pictureExperienceGR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureExperienceGR.Location = new System.Drawing.Point(3, 367);
+            this.pictureExperienceGR.Location = new System.Drawing.Point(3, 341);
             this.pictureExperienceGR.Name = "pictureExperienceGR";
-            this.pictureExperienceGR.Size = new System.Drawing.Size(40, 43);
+            this.pictureExperienceGR.Size = new System.Drawing.Size(40, 40);
             this.pictureExperienceGR.TabIndex = 187;
             this.pictureExperienceGR.TabStop = false;
             // 
             // pictureTyrenosIndex
             // 
-            this.pictureTyrenosIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureTyrenosIndex.Location = new System.Drawing.Point(3, 50);
+            this.pictureTyrenosIndex.Location = new System.Drawing.Point(3, 46);
             this.pictureTyrenosIndex.Name = "pictureTyrenosIndex";
-            this.pictureTyrenosIndex.Size = new System.Drawing.Size(40, 43);
+            this.pictureTyrenosIndex.Size = new System.Drawing.Size(40, 40);
             this.pictureTyrenosIndex.TabIndex = 186;
             this.pictureTyrenosIndex.TabStop = false;
             // 
             // pictureLuckyQuicksilverTonic
             // 
-            this.pictureLuckyQuicksilverTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureLuckyQuicksilverTonic.Location = new System.Drawing.Point(405, 198);
+            this.pictureLuckyQuicksilverTonic.Location = new System.Drawing.Point(405, 184);
             this.pictureLuckyQuicksilverTonic.Name = "pictureLuckyQuicksilverTonic";
-            this.pictureLuckyQuicksilverTonic.Size = new System.Drawing.Size(40, 43);
+            this.pictureLuckyQuicksilverTonic.Size = new System.Drawing.Size(40, 40);
             this.pictureLuckyQuicksilverTonic.TabIndex = 185;
             this.pictureLuckyQuicksilverTonic.TabStop = false;
             // 
             // pictureBriskDwarven
             // 
-            this.pictureBriskDwarven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBriskDwarven.Location = new System.Drawing.Point(405, 99);
+            this.pictureBriskDwarven.Location = new System.Drawing.Point(405, 92);
             this.pictureBriskDwarven.Name = "pictureBriskDwarven";
-            this.pictureBriskDwarven.Size = new System.Drawing.Size(40, 43);
+            this.pictureBriskDwarven.Size = new System.Drawing.Size(40, 40);
             this.pictureBriskDwarven.TabIndex = 184;
             this.pictureBriskDwarven.TabStop = false;
             // 
             // pictureLibraryRelic
             // 
-            this.pictureLibraryRelic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureLibraryRelic.Location = new System.Drawing.Point(206, 297);
+            this.pictureLibraryRelic.Location = new System.Drawing.Point(206, 276);
             this.pictureLibraryRelic.Name = "pictureLibraryRelic";
-            this.pictureLibraryRelic.Size = new System.Drawing.Size(40, 43);
+            this.pictureLibraryRelic.Size = new System.Drawing.Size(40, 40);
             this.pictureLibraryRelic.TabIndex = 183;
             this.pictureLibraryRelic.TabStop = false;
             // 
             // pictureUnstoppableForce
             // 
-            this.pictureUnstoppableForce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureUnstoppableForce.Location = new System.Drawing.Point(206, 248);
+            this.pictureUnstoppableForce.Location = new System.Drawing.Point(206, 230);
             this.pictureUnstoppableForce.Name = "pictureUnstoppableForce";
-            this.pictureUnstoppableForce.Size = new System.Drawing.Size(40, 43);
+            this.pictureUnstoppableForce.Size = new System.Drawing.Size(40, 40);
             this.pictureUnstoppableForce.TabIndex = 182;
             this.pictureUnstoppableForce.TabStop = false;
             // 
             // pictureImmortalXPTonic
             // 
-            this.pictureImmortalXPTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureImmortalXPTonic.Location = new System.Drawing.Point(206, 198);
+            this.pictureImmortalXPTonic.Location = new System.Drawing.Point(206, 184);
             this.pictureImmortalXPTonic.Name = "pictureImmortalXPTonic";
-            this.pictureImmortalXPTonic.Size = new System.Drawing.Size(40, 43);
+            this.pictureImmortalXPTonic.Size = new System.Drawing.Size(40, 40);
             this.pictureImmortalXPTonic.TabIndex = 181;
             this.pictureImmortalXPTonic.TabStop = false;
             // 
             // pictureExpertiseTonic
             // 
-            this.pictureExpertiseTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureExpertiseTonic.Location = new System.Drawing.Point(206, 149);
+            this.pictureExpertiseTonic.Location = new System.Drawing.Point(206, 138);
             this.pictureExpertiseTonic.Name = "pictureExpertiseTonic";
-            this.pictureExpertiseTonic.Size = new System.Drawing.Size(40, 43);
+            this.pictureExpertiseTonic.Size = new System.Drawing.Size(40, 40);
             this.pictureExpertiseTonic.TabIndex = 180;
             this.pictureExpertiseTonic.TabStop = false;
             // 
             // pictureLibraryIndex
             // 
-            this.pictureLibraryIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureLibraryIndex.Location = new System.Drawing.Point(206, 50);
+            this.pictureLibraryIndex.Location = new System.Drawing.Point(206, 46);
             this.pictureLibraryIndex.Name = "pictureLibraryIndex";
-            this.pictureLibraryIndex.Size = new System.Drawing.Size(40, 43);
+            this.pictureLibraryIndex.Size = new System.Drawing.Size(40, 40);
             this.pictureLibraryIndex.TabIndex = 179;
             this.pictureLibraryIndex.TabStop = false;
             // 
             // pictureKingdomsHeart
             // 
-            this.pictureKingdomsHeart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureKingdomsHeart.Location = new System.Drawing.Point(3, 297);
+            this.pictureKingdomsHeart.Location = new System.Drawing.Point(3, 276);
             this.pictureKingdomsHeart.Name = "pictureKingdomsHeart";
-            this.pictureKingdomsHeart.Size = new System.Drawing.Size(40, 43);
+            this.pictureKingdomsHeart.Size = new System.Drawing.Size(40, 40);
             this.pictureKingdomsHeart.TabIndex = 178;
             this.pictureKingdomsHeart.TabStop = false;
             // 
             // pictureBrickwall
             // 
-            this.pictureBrickwall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBrickwall.Location = new System.Drawing.Point(3, 248);
+            this.pictureBrickwall.Location = new System.Drawing.Point(3, 230);
             this.pictureBrickwall.Name = "pictureBrickwall";
-            this.pictureBrickwall.Size = new System.Drawing.Size(40, 43);
+            this.pictureBrickwall.Size = new System.Drawing.Size(40, 40);
             this.pictureBrickwall.TabIndex = 177;
             this.pictureBrickwall.TabStop = false;
             // 
             // pictureXPBoostPotion
             // 
-            this.pictureXPBoostPotion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureXPBoostPotion.Location = new System.Drawing.Point(3, 198);
+            this.pictureXPBoostPotion.Location = new System.Drawing.Point(3, 184);
             this.pictureXPBoostPotion.Name = "pictureXPBoostPotion";
-            this.pictureXPBoostPotion.Size = new System.Drawing.Size(40, 43);
+            this.pictureXPBoostPotion.Size = new System.Drawing.Size(40, 40);
             this.pictureXPBoostPotion.TabIndex = 176;
             this.pictureXPBoostPotion.TabStop = false;
             // 
             // pictureHonorBoost
             // 
-            this.pictureHonorBoost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureHonorBoost.Location = new System.Drawing.Point(3, 149);
+            this.pictureHonorBoost.Location = new System.Drawing.Point(3, 138);
             this.pictureHonorBoost.Name = "pictureHonorBoost";
-            this.pictureHonorBoost.Size = new System.Drawing.Size(40, 43);
+            this.pictureHonorBoost.Size = new System.Drawing.Size(40, 40);
             this.pictureHonorBoost.TabIndex = 175;
             this.pictureHonorBoost.TabStop = false;
             // 
             // pictureGreedyDwarven
             // 
-            this.pictureGreedyDwarven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureGreedyDwarven.Location = new System.Drawing.Point(3, 99);
+            this.pictureGreedyDwarven.Location = new System.Drawing.Point(3, 92);
             this.pictureGreedyDwarven.Name = "pictureGreedyDwarven";
-            this.pictureGreedyDwarven.Size = new System.Drawing.Size(40, 43);
+            this.pictureGreedyDwarven.Size = new System.Drawing.Size(40, 40);
             this.pictureGreedyDwarven.TabIndex = 174;
             this.pictureGreedyDwarven.TabStop = false;
             // 
             // pictureStudiousDwarven
             // 
-            this.pictureStudiousDwarven.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureStudiousDwarven.Location = new System.Drawing.Point(206, 99);
+            this.pictureStudiousDwarven.Location = new System.Drawing.Point(206, 92);
             this.pictureStudiousDwarven.Name = "pictureStudiousDwarven";
-            this.pictureStudiousDwarven.Size = new System.Drawing.Size(40, 43);
+            this.pictureStudiousDwarven.Size = new System.Drawing.Size(40, 40);
             this.pictureStudiousDwarven.TabIndex = 173;
             this.pictureStudiousDwarven.TabStop = false;
             // 
             // chkLuckyQuicksilverTonic
             // 
             this.chkLuckyQuicksilverTonic.AutoSize = true;
-            this.chkLuckyQuicksilverTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkLuckyQuicksilverTonic.Location = new System.Drawing.Point(451, 210);
+            this.chkLuckyQuicksilverTonic.Location = new System.Drawing.Point(451, 195);
             this.chkLuckyQuicksilverTonic.Name = "chkLuckyQuicksilverTonic";
             this.chkLuckyQuicksilverTonic.Size = new System.Drawing.Size(163, 17);
             this.chkLuckyQuicksilverTonic.TabIndex = 171;
             this.chkLuckyQuicksilverTonic.Text = "Lucky Quicksilver Tonic";
-            this.chkLuckyQuicksilverTonic.UseVisualStyleBackColor = false;
+            this.chkLuckyQuicksilverTonic.UseVisualStyleBackColor = true;
             // 
             // chkAncientLibraryRelic
             // 
             this.chkAncientLibraryRelic.AutoSize = true;
-            this.chkAncientLibraryRelic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkAncientLibraryRelic.Location = new System.Drawing.Point(252, 310);
+            this.chkAncientLibraryRelic.Location = new System.Drawing.Point(252, 288);
             this.chkAncientLibraryRelic.Name = "chkAncientLibraryRelic";
             this.chkAncientLibraryRelic.Size = new System.Drawing.Size(144, 17);
             this.chkAncientLibraryRelic.TabIndex = 170;
             this.chkAncientLibraryRelic.Text = "Ancient Library Relic";
-            this.chkAncientLibraryRelic.UseVisualStyleBackColor = false;
+            this.chkAncientLibraryRelic.UseVisualStyleBackColor = true;
             // 
             // chkKingdomHeart
             // 
             this.chkKingdomHeart.AutoSize = true;
-            this.chkKingdomHeart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkKingdomHeart.Location = new System.Drawing.Point(49, 310);
+            this.chkKingdomHeart.Location = new System.Drawing.Point(49, 288);
             this.chkKingdomHeart.Name = "chkKingdomHeart";
             this.chkKingdomHeart.Size = new System.Drawing.Size(118, 17);
             this.chkKingdomHeart.TabIndex = 169;
             this.chkKingdomHeart.Text = "Kingdom\'s Heart";
-            this.chkKingdomHeart.UseVisualStyleBackColor = false;
+            this.chkKingdomHeart.UseVisualStyleBackColor = true;
             // 
             // chkGoldenLibraryIndex
             // 
             this.chkGoldenLibraryIndex.AutoSize = true;
-            this.chkGoldenLibraryIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkGoldenLibraryIndex.Location = new System.Drawing.Point(252, 62);
+            this.chkGoldenLibraryIndex.Location = new System.Drawing.Point(252, 58);
             this.chkGoldenLibraryIndex.Name = "chkGoldenLibraryIndex";
             this.chkGoldenLibraryIndex.Size = new System.Drawing.Size(143, 17);
             this.chkGoldenLibraryIndex.TabIndex = 168;
             this.chkGoldenLibraryIndex.Text = "Golden Library Index";
-            this.chkGoldenLibraryIndex.UseVisualStyleBackColor = false;
+            this.chkGoldenLibraryIndex.UseVisualStyleBackColor = true;
             // 
             // chkBriskDwarvenElixir
             // 
             this.chkBriskDwarvenElixir.AutoSize = true;
-            this.chkBriskDwarvenElixir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkBriskDwarvenElixir.Location = new System.Drawing.Point(451, 114);
+            this.chkBriskDwarvenElixir.Location = new System.Drawing.Point(451, 106);
             this.chkBriskDwarvenElixir.Name = "chkBriskDwarvenElixir";
             this.chkBriskDwarvenElixir.Size = new System.Drawing.Size(108, 17);
             this.chkBriskDwarvenElixir.TabIndex = 167;
             this.chkBriskDwarvenElixir.Text = "Brisk Dwarven";
-            this.chkBriskDwarvenElixir.UseVisualStyleBackColor = false;
+            this.chkBriskDwarvenElixir.UseVisualStyleBackColor = true;
             // 
             // chkStudiousDwarvenElixir
             // 
             this.chkStudiousDwarvenElixir.AutoSize = true;
-            this.chkStudiousDwarvenElixir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkStudiousDwarvenElixir.Location = new System.Drawing.Point(252, 114);
+            this.chkStudiousDwarvenElixir.Location = new System.Drawing.Point(252, 106);
             this.chkStudiousDwarvenElixir.Name = "chkStudiousDwarvenElixir";
             this.chkStudiousDwarvenElixir.Size = new System.Drawing.Size(129, 17);
             this.chkStudiousDwarvenElixir.TabIndex = 166;
             this.chkStudiousDwarvenElixir.Text = "Studious Dwarven";
-            this.chkStudiousDwarvenElixir.UseVisualStyleBackColor = false;
+            this.chkStudiousDwarvenElixir.UseVisualStyleBackColor = true;
             // 
             // chkHonorBoostTonic
             // 
             this.chkHonorBoostTonic.AutoSize = true;
-            this.chkHonorBoostTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkHonorBoostTonic.Location = new System.Drawing.Point(49, 162);
+            this.chkHonorBoostTonic.Location = new System.Drawing.Point(49, 150);
             this.chkHonorBoostTonic.Name = "chkHonorBoostTonic";
             this.chkHonorBoostTonic.Size = new System.Drawing.Size(132, 17);
             this.chkHonorBoostTonic.TabIndex = 165;
             this.chkHonorBoostTonic.Text = "Honor Boost Tonic";
-            this.chkHonorBoostTonic.UseVisualStyleBackColor = false;
+            this.chkHonorBoostTonic.UseVisualStyleBackColor = true;
             // 
             // chkImmortalXPTonic
             // 
             this.chkImmortalXPTonic.AutoSize = true;
-            this.chkImmortalXPTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkImmortalXPTonic.Location = new System.Drawing.Point(252, 210);
+            this.chkImmortalXPTonic.Location = new System.Drawing.Point(252, 195);
             this.chkImmortalXPTonic.Name = "chkImmortalXPTonic";
             this.chkImmortalXPTonic.Size = new System.Drawing.Size(129, 17);
             this.chkImmortalXPTonic.TabIndex = 164;
             this.chkImmortalXPTonic.Text = "Immortal XP Tonic";
-            this.chkImmortalXPTonic.UseVisualStyleBackColor = false;
+            this.chkImmortalXPTonic.UseVisualStyleBackColor = true;
             // 
             // chkXPBoostPotion
             // 
             this.chkXPBoostPotion.AutoSize = true;
-            this.chkXPBoostPotion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkXPBoostPotion.Location = new System.Drawing.Point(49, 210);
+            this.chkXPBoostPotion.Location = new System.Drawing.Point(49, 195);
             this.chkXPBoostPotion.Name = "chkXPBoostPotion";
             this.chkXPBoostPotion.Size = new System.Drawing.Size(118, 17);
             this.chkXPBoostPotion.TabIndex = 163;
             this.chkXPBoostPotion.Text = "XP Boost Potion";
-            this.chkXPBoostPotion.UseVisualStyleBackColor = false;
+            this.chkXPBoostPotion.UseVisualStyleBackColor = true;
             // 
             // chkSpellbookBrickWall
             // 
             this.chkSpellbookBrickWall.AutoSize = true;
-            this.chkSpellbookBrickWall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkSpellbookBrickWall.Location = new System.Drawing.Point(49, 261);
+            this.chkSpellbookBrickWall.Location = new System.Drawing.Point(49, 242);
             this.chkSpellbookBrickWall.Name = "chkSpellbookBrickWall";
             this.chkSpellbookBrickWall.Size = new System.Drawing.Size(148, 17);
             this.chkSpellbookBrickWall.TabIndex = 161;
             this.chkSpellbookBrickWall.Text = "Spellbook: Brick Wall";
-            this.chkSpellbookBrickWall.UseVisualStyleBackColor = false;
+            this.chkSpellbookBrickWall.UseVisualStyleBackColor = true;
             // 
             // chkSpellbookUnstoppableForce
             // 
             this.chkSpellbookUnstoppableForce.AutoSize = true;
-            this.chkSpellbookUnstoppableForce.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkSpellbookUnstoppableForce.Location = new System.Drawing.Point(252, 261);
+            this.chkSpellbookUnstoppableForce.Location = new System.Drawing.Point(252, 242);
             this.chkSpellbookUnstoppableForce.Name = "chkSpellbookUnstoppableForce";
             this.chkSpellbookUnstoppableForce.Size = new System.Drawing.Size(197, 17);
             this.chkSpellbookUnstoppableForce.TabIndex = 160;
             this.chkSpellbookUnstoppableForce.Text = "Spellbook: Unstoppable Force";
-            this.chkSpellbookUnstoppableForce.UseVisualStyleBackColor = false;
+            this.chkSpellbookUnstoppableForce.UseVisualStyleBackColor = true;
             // 
             // chkGreedyDwarvenElixir
             // 
             this.chkGreedyDwarvenElixir.AutoSize = true;
-            this.chkGreedyDwarvenElixir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkGreedyDwarvenElixir.Location = new System.Drawing.Point(49, 114);
+            this.chkGreedyDwarvenElixir.Location = new System.Drawing.Point(49, 106);
             this.chkGreedyDwarvenElixir.Name = "chkGreedyDwarvenElixir";
             this.chkGreedyDwarvenElixir.Size = new System.Drawing.Size(151, 17);
             this.chkGreedyDwarvenElixir.TabIndex = 159;
             this.chkGreedyDwarvenElixir.Text = "Greedy Dwarven Elixir";
-            this.chkGreedyDwarvenElixir.UseVisualStyleBackColor = false;
+            this.chkGreedyDwarvenElixir.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label24.Location = new System.Drawing.Point(203, 29);
+            this.label24.Location = new System.Drawing.Point(203, 27);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(203, 13);
+            this.label24.Size = new System.Drawing.Size(200, 13);
             this.label24.TabIndex = 158;
-            this.label24.Text = "Select The Buffs You Want to Use";
+            this.label24.Text = "Which buff Items should be used?";
             // 
             // label23
             // 
             this.label23.AccessibleDescription = "Auroria";
             this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Lime;
             this.label23.Location = new System.Drawing.Point(211, 3);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(170, 24);
@@ -1726,54 +1672,51 @@
             // chkVocationExpertiseTonic
             // 
             this.chkVocationExpertiseTonic.AutoSize = true;
-            this.chkVocationExpertiseTonic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkVocationExpertiseTonic.Location = new System.Drawing.Point(253, 162);
+            this.chkVocationExpertiseTonic.Location = new System.Drawing.Point(253, 150);
             this.chkVocationExpertiseTonic.Name = "chkVocationExpertiseTonic";
             this.chkVocationExpertiseTonic.Size = new System.Drawing.Size(168, 17);
             this.chkVocationExpertiseTonic.TabIndex = 156;
             this.chkVocationExpertiseTonic.Text = "Vocation Expertise Tonic";
-            this.chkVocationExpertiseTonic.UseVisualStyleBackColor = false;
+            this.chkVocationExpertiseTonic.UseVisualStyleBackColor = true;
             // 
             // chkTyrenosIndex
             // 
             this.chkTyrenosIndex.AutoSize = true;
-            this.chkTyrenosIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkTyrenosIndex.Location = new System.Drawing.Point(49, 62);
+            this.chkTyrenosIndex.Location = new System.Drawing.Point(49, 58);
             this.chkTyrenosIndex.Name = "chkTyrenosIndex";
             this.chkTyrenosIndex.Size = new System.Drawing.Size(115, 17);
             this.chkTyrenosIndex.TabIndex = 155;
             this.chkTyrenosIndex.Text = "Tyrenos\'s Index";
-            this.chkTyrenosIndex.UseVisualStyleBackColor = false;
+            this.chkTyrenosIndex.UseVisualStyleBackColor = true;
             // 
             // tabIgnore
             // 
-            this.tabIgnore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabIgnore.Controls.Add(this.boxIgnoreList);
             this.tabIgnore.Controls.Add(this.label1);
             this.tabIgnore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabIgnore.ForeColor = System.Drawing.Color.White;
-            this.tabIgnore.Location = new System.Drawing.Point(4, 23);
+            this.tabIgnore.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabIgnore.Location = new System.Drawing.Point(4, 22);
             this.tabIgnore.Name = "tabIgnore";
             this.tabIgnore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabIgnore.Size = new System.Drawing.Size(613, 518);
+            this.tabIgnore.Size = new System.Drawing.Size(613, 480);
             this.tabIgnore.TabIndex = 2;
             this.tabIgnore.Text = "Ignored Mobs";
+            this.tabIgnore.UseVisualStyleBackColor = true;
             // 
             // boxIgnoreList
             // 
-            this.boxIgnoreList.BackColor = System.Drawing.Color.Gray;
             this.boxIgnoreList.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.boxIgnoreList.ForeColor = System.Drawing.Color.White;
-            this.boxIgnoreList.Location = new System.Drawing.Point(3, 26);
+            this.boxIgnoreList.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.boxIgnoreList.Location = new System.Drawing.Point(3, 23);
             this.boxIgnoreList.Name = "boxIgnoreList";
-            this.boxIgnoreList.Size = new System.Drawing.Size(607, 489);
+            this.boxIgnoreList.Size = new System.Drawing.Size(607, 454);
             this.boxIgnoreList.TabIndex = 1;
             this.boxIgnoreList.Text = "Cused Giant Stone Golem";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 8);
+            this.label1.Location = new System.Drawing.Point(7, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(346, 13);
             this.label1.TabIndex = 0;
@@ -1781,7 +1724,26 @@
             // 
             // tabGear
             // 
-            this.tabGear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabGear.Controls.Add(this.dropdownMpFood);
+            this.tabGear.Controls.Add(this.dropDownHPFood);
+            this.tabGear.Controls.Add(this.dropdownSmallMpPotion);
+            this.tabGear.Controls.Add(this.dropdownBigMpPotion);
+            this.tabGear.Controls.Add(this.dropdownSmallHpPotion);
+            this.tabGear.Controls.Add(this.dropdownBigHpPotion);
+            this.tabGear.Controls.Add(this.label37);
+            this.tabGear.Controls.Add(this.label36);
+            this.tabGear.Controls.Add(this.label35);
+            this.tabGear.Controls.Add(this.label34);
+            this.tabGear.Controls.Add(this.label25);
+            this.tabGear.Controls.Add(this.label22);
+            this.tabGear.Controls.Add(this.label20);
+            this.tabGear.Controls.Add(this.progressBar1);
+            this.tabGear.Controls.Add(this.label10);
+            this.tabGear.Controls.Add(this.textFoodCooldown);
+            this.tabGear.Controls.Add(this.label9);
+            this.tabGear.Controls.Add(this.textPotionCooldown);
+            this.tabGear.Controls.Add(this.labelFoodCooldown);
+            this.tabGear.Controls.Add(this.labelPotionCooldown);
             this.tabGear.Controls.Add(this.labelQtyFoodMP);
             this.tabGear.Controls.Add(this.labelQtyFoodHP);
             this.tabGear.Controls.Add(this.labelQtyPotionMP);
@@ -1802,20 +1764,124 @@
             this.tabGear.Controls.Add(this.labelLute);
             this.tabGear.Controls.Add(this.labelFlute);
             this.tabGear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabGear.ForeColor = System.Drawing.Color.White;
-            this.tabGear.Location = new System.Drawing.Point(4, 23);
+            this.tabGear.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tabGear.Location = new System.Drawing.Point(4, 22);
             this.tabGear.Name = "tabGear";
             this.tabGear.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGear.Size = new System.Drawing.Size(613, 518);
+            this.tabGear.Size = new System.Drawing.Size(613, 480);
             this.tabGear.TabIndex = 4;
             this.tabGear.Text = "Gear/Consumables";
+            this.tabGear.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(9, 391);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(97, 13);
+            this.label35.TabIndex = 149;
+            this.label35.Text = "MP Food Name:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(9, 364);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(96, 13);
+            this.label34.TabIndex = 148;
+            this.label34.Text = "HP Food Name:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(9, 310);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(126, 13);
+            this.label25.TabIndex = 147;
+            this.label25.Text = "big MP Potion Name:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(9, 252);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(125, 13);
+            this.label22.TabIndex = 146;
+            this.label22.Text = "big HP Potion Name:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label20.Location = new System.Drawing.Point(225, 219);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(114, 25);
+            this.label20.TabIndex = 145;
+            this.label20.Text = "Test Area";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(-4, 194);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(621, 22);
+            this.progressBar1.TabIndex = 143;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(386, 171);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "seconds";
+            // 
+            // textFoodCooldown
+            // 
+            this.textFoodCooldown.Location = new System.Drawing.Point(338, 168);
+            this.textFoodCooldown.Name = "textFoodCooldown";
+            this.textFoodCooldown.Size = new System.Drawing.Size(42, 20);
+            this.textFoodCooldown.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(386, 146);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "seconds";
+            // 
+            // textPotionCooldown
+            // 
+            this.textPotionCooldown.Location = new System.Drawing.Point(338, 143);
+            this.textPotionCooldown.Name = "textPotionCooldown";
+            this.textPotionCooldown.Size = new System.Drawing.Size(42, 20);
+            this.textPotionCooldown.TabIndex = 22;
+            // 
+            // labelFoodCooldown
+            // 
+            this.labelFoodCooldown.AutoSize = true;
+            this.labelFoodCooldown.Location = new System.Drawing.Point(229, 171);
+            this.labelFoodCooldown.Name = "labelFoodCooldown";
+            this.labelFoodCooldown.Size = new System.Drawing.Size(97, 13);
+            this.labelFoodCooldown.TabIndex = 21;
+            this.labelFoodCooldown.Text = "Food cooldown:";
+            // 
+            // labelPotionCooldown
+            // 
+            this.labelPotionCooldown.AutoSize = true;
+            this.labelPotionCooldown.Location = new System.Drawing.Point(227, 146);
+            this.labelPotionCooldown.Name = "labelPotionCooldown";
+            this.labelPotionCooldown.Size = new System.Drawing.Size(105, 13);
+            this.labelPotionCooldown.TabIndex = 20;
+            this.labelPotionCooldown.Text = "Potion cooldown:";
             // 
             // labelQtyFoodMP
             // 
             this.labelQtyFoodMP.AutoSize = true;
-            this.labelQtyFoodMP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelQtyFoodMP.ForeColor = System.Drawing.Color.White;
-            this.labelQtyFoodMP.Location = new System.Drawing.Point(484, 202);
+            this.labelQtyFoodMP.Location = new System.Drawing.Point(454, 93);
             this.labelQtyFoodMP.Name = "labelQtyFoodMP";
             this.labelQtyFoodMP.Size = new System.Drawing.Size(57, 13);
             this.labelQtyFoodMP.TabIndex = 19;
@@ -1825,9 +1891,7 @@
             // labelQtyFoodHP
             // 
             this.labelQtyFoodHP.AutoSize = true;
-            this.labelQtyFoodHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelQtyFoodHP.ForeColor = System.Drawing.Color.White;
-            this.labelQtyFoodHP.Location = new System.Drawing.Point(484, 178);
+            this.labelQtyFoodHP.Location = new System.Drawing.Point(454, 70);
             this.labelQtyFoodHP.Name = "labelQtyFoodHP";
             this.labelQtyFoodHP.Size = new System.Drawing.Size(57, 13);
             this.labelQtyFoodHP.TabIndex = 18;
@@ -1837,9 +1901,7 @@
             // labelQtyPotionMP
             // 
             this.labelQtyPotionMP.AutoSize = true;
-            this.labelQtyPotionMP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelQtyPotionMP.ForeColor = System.Drawing.Color.White;
-            this.labelQtyPotionMP.Location = new System.Drawing.Point(484, 152);
+            this.labelQtyPotionMP.Location = new System.Drawing.Point(454, 46);
             this.labelQtyPotionMP.Name = "labelQtyPotionMP";
             this.labelQtyPotionMP.Size = new System.Drawing.Size(57, 13);
             this.labelQtyPotionMP.TabIndex = 17;
@@ -1849,9 +1911,7 @@
             // labelQtyPotionHP
             // 
             this.labelQtyPotionHP.AutoSize = true;
-            this.labelQtyPotionHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelQtyPotionHP.ForeColor = System.Drawing.Color.White;
-            this.labelQtyPotionHP.Location = new System.Drawing.Point(484, 126);
+            this.labelQtyPotionHP.Location = new System.Drawing.Point(454, 22);
             this.labelQtyPotionHP.Name = "labelQtyPotionHP";
             this.labelQtyPotionHP.Size = new System.Drawing.Size(57, 13);
             this.labelQtyPotionHP.TabIndex = 16;
@@ -1860,30 +1920,24 @@
             // 
             // btnCheckPots
             // 
-            this.btnCheckPots.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCheckPots.ForeColor = System.Drawing.Color.White;
-            this.btnCheckPots.Location = new System.Drawing.Point(256, 227);
+            this.btnCheckPots.Location = new System.Drawing.Point(226, 116);
             this.btnCheckPots.Name = "btnCheckPots";
-            this.btnCheckPots.Size = new System.Drawing.Size(258, 25);
+            this.btnCheckPots.Size = new System.Drawing.Size(258, 23);
             this.btnCheckPots.TabIndex = 15;
             this.btnCheckPots.Text = "Check Potion/Food quantities in inventory";
-            this.btnCheckPots.UseVisualStyleBackColor = false;
+            this.btnCheckPots.UseVisualStyleBackColor = true;
             this.btnCheckPots.Click += new System.EventHandler(this.btnCheckPots_Click);
             // 
             // textFoodMP
             // 
-            this.textFoodMP.BackColor = System.Drawing.Color.White;
-            this.textFoodMP.ForeColor = System.Drawing.Color.Black;
-            this.textFoodMP.Location = new System.Drawing.Point(364, 199);
+            this.textFoodMP.Location = new System.Drawing.Point(334, 90);
             this.textFoodMP.Name = "textFoodMP";
             this.textFoodMP.Size = new System.Drawing.Size(114, 20);
             this.textFoodMP.TabIndex = 14;
             // 
             // textFoodHP
             // 
-            this.textFoodHP.BackColor = System.Drawing.Color.White;
-            this.textFoodHP.ForeColor = System.Drawing.Color.Black;
-            this.textFoodHP.Location = new System.Drawing.Point(364, 174);
+            this.textFoodHP.Location = new System.Drawing.Point(334, 67);
             this.textFoodHP.Name = "textFoodHP";
             this.textFoodHP.Size = new System.Drawing.Size(114, 20);
             this.textFoodHP.TabIndex = 13;
@@ -1891,9 +1945,7 @@
             // labelFoodMP
             // 
             this.labelFoodMP.AutoSize = true;
-            this.labelFoodMP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFoodMP.ForeColor = System.Drawing.Color.White;
-            this.labelFoodMP.Location = new System.Drawing.Point(259, 202);
+            this.labelFoodMP.Location = new System.Drawing.Point(229, 93);
             this.labelFoodMP.Name = "labelFoodMP";
             this.labelFoodMP.Size = new System.Drawing.Size(97, 13);
             this.labelFoodMP.TabIndex = 12;
@@ -1902,9 +1954,7 @@
             // labelFoodHP
             // 
             this.labelFoodHP.AutoSize = true;
-            this.labelFoodHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFoodHP.ForeColor = System.Drawing.Color.White;
-            this.labelFoodHP.Location = new System.Drawing.Point(259, 178);
+            this.labelFoodHP.Location = new System.Drawing.Point(229, 70);
             this.labelFoodHP.Name = "labelFoodHP";
             this.labelFoodHP.Size = new System.Drawing.Size(96, 13);
             this.labelFoodHP.TabIndex = 11;
@@ -1912,18 +1962,14 @@
             // 
             // textPotionMP
             // 
-            this.textPotionMP.BackColor = System.Drawing.Color.White;
-            this.textPotionMP.ForeColor = System.Drawing.Color.Black;
-            this.textPotionMP.Location = new System.Drawing.Point(364, 149);
+            this.textPotionMP.Location = new System.Drawing.Point(334, 43);
             this.textPotionMP.Name = "textPotionMP";
             this.textPotionMP.Size = new System.Drawing.Size(114, 20);
             this.textPotionMP.TabIndex = 10;
             // 
             // textPotionHP
             // 
-            this.textPotionHP.BackColor = System.Drawing.Color.White;
-            this.textPotionHP.ForeColor = System.Drawing.Color.Black;
-            this.textPotionHP.Location = new System.Drawing.Point(364, 124);
+            this.textPotionHP.Location = new System.Drawing.Point(334, 20);
             this.textPotionHP.Name = "textPotionHP";
             this.textPotionHP.Size = new System.Drawing.Size(114, 20);
             this.textPotionHP.TabIndex = 9;
@@ -1931,9 +1977,7 @@
             // labelPotionMP
             // 
             this.labelPotionMP.AutoSize = true;
-            this.labelPotionMP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelPotionMP.ForeColor = System.Drawing.Color.White;
-            this.labelPotionMP.Location = new System.Drawing.Point(253, 152);
+            this.labelPotionMP.Location = new System.Drawing.Point(223, 46);
             this.labelPotionMP.Name = "labelPotionMP";
             this.labelPotionMP.Size = new System.Drawing.Size(105, 13);
             this.labelPotionMP.TabIndex = 8;
@@ -1942,9 +1986,7 @@
             // labelPotionHP
             // 
             this.labelPotionHP.AutoSize = true;
-            this.labelPotionHP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelPotionHP.ForeColor = System.Drawing.Color.White;
-            this.labelPotionHP.Location = new System.Drawing.Point(254, 126);
+            this.labelPotionHP.Location = new System.Drawing.Point(224, 22);
             this.labelPotionHP.Name = "labelPotionHP";
             this.labelPotionHP.Size = new System.Drawing.Size(104, 13);
             this.labelPotionHP.TabIndex = 7;
@@ -1952,33 +1994,27 @@
             // 
             // dropdownPet
             // 
-            this.dropdownPet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dropdownPet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownPet.ForeColor = System.Drawing.Color.White;
             this.dropdownPet.FormattingEnabled = true;
-            this.dropdownPet.Location = new System.Drawing.Point(85, 209);
+            this.dropdownPet.Location = new System.Drawing.Point(55, 99);
             this.dropdownPet.Name = "dropdownPet";
             this.dropdownPet.Size = new System.Drawing.Size(121, 21);
             this.dropdownPet.TabIndex = 6;
             // 
             // dropdownLute
             // 
-            this.dropdownLute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dropdownLute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownLute.ForeColor = System.Drawing.Color.White;
             this.dropdownLute.FormattingEnabled = true;
-            this.dropdownLute.Location = new System.Drawing.Point(85, 154);
+            this.dropdownLute.Location = new System.Drawing.Point(55, 48);
             this.dropdownLute.Name = "dropdownLute";
             this.dropdownLute.Size = new System.Drawing.Size(121, 21);
             this.dropdownLute.TabIndex = 5;
             // 
             // dropdownFlute
             // 
-            this.dropdownFlute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dropdownFlute.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdownFlute.ForeColor = System.Drawing.Color.White;
             this.dropdownFlute.FormattingEnabled = true;
-            this.dropdownFlute.Location = new System.Drawing.Point(85, 123);
+            this.dropdownFlute.Location = new System.Drawing.Point(55, 19);
             this.dropdownFlute.Name = "dropdownFlute";
             this.dropdownFlute.Size = new System.Drawing.Size(121, 21);
             this.dropdownFlute.TabIndex = 4;
@@ -1986,9 +2022,7 @@
             // labelPet
             // 
             this.labelPet.AutoSize = true;
-            this.labelPet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelPet.ForeColor = System.Drawing.Color.White;
-            this.labelPet.Location = new System.Drawing.Point(38, 212);
+            this.labelPet.Location = new System.Drawing.Point(8, 102);
             this.labelPet.Name = "labelPet";
             this.labelPet.Size = new System.Drawing.Size(26, 13);
             this.labelPet.TabIndex = 3;
@@ -1997,9 +2031,7 @@
             // labelLute
             // 
             this.labelLute.AutoSize = true;
-            this.labelLute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelLute.ForeColor = System.Drawing.Color.White;
-            this.labelLute.Location = new System.Drawing.Point(38, 157);
+            this.labelLute.Location = new System.Drawing.Point(8, 51);
             this.labelLute.Name = "labelLute";
             this.labelLute.Size = new System.Drawing.Size(32, 13);
             this.labelLute.TabIndex = 2;
@@ -2008,9 +2040,7 @@
             // labelFlute
             // 
             this.labelFlute.AutoSize = true;
-            this.labelFlute.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelFlute.ForeColor = System.Drawing.Color.White;
-            this.labelFlute.Location = new System.Drawing.Point(38, 126);
+            this.labelFlute.Location = new System.Drawing.Point(8, 22);
             this.labelFlute.Name = "labelFlute";
             this.labelFlute.Size = new System.Drawing.Size(35, 13);
             this.labelFlute.TabIndex = 1;
@@ -2019,17 +2049,16 @@
             // tabStats
             // 
             this.tabStats.Controls.Add(this.tableLayoutPanel1);
-            this.tabStats.Location = new System.Drawing.Point(4, 23);
+            this.tabStats.Location = new System.Drawing.Point(4, 22);
             this.tabStats.Name = "tabStats";
             this.tabStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStats.Size = new System.Drawing.Size(613, 518);
+            this.tabStats.Size = new System.Drawing.Size(613, 480);
             this.tabStats.TabIndex = 5;
             this.tabStats.Text = "Stats";
             this.tabStats.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
@@ -2054,7 +2083,7 @@
             this.tableLayoutPanel1.Controls.Add(this.labelPetTotal, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
+            this.tableLayoutPanel1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -2064,19 +2093,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(607, 512);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(607, 474);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(4, 426);
+            this.label17.Location = new System.Drawing.Point(4, 391);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(194, 85);
+            this.label17.Size = new System.Drawing.Size(194, 82);
             this.label17.TabIndex = 14;
             this.label17.Text = "Tokens/Chips";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2084,12 +2112,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(4, 86);
+            this.label12.Location = new System.Drawing.Point(4, 79);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(194, 84);
+            this.label12.Size = new System.Drawing.Size(194, 77);
             this.label12.TabIndex = 0;
             this.label12.Text = "Mob Kills";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2097,12 +2124,11 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(4, 256);
+            this.label13.Location = new System.Drawing.Point(4, 235);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(194, 84);
+            this.label13.Size = new System.Drawing.Size(194, 77);
             this.label13.TabIndex = 1;
             this.label13.Text = "XP Gained";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2110,13 +2136,11 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label14.Location = new System.Drawing.Point(205, 1);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 84);
+            this.label14.Size = new System.Drawing.Size(195, 77);
             this.label14.TabIndex = 3;
             this.label14.Text = "Per Hour";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2124,13 +2148,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Lime;
             this.label15.Location = new System.Drawing.Point(407, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(196, 84);
+            this.label15.Size = new System.Drawing.Size(196, 77);
             this.label15.TabIndex = 4;
             this.label15.Text = "Total";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2138,12 +2160,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(4, 341);
+            this.label16.Location = new System.Drawing.Point(4, 313);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 84);
+            this.label16.Size = new System.Drawing.Size(194, 77);
             this.label16.TabIndex = 5;
             this.label16.Text = "Coinpurses";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2151,116 +2172,99 @@
             // labelKillsHour
             // 
             this.labelKillsHour.AutoSize = true;
-            this.labelKillsHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelKillsHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelKillsHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKillsHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelKillsHour.Location = new System.Drawing.Point(205, 86);
+            this.labelKillsHour.Location = new System.Drawing.Point(205, 79);
             this.labelKillsHour.Name = "labelKillsHour";
-            this.labelKillsHour.Size = new System.Drawing.Size(195, 84);
+            this.labelKillsHour.Size = new System.Drawing.Size(195, 77);
             this.labelKillsHour.TabIndex = 6;
             this.labelKillsHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelKillsTotal
             // 
             this.labelKillsTotal.AutoSize = true;
-            this.labelKillsTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelKillsTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelKillsTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKillsTotal.ForeColor = System.Drawing.Color.Lime;
-            this.labelKillsTotal.Location = new System.Drawing.Point(407, 86);
+            this.labelKillsTotal.Location = new System.Drawing.Point(407, 79);
             this.labelKillsTotal.Name = "labelKillsTotal";
-            this.labelKillsTotal.Size = new System.Drawing.Size(196, 84);
+            this.labelKillsTotal.Size = new System.Drawing.Size(196, 77);
             this.labelKillsTotal.TabIndex = 7;
             this.labelKillsTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelXpHour
             // 
             this.labelXpHour.AutoSize = true;
-            this.labelXpHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelXpHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelXpHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelXpHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelXpHour.Location = new System.Drawing.Point(205, 256);
+            this.labelXpHour.Location = new System.Drawing.Point(205, 235);
             this.labelXpHour.Name = "labelXpHour";
-            this.labelXpHour.Size = new System.Drawing.Size(195, 84);
+            this.labelXpHour.Size = new System.Drawing.Size(195, 77);
             this.labelXpHour.TabIndex = 8;
             this.labelXpHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelXpTotal
             // 
             this.labelXpTotal.AutoSize = true;
-            this.labelXpTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelXpTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelXpTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelXpTotal.ForeColor = System.Drawing.Color.Lime;
-            this.labelXpTotal.Location = new System.Drawing.Point(407, 256);
+            this.labelXpTotal.Location = new System.Drawing.Point(407, 235);
             this.labelXpTotal.Name = "labelXpTotal";
-            this.labelXpTotal.Size = new System.Drawing.Size(196, 84);
+            this.labelXpTotal.Size = new System.Drawing.Size(196, 77);
             this.labelXpTotal.TabIndex = 9;
             this.labelXpTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelPurseHour
             // 
             this.labelPurseHour.AutoSize = true;
-            this.labelPurseHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelPurseHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPurseHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPurseHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelPurseHour.Location = new System.Drawing.Point(205, 341);
+            this.labelPurseHour.Location = new System.Drawing.Point(205, 313);
             this.labelPurseHour.Name = "labelPurseHour";
-            this.labelPurseHour.Size = new System.Drawing.Size(195, 84);
+            this.labelPurseHour.Size = new System.Drawing.Size(195, 77);
             this.labelPurseHour.TabIndex = 10;
             this.labelPurseHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelPurseTotal
             // 
             this.labelPurseTotal.AutoSize = true;
-            this.labelPurseTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelPurseTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPurseTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPurseTotal.ForeColor = System.Drawing.Color.Lime;
-            this.labelPurseTotal.Location = new System.Drawing.Point(407, 341);
+            this.labelPurseTotal.Location = new System.Drawing.Point(407, 313);
             this.labelPurseTotal.Name = "labelPurseTotal";
-            this.labelPurseTotal.Size = new System.Drawing.Size(196, 84);
+            this.labelPurseTotal.Size = new System.Drawing.Size(196, 77);
             this.labelPurseTotal.TabIndex = 11;
             this.labelPurseTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTokenHour
             // 
             this.labelTokenHour.AutoSize = true;
-            this.labelTokenHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelTokenHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTokenHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTokenHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelTokenHour.Location = new System.Drawing.Point(205, 426);
+            this.labelTokenHour.Location = new System.Drawing.Point(205, 391);
             this.labelTokenHour.Name = "labelTokenHour";
-            this.labelTokenHour.Size = new System.Drawing.Size(195, 85);
+            this.labelTokenHour.Size = new System.Drawing.Size(195, 82);
             this.labelTokenHour.TabIndex = 12;
             this.labelTokenHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelTokenTotal
             // 
             this.labelTokenTotal.AutoSize = true;
-            this.labelTokenTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelTokenTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTokenTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTokenTotal.ForeColor = System.Drawing.Color.Lime;
-            this.labelTokenTotal.Location = new System.Drawing.Point(407, 426);
+            this.labelTokenTotal.Location = new System.Drawing.Point(407, 391);
             this.labelTokenTotal.Name = "labelTokenTotal";
-            this.labelTokenTotal.Size = new System.Drawing.Size(196, 85);
+            this.labelTokenTotal.Size = new System.Drawing.Size(196, 82);
             this.labelTokenTotal.TabIndex = 13;
             this.labelTokenTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(4, 171);
+            this.label18.Location = new System.Drawing.Point(4, 157);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(194, 84);
+            this.label18.Size = new System.Drawing.Size(194, 77);
             this.label18.TabIndex = 15;
             this.label18.Text = "Pet XP Gained";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2268,32 +2272,25 @@
             // labelPetHour
             // 
             this.labelPetHour.AutoSize = true;
-            this.labelPetHour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelPetHour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPetHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelPetHour.Location = new System.Drawing.Point(205, 171);
+            this.labelPetHour.Location = new System.Drawing.Point(205, 157);
             this.labelPetHour.Name = "labelPetHour";
-            this.labelPetHour.Size = new System.Drawing.Size(195, 84);
+            this.labelPetHour.Size = new System.Drawing.Size(195, 77);
             this.labelPetHour.TabIndex = 16;
             this.labelPetHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelPetTotal
             // 
             this.labelPetTotal.AutoSize = true;
-            this.labelPetTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.labelPetTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPetTotal.ForeColor = System.Drawing.Color.Lime;
-            this.labelPetTotal.Location = new System.Drawing.Point(407, 171);
+            this.labelPetTotal.Location = new System.Drawing.Point(407, 157);
             this.labelPetTotal.Name = "labelPetTotal";
-            this.labelPetTotal.Size = new System.Drawing.Size(196, 84);
+            this.labelPetTotal.Size = new System.Drawing.Size(196, 77);
             this.labelPetTotal.TabIndex = 17;
             this.labelPetTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabHelp
             // 
-            this.tabHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabHelp.Controls.Add(this.label22);
-            this.tabHelp.Controls.Add(this.label20);
             this.tabHelp.Controls.Add(this.label27);
             this.tabHelp.Controls.Add(this.label26);
             this.tabHelp.Controls.Add(this.chkDebugBuffs);
@@ -2304,31 +2301,20 @@
             this.tabHelp.Controls.Add(this.label5);
             this.tabHelp.Controls.Add(this.label4);
             this.tabHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tabHelp.Location = new System.Drawing.Point(4, 23);
+            this.tabHelp.Location = new System.Drawing.Point(4, 22);
             this.tabHelp.Name = "tabHelp";
             this.tabHelp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHelp.Size = new System.Drawing.Size(613, 518);
+            this.tabHelp.Size = new System.Drawing.Size(613, 480);
             this.tabHelp.TabIndex = 3;
             this.tabHelp.Text = "Help/About";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(4, 84);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(215, 15);
-            this.label20.TabIndex = 9;
-            this.label20.Text = "- Thanks to LordManza for helping me";
+            this.tabHelp.UseVisualStyleBackColor = true;
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(4, 68);
+            this.label27.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label27.Location = new System.Drawing.Point(4, 63);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(167, 15);
             this.label27.TabIndex = 8;
@@ -2338,8 +2324,8 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(4, 52);
+            this.label26.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label26.Location = new System.Drawing.Point(4, 48);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(315, 15);
             this.label26.TabIndex = 7;
@@ -2348,22 +2334,21 @@
             // chkDebugBuffs
             // 
             this.chkDebugBuffs.AutoSize = true;
-            this.chkDebugBuffs.BackColor = System.Drawing.Color.Red;
             this.chkDebugBuffs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDebugBuffs.ForeColor = System.Drawing.Color.White;
-            this.chkDebugBuffs.Location = new System.Drawing.Point(14, 112);
+            this.chkDebugBuffs.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.chkDebugBuffs.Location = new System.Drawing.Point(14, 91);
             this.chkDebugBuffs.Name = "chkDebugBuffs";
             this.chkDebugBuffs.Size = new System.Drawing.Size(117, 19);
             this.chkDebugBuffs.TabIndex = 6;
             this.chkDebugBuffs.Text = "Debug Buffs\' IDs";
-            this.chkDebugBuffs.UseVisualStyleBackColor = false;
+            this.chkDebugBuffs.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(4, 36);
+            this.label11.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label11.Location = new System.Drawing.Point(4, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(479, 15);
             this.label11.TabIndex = 5;
@@ -2374,28 +2359,28 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(11, 136);
+            this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label6.Location = new System.Drawing.Point(11, 126);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(297, 16);
+            this.label6.Size = new System.Drawing.Size(308, 16);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Plugin Maintained by WTFAB from Buddy forums";
+            this.label6.Text = "Plugin developped by Taranira from Buddy forums";
             // 
             // linkDonate
             // 
             this.linkDonate.AutoSize = true;
-            this.linkDonate.Location = new System.Drawing.Point(9, 191);
+            this.linkDonate.Location = new System.Drawing.Point(8, 180);
             this.linkDonate.Name = "linkDonate";
-            this.linkDonate.Size = new System.Drawing.Size(148, 13);
+            this.linkDonate.Size = new System.Drawing.Size(306, 13);
             this.linkDonate.TabIndex = 3;
             this.linkDonate.TabStop = true;
-            this.linkDonate.Text = "Link To Plugins Git Hub Repo";
+            this.linkDonate.Text = "Liking the plugin a lot? You can donate to support development";
             this.linkDonate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkDonate_LinkClicked);
             // 
             // linkForum
             // 
             this.linkForum.AutoSize = true;
-            this.linkForum.Location = new System.Drawing.Point(11, 152);
+            this.linkForum.Location = new System.Drawing.Point(8, 156);
             this.linkForum.Name = "linkForum";
             this.linkForum.Size = new System.Drawing.Size(222, 13);
             this.linkForum.TabIndex = 2;
@@ -2407,8 +2392,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(4, 19);
+            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Location = new System.Drawing.Point(4, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(511, 15);
             this.label5.TabIndex = 1;
@@ -2419,40 +2404,96 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(4, 3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(305, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "- Settings are saved whenever you start Loot or Combat";
             // 
-            // label22
+            // label36
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(11, 175);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(140, 16);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "Plugin Is Open Source";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(8, 282);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(136, 13);
+            this.label36.TabIndex = 150;
+            this.label36.Text = "small HP Potion Name:";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(9, 337);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(137, 13);
+            this.label37.TabIndex = 151;
+            this.label37.Text = "small MP Potion Name:";
+            // 
+            // dropdownBigHpPotion
+            // 
+            this.dropdownBigHpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownBigHpPotion.FormattingEnabled = true;
+            this.dropdownBigHpPotion.Location = new System.Drawing.Point(166, 249);
+            this.dropdownBigHpPotion.Name = "dropdownBigHpPotion";
+            this.dropdownBigHpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownBigHpPotion.TabIndex = 152;
+            // 
+            // dropdownSmallHpPotion
+            // 
+            this.dropdownSmallHpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownSmallHpPotion.FormattingEnabled = true;
+            this.dropdownSmallHpPotion.Location = new System.Drawing.Point(166, 279);
+            this.dropdownSmallHpPotion.Name = "dropdownSmallHpPotion";
+            this.dropdownSmallHpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownSmallHpPotion.TabIndex = 153;
+            // 
+            // dropdownBigMpPotion
+            // 
+            this.dropdownBigMpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownBigMpPotion.FormattingEnabled = true;
+            this.dropdownBigMpPotion.Location = new System.Drawing.Point(166, 307);
+            this.dropdownBigMpPotion.Name = "dropdownBigMpPotion";
+            this.dropdownBigMpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownBigMpPotion.TabIndex = 154;
+            // 
+            // dropdownSmallMpPotion
+            // 
+            this.dropdownSmallMpPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownSmallMpPotion.FormattingEnabled = true;
+            this.dropdownSmallMpPotion.Location = new System.Drawing.Point(166, 334);
+            this.dropdownSmallMpPotion.Name = "dropdownSmallMpPotion";
+            this.dropdownSmallMpPotion.Size = new System.Drawing.Size(121, 21);
+            this.dropdownSmallMpPotion.TabIndex = 155;
+            // 
+            // dropDownHPFood
+            // 
+            this.dropDownHPFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownHPFood.FormattingEnabled = true;
+            this.dropDownHPFood.Location = new System.Drawing.Point(166, 361);
+            this.dropDownHPFood.Name = "dropDownHPFood";
+            this.dropDownHPFood.Size = new System.Drawing.Size(121, 21);
+            this.dropDownHPFood.TabIndex = 156;
+            // 
+            // dropdownMpFood
+            // 
+            this.dropdownMpFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdownMpFood.FormattingEnabled = true;
+            this.dropdownMpFood.Location = new System.Drawing.Point(166, 388);
+            this.dropdownMpFood.Name = "dropdownMpFood";
+            this.dropdownMpFood.Size = new System.Drawing.Size(121, 21);
+            this.dropdownMpFood.TabIndex = 157;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(621, 545);
+            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ClientSize = new System.Drawing.Size(621, 506);
             this.Controls.Add(this.tabControl);
-            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ArcheGrinder[ALPHA] 1.0.1.1 | Maintained By: WTFAB | ";
+            this.Text = "ArcheGrinder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
-            this.Load += new System.EventHandler(this.FormMain_Load);
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.tabControl.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);
@@ -2598,6 +2639,12 @@
         private System.Windows.Forms.CheckBox chkVocationExpertiseTonic;
         private System.Windows.Forms.CheckBox chkTyrenosIndex;
         private System.Windows.Forms.TabPage tabGear;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textFoodCooldown;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textPotionCooldown;
+        private System.Windows.Forms.Label labelFoodCooldown;
+        private System.Windows.Forms.Label labelPotionCooldown;
         private System.Windows.Forms.Label labelQtyFoodMP;
         private System.Windows.Forms.Label labelQtyFoodHP;
         private System.Windows.Forms.Label labelQtyPotionMP;
@@ -2643,7 +2690,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox lootDisciplesTear;
         private System.Windows.Forms.CheckBox lootEnchantedSkein;
+        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.ProgressBar nuralsTrennleistebenutzt;
+        private System.Windows.Forms.ProgressBar nuralsTrennleistebenutzt2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textMinMPplayDead;
         private System.Windows.Forms.Label label32;
@@ -2651,6 +2701,7 @@
         private System.Windows.Forms.TextBox textMinHPplayDead;
         private System.Windows.Forms.CheckBox chkPlayDeadHP;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.CheckBox chkCrazyEnigmatist;
         private System.Windows.Forms.PictureBox pictureLuckyQuicksilverTonic;
         private System.Windows.Forms.PictureBox pictureBriskDwarven;
         private System.Windows.Forms.PictureBox pictureLibraryRelic;
@@ -2703,10 +2754,19 @@
         private System.Windows.Forms.CheckBox chkFrenzyGR;
         private System.Windows.Forms.CheckBox chkExperienceGR;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textPlayDeadHPcombat;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ComboBox dropdownMpFood;
+        private System.Windows.Forms.ComboBox dropDownHPFood;
+        private System.Windows.Forms.ComboBox dropdownSmallMpPotion;
+        private System.Windows.Forms.ComboBox dropdownBigMpPotion;
+        private System.Windows.Forms.ComboBox dropdownSmallHpPotion;
+        private System.Windows.Forms.ComboBox dropdownBigHpPotion;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
     }
 }

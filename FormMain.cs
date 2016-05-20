@@ -37,7 +37,7 @@ namespace ArcheGrinder
             this.FormClosing += FormMain_FormClosing;
 
             tooltips.SetToolTip(chkFastTag, "Will engage mobs with instant skills to try to win tagging battles");
-           // tooltips.SetToolTip(chkCrazyEnigmatist, "Will use skill canceling from God's Whip to do a high dps combo, skillbuild: http://archeagedatabase.net/us/calc/328563/");
+            tooltips.SetToolTip(chkCrazyEnigmatist, "Will use skill canceling from God's Whip to do a high dps combo, skillbuild: http://archeagedatabase.net/us/calc/328563/");
             tooltips.SetToolTip(chkHealerMode, "Work in Progress");
             tooltips.SetToolTip(chkLoot, "Will attempt to loot close targets even while in group");
             tooltips.SetToolTip(chkOpenPurses, "Will open coinpurses every now and then when you have a few and the labor to do so");
@@ -87,8 +87,8 @@ namespace ArcheGrinder
             tooltips.SetToolTip(labelPotionHP, "Enter a HP Potion item's name to use in-combat when your health drops low (Leave empty to not use any)");
             tooltips.SetToolTip(labelPotionMP, "Enter a Mana Potion item's name to use in-combat when your mana drops low (Leave empty to not use any)");
 
-           // tooltips.SetToolTip(labelPotionCooldown, "How long should the plugin wait between each potion use? (0 for no cooldown)");
-           // tooltips.SetToolTip(labelFoodCooldown, "How long should the plugin wait between each food use? (0 for no cooldown");
+            tooltips.SetToolTip(labelPotionCooldown, "How long should the plugin wait between each potion use? (0 for no cooldown)");
+            tooltips.SetToolTip(labelFoodCooldown, "How long should the plugin wait between each food use? (0 for no cooldown");
 
 
             tooltips.SetToolTip(chkDebugBuffs, "Check forum thread if you need this one");
@@ -283,7 +283,7 @@ namespace ArcheGrinder
             lootUnknown.Checked = prefs.lootUnknown;
 
             chkFastTag.Checked = prefs.fastTagging;
-            //chkCrazyEnigmatist.Checked = prefs.EnigmatistCombo;
+            chkCrazyEnigmatist.Checked = prefs.EnigmatistCombo;
             chkHealerMode.Checked = prefs.healerMode;
             chkUseCC.Checked = prefs.useCC;
             chkLoot.Checked = prefs.lootCorpses;            
@@ -296,7 +296,6 @@ namespace ArcheGrinder
 
             chkPlayDeadMana.Checked = prefs.PlayDeadRegMana;
             chkPlayDeadHP.Checked = prefs.PlayDeadRegHP;
-            
 
             chkAutoCombat.Checked = prefs.autoFight;
             chkAutoLoot.Checked = prefs.autoLoot;
@@ -336,12 +335,11 @@ namespace ArcheGrinder
 
             textMinMP.Text = prefs.minMP.ToString();
             textMinHP.Text = prefs.minHP.ToString();
-            textPlayDeadHPcombat.Text = prefs.PlayDeadRegHP.ToString();
             textMinMPplayDead.Text = prefs.MinMPplayDead.ToString();
             textMinHPplayDead.Text = prefs.MinHPplayDead.ToString();
 
-            //textPotionCooldown.Text = prefs.potionCooldown.ToString();
-            //textFoodCooldown.Text = prefs.foodCooldown.ToString();
+            textPotionCooldown.Text = prefs.potionCooldown.ToString();
+            textFoodCooldown.Text = prefs.foodCooldown.ToString();
             textFoodHP.Text = prefs.foodHP;
             textFoodMP.Text = prefs.foodMP;
             textPotionHP.Text = prefs.potionHP;
@@ -391,11 +389,10 @@ namespace ArcheGrinder
             int zoneRadius = 0;
             int minHP = 0;
             int minMP = 0;
-            int PlayDeadRegHPCombat = 0;
             int MinMPplayDead = 0;
             int MinHPplayDead = 0;
-           // int potionCooldown = 0;
-           // int foodCooldown = 0;
+            int potionCooldown = 0;
+            int foodCooldown = 0;
 
             try
             {
@@ -432,6 +429,7 @@ namespace ArcheGrinder
                 prefs.openPurses = chkOpenPurses.Checked;
 
                 prefs.PlayDeadRegMana = chkPlayDeadMana.Checked;
+                prefs.PlayDeadRegHP = chkPlayDeadHP.Checked;
 
                 prefs.UseTyrenosIndex = chkTyrenosIndex.Checked;
                 prefs.UseGoldenLibraryIndex = chkGoldenLibraryIndex.Checked;
@@ -469,7 +467,7 @@ namespace ArcheGrinder
                 textZoneRadius.Text = prefs.zoneRadius.ToString();
 
                 prefs.fastTagging = chkFastTag.Checked;
-              //  prefs.EnigmatistCombo = chkCrazyEnigmatist.Checked;
+                prefs.EnigmatistCombo = chkCrazyEnigmatist.Checked;
                 prefs.healerMode = chkHealerMode.Checked;
                 prefs.useCC = chkUseCC.Checked;
                 prefs.lootCorpses = chkLoot.Checked;
@@ -481,10 +479,6 @@ namespace ArcheGrinder
                 int.TryParse(textMinHP.Text, out minHP);
                 prefs.minHP = minHP > 0 ? minHP : 75;
                 textMinHP.Text = prefs.minHP.ToString();
-
-                int.TryParse(textPlayDeadHPcombat.Text, out PlayDeadRegHPCombat);
-                prefs.HPplayDeadCombat = PlayDeadRegHPCombat > 0 ? PlayDeadRegHPCombat : 25;
-                textPlayDeadHPcombat.Text = prefs.HPplayDeadCombat.ToString();
 
                 int.TryParse(textMinMP.Text, out minMP);
                 prefs.minMP = minMP > 0 ? minMP : 40;
@@ -500,13 +494,13 @@ namespace ArcheGrinder
 
                 prefs.ignoredMobs = (boxIgnoreList.Text + "\n").Split('\n').Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
 
-               // int.TryParse(textPotionCooldown.Text, out potionCooldown);
-               // prefs.potionCooldown = potionCooldown > 0 ? potionCooldown : 60;
-               // textPotionCooldown.Text = prefs.potionCooldown.ToString();
+                int.TryParse(textPotionCooldown.Text, out potionCooldown);
+                prefs.potionCooldown = potionCooldown > 0 ? potionCooldown : 60;
+                textPotionCooldown.Text = prefs.potionCooldown.ToString();
 
-               // int.TryParse(textFoodCooldown.Text, out foodCooldown);
-               // prefs.foodCooldown = foodCooldown > 0 ? foodCooldown : 60;
-               // textFoodCooldown.Text = prefs.foodCooldown.ToString();
+                int.TryParse(textFoodCooldown.Text, out foodCooldown);
+                prefs.foodCooldown = foodCooldown > 0 ? foodCooldown : 60;
+                textFoodCooldown.Text = prefs.foodCooldown.ToString();
 
                 prefs.potionHP = textPotionHP.Text;
                 prefs.potionMP = textPotionMP.Text;
@@ -643,7 +637,7 @@ namespace ArcheGrinder
         private void FormMain_Shown(object sender, EventArgs e)
         {
             
-            this.Text = "ArcheGrinder[Alpha] 1.0.1.1: " + core.me.name;
+            this.Text = "ArcheGrinder used by: " + core.me.name;
             try { 
             this.Icon                                       = Icon.ExtractAssociatedIcon(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\archeageicon.ico");
             this.pictureLibraryRelic.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\AncientLibraryRelic.jpg");
@@ -696,16 +690,7 @@ namespace ArcheGrinder
             catch { core.Log("Something wen't wrong: " + core.GetLastError() ); }
             }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabCombat_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void UpdateLootOptions()
         {
             lootCompassion.Enabled = !isLooting;
@@ -748,7 +733,7 @@ namespace ArcheGrinder
             boxIgnoreList.Enabled = !isFighting;
 
             chkFastTag.Enabled = !isFighting;
-            //chkCrazyEnigmatist.Enabled = false;
+            chkCrazyEnigmatist.Enabled = false;
             chkHealerMode.Enabled = false;
             chkUseCC.Enabled = !isFighting;
             chkLoot.Enabled = !isFighting;
@@ -791,7 +776,6 @@ namespace ArcheGrinder
 
             textMinHP.Enabled = !isFighting;
             textMinMP.Enabled = !isFighting;
-            textPlayDeadHPcombat.Enabled = !isFighting;
             textMinMPplayDead.Enabled = !isFighting;
             textMinHPplayDead.Enabled = !isFighting;
 
@@ -800,7 +784,7 @@ namespace ArcheGrinder
             dropdownPet.Enabled = !isFighting;
 
             textFoodHP.Enabled = textFoodMP.Enabled = textPotionHP.Enabled = textPotionMP.Enabled = !isFighting;
-            // textPotionCooldown.Enabled = textFoodCooldown.Enabled = !isFighting;
+            textPotionCooldown.Enabled = textFoodCooldown.Enabled = !isFighting;
 
             chkAutoCombat.Enabled = !isFighting;
 
@@ -837,11 +821,11 @@ namespace ArcheGrinder
 
         private void linkForum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.thebuddyforum.com/archebuddy-forum/archebuddy-plugins/plugins-in-development/246220-plugin-ann-return-archegrinder-developer-wtfab.html");
+            System.Diagnostics.Process.Start("https://www.thebuddyforum.com/archebuddy-forum/archebuddy-plugins/grinding/214473-haslaassistant-2-3-mob-grinder-hasla-features.html#post1950778");
         }
         private void linkDonate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/WTFAB/ArcheGrinder2016");
+            System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8HR9ESD2LXFWA");
         }
 
 
