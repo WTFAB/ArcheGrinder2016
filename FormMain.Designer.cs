@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabMain = new System.Windows.Forms.TabPage();
             this.pictureUnknownItems = new System.Windows.Forms.PictureBox();
@@ -236,6 +237,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tooltips = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUnknownItems)).BeginInit();
@@ -289,6 +291,7 @@
             this.tabStats.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabHelp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -2175,6 +2178,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label18, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelPetHour, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelPetTotal, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.ForeColor = System.Drawing.Color.White;
@@ -2508,6 +2512,15 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "- Settings are saved whenever you start Loot or Combat";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 71);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2582,6 +2595,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tabHelp.ResumeLayout(false);
             this.tabHelp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2795,5 +2809,6 @@
         private System.Windows.Forms.ComboBox dropdownBigHpPotion;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
