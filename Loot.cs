@@ -67,6 +67,15 @@ namespace ArcheGrinder
                         else if (item.name.StartsWith("Unidentified"))
                             doRoll = prefs.lootUnid;
 
+                        else if (item.name.StartsWith("Неизвестное ")) //sollte nun auch auf unbekannte items würfeln wenn das Spiel auf russisch ist
+                            doRoll = prefs.lootUnid;
+
+                        else if (item.name.StartsWith("Предмет ")) //rollt auf russische unbekannte Rüstungen sie fangen mit nem anderen wort an als die waffen schuhe und co
+                            doRoll = prefs.lootUnid;
+
+                        else if (item.name.StartsWith("Unbekannte")) //sollte nun auch auf unbekannte items würfeln wenn das Spiel auf deutsch ist
+                            doRoll = prefs.lootUnid;
+
                         else if (item.id == 26056)
                             doRoll = prefs.lootConviction;
 

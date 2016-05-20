@@ -1,0 +1,7 @@
+D:\Games\DoIt\Plugins\Haslassistant\ArcheGrinder.dll
+D:\Games\DoIt\Plugins\Haslassistant\ArcheGrinder.pdb
+C:\Users\sarge\Documents\Visual Studio 2015\Projects\ArcheGrinder_for_BuddyStore-masterCS\obj\Release\ArcheGrinder.FormMain.resources
+C:\Users\sarge\Documents\Visual Studio 2015\Projects\ArcheGrinder_for_BuddyStore-masterCS\obj\Release\ArcheGrinder.Properties.Resources.resources
+C:\Users\sarge\Documents\Visual Studio 2015\Projects\ArcheGrinder_for_BuddyStore-masterCS\obj\Release\ArcheGrinder.csproj.GenerateResource.Cache
+C:\Users\sarge\Documents\Visual Studio 2015\Projects\ArcheGrinder_for_BuddyStore-masterCS\obj\Release\ArcheGrinder.dll
+C:\Users\sarge\Documents\Visual Studio 2015\Projects\ArcheGrinder_for_BuddyStore-masterCS\obj\Release\ArcheGrinder.pdb

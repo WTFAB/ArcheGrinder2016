@@ -16,6 +16,8 @@ namespace ArcheGrinder
 {
     public partial class FormMain : Form
     {
+        ArcheGrinder main;
+
         public bool isFighting = false;
         public bool isLooting = false;
 
@@ -29,19 +31,22 @@ namespace ArcheGrinder
         private int xp, kills, purses, tokens, petXp;
         List<uint> purseList, tokenList;
 
-        public FormMain()
+        public FormMain(ArcheGrinder main)
         {
             InitializeComponent();
             this.FormClosing += FormMain_FormClosing;
 
             tooltips.SetToolTip(chkFastTag, "Will engage mobs with instant skills to try to win tagging battles");
+           // tooltips.SetToolTip(chkCrazyEnigmatist, "Will use skill canceling from God's Whip to do a high dps combo, skillbuild: http://archeagedatabase.net/us/calc/328563/");
             tooltips.SetToolTip(chkHealerMode, "Work in Progress");
             tooltips.SetToolTip(chkLoot, "Will attempt to loot close targets even while in group");
             tooltips.SetToolTip(chkOpenPurses, "Will open coinpurses every now and then when you have a few and the labor to do so");
             tooltips.SetToolTip(chkUseCC, "Will attempt to use crowd control skills when aggroed by more than one mob");
             tooltips.SetToolTip(chkAssist, "EXPERIMENTAL: will only assist party leader or retaliate when attacked");
 
-            tooltips.SetToolTip(chkPlayDeadMana, "Will use PlayDead if you have no aggro and are below your Min MP");
+            tooltips.SetToolTip(chkPlayDeadMana, "Will use PlayDead if you have no aggro and are below your % MP that you can set right next to the checkbox");
+            tooltips.SetToolTip(chkPlayDeadHP, "Will use PlayDead if you have no aggro and are below your % HP that you can set right next to the checkbox");
+
 
             tooltips.SetToolTip(lootCompassion, "Will roll on that Hasla token");
             tooltips.SetToolTip(lootCourage, "Will roll on that Hasla token");
@@ -82,8 +87,8 @@ namespace ArcheGrinder
             tooltips.SetToolTip(labelPotionHP, "Enter a HP Potion item's name to use in-combat when your health drops low (Leave empty to not use any)");
             tooltips.SetToolTip(labelPotionMP, "Enter a Mana Potion item's name to use in-combat when your mana drops low (Leave empty to not use any)");
 
-            tooltips.SetToolTip(labelPotionCooldown, "How long should the plugin wait between each potion use? (0 for no cooldown)");
-            tooltips.SetToolTip(labelFoodCooldown, "How long should the plugin wait between each food use? (0 for no cooldown");
+           // tooltips.SetToolTip(labelPotionCooldown, "How long should the plugin wait between each potion use? (0 for no cooldown)");
+           // tooltips.SetToolTip(labelFoodCooldown, "How long should the plugin wait between each food use? (0 for no cooldown");
 
 
             tooltips.SetToolTip(chkDebugBuffs, "Check forum thread if you need this one");
@@ -114,6 +119,8 @@ namespace ArcheGrinder
             }
             catch { }
         }
+
+        
 
         public void SetCore(Core core)
         {
@@ -158,6 +165,34 @@ namespace ArcheGrinder
             core.onExpChanged += core_onExpChanged;
             core.onNewInvItem += core_onNewInvItem;
             core.onCreatureDied += core_onCreatureDied;
+        }
+
+        private void btnCombat_Click()
+        {
+            if (!isFighting)
+                SaveSettings();
+
+            isFighting = !isFighting;
+            btnCombat.Text = isFighting ? "ON" : "OFF";
+
+            UpdateCombatOptions();
+
+            if (isFighting)
+            {
+                combat = new Combat(core, prefs);
+                xp = kills = purses = petXp = tokens = 0;
+                combatStart = DateTime.UtcNow;
+                UpdateStats();
+            }
+            else
+            {
+                UpdateStats(); // update stats a last time to get an accurate value for the session
+                if (combat != null)
+                {
+                    combat.Stop();
+                    combat = null;
+                }
+            }
         }
 
         void core_onCreatureDied(Creature obj)
@@ -248,6 +283,7 @@ namespace ArcheGrinder
             lootUnknown.Checked = prefs.lootUnknown;
 
             chkFastTag.Checked = prefs.fastTagging;
+            //chkCrazyEnigmatist.Checked = prefs.EnigmatistCombo;
             chkHealerMode.Checked = prefs.healerMode;
             chkUseCC.Checked = prefs.useCC;
             chkLoot.Checked = prefs.lootCorpses;            
@@ -259,6 +295,8 @@ namespace ArcheGrinder
             chkOpenStolenBag.Checked = prefs.OpenStolenBag;
 
             chkPlayDeadMana.Checked = prefs.PlayDeadRegMana;
+            chkPlayDeadHP.Checked = prefs.PlayDeadRegHP;
+            
 
             chkAutoCombat.Checked = prefs.autoFight;
             chkAutoLoot.Checked = prefs.autoLoot;
@@ -268,6 +306,14 @@ namespace ArcheGrinder
             //Buff Monitor Settings
             chkTyrenosIndex.Checked = prefs.UseTyrenosIndex;
             chkGoldenLibraryIndex.Checked = prefs.UseGoldenLibraryIndex;
+
+            chkExperienceGR.Checked = prefs.UseExperienceGR; //GR = Grimoire
+            chkFrenzyGR.Checked = prefs.UseFrenzyGR;
+            chkHasteGR.Checked = prefs.UseHasteGR;
+            chkPromiseGR.Checked = prefs.UsePromiesGR;
+            chkWardGR.Checked = prefs.UseWardGR;
+            chkZealGR.Checked = prefs.UseZealGR;
+            chkGreedyGR.Checked = prefs.UseGreedyGR;
 
             chkGreedyDwarvenElixir.Checked = prefs.UseGreedyDwarvenElixir;
             chkStudiousDwarvenElixir.Checked = prefs.UseStudiousDwarvenElixir;
@@ -290,10 +336,12 @@ namespace ArcheGrinder
 
             textMinMP.Text = prefs.minMP.ToString();
             textMinHP.Text = prefs.minHP.ToString();
+            textPlayDeadHPcombat.Text = prefs.PlayDeadRegHP.ToString();
             textMinMPplayDead.Text = prefs.MinMPplayDead.ToString();
+            textMinHPplayDead.Text = prefs.MinHPplayDead.ToString();
 
-            textPotionCooldown.Text = prefs.potionCooldown.ToString();
-            textFoodCooldown.Text = prefs.foodCooldown.ToString();
+            //textPotionCooldown.Text = prefs.potionCooldown.ToString();
+            //textFoodCooldown.Text = prefs.foodCooldown.ToString();
             textFoodHP.Text = prefs.foodHP;
             textFoodMP.Text = prefs.foodMP;
             textPotionHP.Text = prefs.potionHP;
@@ -343,9 +391,11 @@ namespace ArcheGrinder
             int zoneRadius = 0;
             int minHP = 0;
             int minMP = 0;
+            int PlayDeadRegHPCombat = 0;
             int MinMPplayDead = 0;
-            int potionCooldown = 0;
-            int foodCooldown = 0;
+            int MinHPplayDead = 0;
+           // int potionCooldown = 0;
+           // int foodCooldown = 0;
 
             try
             {
@@ -386,6 +436,14 @@ namespace ArcheGrinder
                 prefs.UseTyrenosIndex = chkTyrenosIndex.Checked;
                 prefs.UseGoldenLibraryIndex = chkGoldenLibraryIndex.Checked;
 
+                prefs.UseExperienceGR = chkExperienceGR.Checked; //GR = Grimoire
+                prefs.UseFrenzyGR = chkFrenzyGR.Checked;
+                prefs.UseHasteGR = chkHasteGR.Checked;
+                prefs.UsePromiesGR = chkPromiseGR.Checked;
+                prefs.UseWardGR = chkWardGR.Checked;
+                prefs.UseZealGR = chkZealGR.Checked;
+                prefs.UseGreedyGR = chkGreedyGR.Checked;
+
                 prefs.UseGreedyDwarvenElixir = chkGreedyDwarvenElixir.Checked;
                 prefs.UseStudiousDwarvenElixir = chkStudiousDwarvenElixir.Checked;
                 prefs.UseBriskDwarvenElixir = chkBriskDwarvenElixir.Checked;
@@ -411,6 +469,7 @@ namespace ArcheGrinder
                 textZoneRadius.Text = prefs.zoneRadius.ToString();
 
                 prefs.fastTagging = chkFastTag.Checked;
+              //  prefs.EnigmatistCombo = chkCrazyEnigmatist.Checked;
                 prefs.healerMode = chkHealerMode.Checked;
                 prefs.useCC = chkUseCC.Checked;
                 prefs.lootCorpses = chkLoot.Checked;
@@ -423,6 +482,10 @@ namespace ArcheGrinder
                 prefs.minHP = minHP > 0 ? minHP : 75;
                 textMinHP.Text = prefs.minHP.ToString();
 
+                int.TryParse(textPlayDeadHPcombat.Text, out PlayDeadRegHPCombat);
+                prefs.HPplayDeadCombat = PlayDeadRegHPCombat > 0 ? PlayDeadRegHPCombat : 25;
+                textPlayDeadHPcombat.Text = prefs.HPplayDeadCombat.ToString();
+
                 int.TryParse(textMinMP.Text, out minMP);
                 prefs.minMP = minMP > 0 ? minMP : 40;
                 textMinMP.Text = prefs.minMP.ToString();
@@ -431,15 +494,19 @@ namespace ArcheGrinder
                 prefs.MinMPplayDead = MinMPplayDead > 0 ? MinMPplayDead: 50;
                 textMinMPplayDead.Text = prefs.MinMPplayDead.ToString();
 
+                int.TryParse(textMinHPplayDead.Text, out MinHPplayDead);
+                prefs.MinHPplayDead = MinHPplayDead > 0 ? MinHPplayDead : 50;
+                textMinHPplayDead.Text = prefs.MinHPplayDead.ToString();
+
                 prefs.ignoredMobs = (boxIgnoreList.Text + "\n").Split('\n').Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
 
-                int.TryParse(textPotionCooldown.Text, out potionCooldown);
-                prefs.potionCooldown = potionCooldown > 0 ? potionCooldown : 60;
-                textPotionCooldown.Text = prefs.potionCooldown.ToString();
+               // int.TryParse(textPotionCooldown.Text, out potionCooldown);
+               // prefs.potionCooldown = potionCooldown > 0 ? potionCooldown : 60;
+               // textPotionCooldown.Text = prefs.potionCooldown.ToString();
 
-                int.TryParse(textFoodCooldown.Text, out foodCooldown);
-                prefs.foodCooldown = foodCooldown > 0 ? foodCooldown : 60;
-                textFoodCooldown.Text = prefs.foodCooldown.ToString();
+               // int.TryParse(textFoodCooldown.Text, out foodCooldown);
+               // prefs.foodCooldown = foodCooldown > 0 ? foodCooldown : 60;
+               // textFoodCooldown.Text = prefs.foodCooldown.ToString();
 
                 prefs.potionHP = textPotionHP.Text;
                 prefs.potionMP = textPotionMP.Text;
@@ -471,7 +538,7 @@ namespace ArcheGrinder
                 }
                 catch (IOException)
                 {
-                    core.Log(Application.StartupPath +"\\ArcheGrinder"+core.me.name+".xml is already opened, settings saving failed");
+                    core.Log("ArcheGrinder"+core.me.name+".xml is already opened, settings saving failed");
                 }
                 catch (Exception e)
                 {
@@ -512,7 +579,35 @@ namespace ArcheGrinder
                 }
             }
         }
-        
+
+        private void btnCombat_Click(object sender, EventArgs e)
+        {
+            if (!isFighting)
+                SaveSettings();
+
+            isFighting = !isFighting;
+            btnCombat.Text = isFighting ? "ON" : "OFF";
+
+            UpdateCombatOptions();
+
+            if (isFighting)
+            {
+                combat = new Combat(core, prefs);
+                xp = kills = purses = petXp = tokens = 0;
+                combatStart = DateTime.UtcNow;
+                UpdateStats();
+            }
+            else
+            {
+                UpdateStats(); // update stats a last time to get an accurate value for the session
+                if (combat != null)
+                {
+                    combat.Stop();
+                    combat = null;
+                }
+            }
+        }
+
         private void btnCheckPots_Click(object sender = null, EventArgs e = null)
         {
             labelQtyFoodHP.Text = labelQtyFoodMP.Text = labelQtyPotionHP.Text = labelQtyPotionMP.Text = "";
@@ -542,59 +637,71 @@ namespace ArcheGrinder
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            main.isFormOpen = false;
         }
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
-            this.Text = "ArcheGrinder[ALPHA] 1.0.0.1 | Maintained by: WTFAB | ";
-            //this.Text = "ArcheGrinder[ALPHA] 1.0.0.1 | Maintained by: WTFAB | " + core.me.name; // wird den Namen des Chars anzeigen + text sobald die Form offen ist
-        }
+            
+            this.Text = "ArcheGrinder[Alpha] 1.0.1.1: " + core.me.name;
+            try { 
+            this.Icon                                       = Icon.ExtractAssociatedIcon(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\archeageicon.ico");
+            this.pictureLibraryRelic.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\AncientLibraryRelic.jpg");
+            this.pictureBriskDwarven.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\BriskDwarvenElixir.jpg");
+            this.pictureLibraryIndex.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\GoldenLibraryIndex.jpg");
+            this.pictureGreedyDwarven.Image                 = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\GreedyDwarvenElixir.jpg");
+            this.pictureHonorBoost.Image                    = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\HonorBoostTonic.jpg");
+            this.pictureImmortalXPTonic.Image               = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ImmortalXPTonic.jpg");
+            this.pictureKingdomsHeart.Image                 = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\Kingdom'sHeart.jpg");
+            this.pictureLuckyQuicksilverTonic.Image         = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\LuckyQuicksilverTonic.jpg");
+            this.pictureBrickwall.Image                     = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\SpellbookBrickWall.jpg");
+            this.pictureUnstoppableForce.Image              = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\SpellbookUnstoppableForce.jpg");
+            this.pictureStudiousDwarven.Image               = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\StudiousDwarvenElixir.jpg");
+            this.pictureTyrenosIndex.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\TyrenosIndex.jpg");
+            this.pictureExpertiseTonic.Image                = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\VocationExpertiseTonic.jpg");
+            this.pictureXPBoostPotion.Image                 = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\XPBoostPotion.jpg");
+            this.pictureCompassion.Image                    = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedCompassionToken.jpg");
+            this.pictureHonor.Image                         = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedHonorToken.jpg");
+            this.pictureFortitude.Image                     = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedFortitudeToken.jpg");
+            this.pictureConviction.Image                    = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedConvictionToken.jpg");
+            this.pictureSacrifice.Image                     = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedSacrificeToken.jpg");
+            this.pictureCourage.Image                       = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedCourageToken.jpg");
+            this.pictureLoyalty.Image                       = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FadedLoyaltyToken.jpg");
+            this.pictureDisciplesTear.Image                 = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\DisciplesTear.PNG");
+            this.pictureHauntedChest.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\HauntedChest.jpg");
+            this.pictureDivineClothGear.Image               = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ArmorIcon.PNG");
+            this.pictureDivineLeatherGear.Image             = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ArmorIcon.PNG");
+            this.pictureDivinePlatGear.Image                = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ArmorIcon.PNG");
+            this.pictureEternalLibraryTome.Image            = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\EternalLibraryTome.jpg");
+            this.pictureEternalLibraryArmor.Image           = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ArmorIcon.PNG");
+            this.pictureEternalLibraryWeapon.Image          = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\EternalWeapon.jpg");
+            this.pictureEnchantedSkein.Image                = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\EnchantedSkein.PNG");
+            this.pictureDesignScrap.Image                   = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\AyanadDesignScrap.png");
+            this.pictureUnidentifiedEquipment.Image         = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\Fragezeichen.jpg");
+            this.pictureDragonBoneChip.Image                = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\DragonBoneChip.PNG");
+            this.pictureUnknownItems.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\Fragezeichen.jpg");
+            this.pictureCoinpurses.Image                    = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\Coinpurse.PNG");
+            this.pictureStolenBag.Image                     = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\StolenBag.PNG");
+            this.pictureScratchedSafe.Image                 = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\scratchedsafe.PNG");
+            this.pictureExperienceGR.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ExperienceGR.png");
+            this.pictureFrenzyGR.Image                      = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\FrenzyGR.png");
+            this.pictureHasteGR.Image                       = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\HasteGR.png");
+            this.picturePromiseGR.Image                     = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\PromiseGR.png");
+            this.pictureWardGR.Image                        = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\WardGR.png");
+            this.pictureZealGR.Image                        = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\ZealGR.png");
+            this.pictureGreedyGR.Image                      = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\GreedyGR.png");
 
-        private void btnCombat_Click(object sender = null, EventArgs e = null)
-        {
-            if (!isFighting)
-                SaveSettings();
 
-            isFighting = !isFighting;
-            btnCombat.Text = isFighting ? "ON" : "OFF";
-
-            UpdateCombatOptions();
-
-            if (isFighting)
-            {
-                combat = new Combat(core, prefs);
-                xp = kills = purses = petXp = tokens = 0;
-                combatStart = DateTime.UtcNow;
-                UpdateStats();
             }
-            else
-            {
-                UpdateStats(); // update stats a last time to get an accurate value for the session
-                if (combat != null)
-                {
-                    combat.Stop();
-                    combat = null;
-                }
+            catch { core.Log("Something wen't wrong: " + core.GetLastError() ); }
             }
-        }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void nuralsTrennleistebenutzt2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void boxIgnoreList_TextChanged(object sender, EventArgs e)
+        private void tabCombat_Click(object sender, EventArgs e)
         {
 
         }
@@ -641,6 +748,7 @@ namespace ArcheGrinder
             boxIgnoreList.Enabled = !isFighting;
 
             chkFastTag.Enabled = !isFighting;
+            //chkCrazyEnigmatist.Enabled = false;
             chkHealerMode.Enabled = false;
             chkUseCC.Enabled = !isFighting;
             chkLoot.Enabled = !isFighting;
@@ -652,9 +760,18 @@ namespace ArcheGrinder
             chkOpenPurses.Enabled = !isFighting;
 
             chkPlayDeadMana.Enabled = !isFighting;
+            chkPlayDeadHP.Enabled = !isFighting;
 
             chkTyrenosIndex.Enabled = !isFighting;
             chkGoldenLibraryIndex.Enabled = !isFighting;
+
+            chkExperienceGR.Enabled = !isFighting;
+            chkFrenzyGR.Enabled = !isFighting;
+            chkHasteGR.Enabled = !isFighting;
+            chkPromiseGR.Enabled = !isFighting;
+            chkWardGR.Enabled = !isFighting;
+            chkZealGR.Enabled = !isFighting;
+            chkGreedyGR.Enabled = !isFighting;
 
             chkGreedyDwarvenElixir.Enabled = !isFighting;
             chkStudiousDwarvenElixir.Enabled = !isFighting;
@@ -674,14 +791,16 @@ namespace ArcheGrinder
 
             textMinHP.Enabled = !isFighting;
             textMinMP.Enabled = !isFighting;
+            textPlayDeadHPcombat.Enabled = !isFighting;
             textMinMPplayDead.Enabled = !isFighting;
+            textMinHPplayDead.Enabled = !isFighting;
 
             dropdownFlute.Enabled = !isFighting;
             dropdownLute.Enabled = !isFighting;
             dropdownPet.Enabled = !isFighting;
 
             textFoodHP.Enabled = textFoodMP.Enabled = textPotionHP.Enabled = textPotionMP.Enabled = !isFighting;
-            textPotionCooldown.Enabled = textFoodCooldown.Enabled = !isFighting;
+            // textPotionCooldown.Enabled = textFoodCooldown.Enabled = !isFighting;
 
             chkAutoCombat.Enabled = !isFighting;
 
@@ -718,11 +837,11 @@ namespace ArcheGrinder
 
         private void linkForum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.thebuddyforum.com/archebuddy-forum/archebuddy-plugins/grinding/214473-haslaassistant-2-3-mob-grinder-hasla-features.html#post1950778");
+            System.Diagnostics.Process.Start("https://www.thebuddyforum.com/archebuddy-forum/archebuddy-plugins/plugins-in-development/246220-plugin-ann-return-archegrinder-developer-wtfab.html");
         }
         private void linkDonate_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.paypal.com/");
+            System.Diagnostics.Process.Start("https://github.com/WTFAB/ArcheGrinder2016");
         }
 
 

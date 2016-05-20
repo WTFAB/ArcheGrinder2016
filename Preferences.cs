@@ -45,10 +45,19 @@ namespace ArcheGrinder
 
         //Play dead to reg mana
         public bool PlayDeadRegMana;
+        public bool PlayDeadRegHP;
 
         //Buff Monitor
         public bool UseTyrenosIndex;
         public bool UseGoldenLibraryIndex;
+
+        public bool UseExperienceGR; //GR = Grimoire
+        public bool UseFrenzyGR;
+        public bool UseHasteGR;
+        public bool UsePromiesGR;
+        public bool UseWardGR;
+        public bool UseZealGR;
+        public bool UseGreedyGR;
 
         public bool UseGreedyDwarvenElixir;
         public bool UseStudiousDwarvenElixir;
@@ -69,6 +78,7 @@ namespace ArcheGrinder
         public int zoneRadius;
         public int combatRange;
         public bool fastTagging;
+        public bool EnigmatistCombo;
         public bool healerMode;
         public bool useCC;
         public bool lootCorpses;
@@ -84,6 +94,8 @@ namespace ArcheGrinder
         public int minMP;
 
         public int MinMPplayDead;
+        public int MinHPplayDead;
+        public int HPplayDeadCombat;
 
         public string potionHP, potionMP, foodMP, foodHP;
         public int potionCooldown, foodCooldown;
@@ -123,6 +135,7 @@ namespace ArcheGrinder
             OpenStolenBag = false;
 
             PlayDeadRegMana = false;
+            PlayDeadRegHP = false;
 
             lootStolenBag = false;
             lootScratchedSafe = false;
@@ -137,6 +150,14 @@ namespace ArcheGrinder
             //Buff Monitor Settings
             UseTyrenosIndex = false;
             UseGoldenLibraryIndex = false;
+
+            UseExperienceGR = false; //GR = Grimoire
+            UseFrenzyGR = false;
+            UseHasteGR = false;
+            UsePromiesGR = false;
+            UseWardGR = false;
+            UseZealGR = false;
+            UseGreedyGR = false;
 
             UseGreedyDwarvenElixir = false;
             UseStudiousDwarvenElixir = false;
@@ -159,6 +180,7 @@ namespace ArcheGrinder
             zoneRadius = 50;
             combatRange = 20;
             fastTagging = true;
+            EnigmatistCombo = true;
             healerMode = false;
             useCC = false;
             lootCorpses = true;
@@ -169,6 +191,7 @@ namespace ArcheGrinder
             minHP = 75;
             minMP = 40;
             MinMPplayDead = 50;
+            MinHPplayDead = 50;
 
             potionHP = potionMP = foodMP = foodHP = "";
             potionCooldown = foodCooldown = 60;
