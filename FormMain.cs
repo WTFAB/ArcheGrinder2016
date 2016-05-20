@@ -101,8 +101,8 @@ namespace ArcheGrinder
 
         void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //SaveSettings();
-
+            SaveSettings();
+            core.Log("Settings Saved");
             core.onKeyDown -= core_onKeyDown;
 
             try
