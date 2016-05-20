@@ -2517,6 +2517,7 @@
             this.Name = "FormMain";
             this.Text = "ArcheGrinder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.Shown += new System.EventHandler(this.FormMain_Shown);
             this.tabControl.ResumeLayout(false);
             this.tabMain.ResumeLayout(false);

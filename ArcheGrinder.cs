@@ -14,13 +14,13 @@ namespace ArcheGrinder
 
         public static string GetPluginAuthor()
         {
-            return "Taranira";
+            return "WTFAB";
         }
 
         public static string GetPluginVersion()
         {
-            return "ArcheGrinder BETA 0.0.0.5";
-            
+            return "ArcheGrinder[Alpha] 1.0.1.2";
+
         }
 
         public static string GetPluginDescription()
@@ -56,29 +56,45 @@ namespace ArcheGrinder
             isFormOpen = true;
             form = new FormMain(this);
             form.SetCore(this);
+            form.FormClosed += form_FormClosed;
             formThread = new Thread(loadForm);
-            formThread.SetApartmentState(ApartmentState.STA);
+           // formThread.SetApartmentState(ApartmentState.STA);
             formThread.Start();
             Log("Interface loaded", System.Drawing.Color.Green);
 
-            while (isFormOpen && me != null)
-            {
-                Thread.Sleep(100);
-            }
+            while (isFormOpen)
+                if (me == null)
+                {
+                    PluginStop();
+                    {
+                        Thread.Sleep(100);
+                    }
 
-            PluginStop();
+
+                }
         }
-
         public void PluginStop()
         {
             CancelMoveTo();
             CancelSkill();
-            CancelTarget();
 
+
+            if (form != null)
+            {
+                Log("ArcheGrinder plugin is succesfully stopped", System.Drawing.Color.Green); //changed Color
+                form.Invoke(new Action(() => form.Close()));
+                form.Invoke(new Action(() => form.Dispose()));
+
+            }
+            Application.Exit();
+
+            formThread.Abort();
+            /*
             if (formThread.IsAlive)
                 formThread.Abort();
 
             Log("ArcheGrinder closed");
+            */
         }
 
         public void PluginRun()
@@ -91,21 +107,37 @@ namespace ArcheGrinder
                 while (gameState != GameState.Ingame)
                     Thread.Sleep(50);
             }
-            
+
             isFormOpen = true;
             form = new FormMain(this);
             form.SetCore(this);
+            form.FormClosed += form_FormClosed;
             formThread = new Thread(loadForm);
             formThread.SetApartmentState(ApartmentState.STA);
             formThread.Start();
             Log("Interface loaded", System.Drawing.Color.Green);
-            
-            while (isFormOpen && me != null)
+
+            while (isFormOpen)
+                if (me == null)
+                {
+                    PluginStop();
+                }
+
+
+            Thread.Sleep(100);
+        }
+        void form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Log("Form closed - stopping the plugin", System.Drawing.Color.Red); //changed Color
+            isFormOpen = false;
+            if (isPluginRun(pluginPath))
             {
-                Thread.Sleep(100);
+                PluginStop();
+
             }
 
-            PluginStop();
-        }   
+
+
+        }
     }
 }

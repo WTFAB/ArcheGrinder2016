@@ -16,7 +16,7 @@ namespace ArcheGrinder
 {
     public partial class FormMain : Form
     {
-        ArcheGrinder main;
+        //ArcheGrinder main;
 
         public bool isFighting = false;
         public bool isLooting = false;
@@ -631,7 +631,8 @@ namespace ArcheGrinder
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            main.isFormOpen = false;
+            
+            //main.isFormOpen = false;
         }
 
         private void FormMain_Shown(object sender, EventArgs e)
@@ -691,6 +692,11 @@ namespace ArcheGrinder
             }
 
         private void chkCrazyEnigmatist_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
         {
 
         }
