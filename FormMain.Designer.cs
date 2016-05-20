@@ -579,11 +579,12 @@
             // 
             this.Version.AutoSize = true;
             this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Version.Location = new System.Drawing.Point(468, 461);
+            this.Version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Version.Location = new System.Drawing.Point(473, 459);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(142, 16);
+            this.Version.Size = new System.Drawing.Size(137, 16);
             this.Version.TabIndex = 114;
-            this.Version.Text = "Version B E T A 0.0.0.4";
+            this.Version.Text = "Version[Alpha] 1.0.1.2";
             // 
             // lootScratchedSafe
             // 
@@ -2454,29 +2455,31 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(11, 126);
+            this.label6.Location = new System.Drawing.Point(11, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(308, 16);
+            this.label6.Size = new System.Drawing.Size(466, 16);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Plugin developped by Taranira from Buddy forums";
+            this.label6.Text = "Plugin developped by many people from Buddy forums. Current Dev: WTFAB";
             // 
             // linkDonate
             // 
             this.linkDonate.AutoSize = true;
-            this.linkDonate.Location = new System.Drawing.Point(6, 213);
+            this.linkDonate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkDonate.Location = new System.Drawing.Point(8, 191);
             this.linkDonate.Name = "linkDonate";
-            this.linkDonate.Size = new System.Drawing.Size(258, 13);
+            this.linkDonate.Size = new System.Drawing.Size(480, 18);
             this.linkDonate.TabIndex = 3;
             this.linkDonate.TabStop = true;
-            this.linkDonate.Text = "Liking the plugin a lot? You can Help Develop it Here";
+            this.linkDonate.Text = "Liking the plugin a lot?  Its OpenSource So you can Help Improve It Here";
             this.linkDonate.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkDonate_LinkClicked);
             // 
             // linkForum
             // 
             this.linkForum.AutoSize = true;
+            this.linkForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkForum.Location = new System.Drawing.Point(8, 156);
             this.linkForum.Name = "linkForum";
-            this.linkForum.Size = new System.Drawing.Size(222, 13);
+            this.linkForum.Size = new System.Drawing.Size(303, 18);
             this.linkForum.TabIndex = 2;
             this.linkForum.TabStop = true;
             this.linkForum.Text = "Forum Thread for feedback/help/suggestions";

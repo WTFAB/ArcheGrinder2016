@@ -638,7 +638,7 @@ namespace ArcheGrinder
         private void FormMain_Shown(object sender, EventArgs e)
         {
             
-            this.Text = "ArcheGrinder used by: " + core.me.name;
+            this.Text = "ArcheGrinder[Alpha] 1.0.1.2 | Current User: " + core.me.name;
             try { 
             this.Icon                                       = Icon.ExtractAssociatedIcon(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\archeageicon.ico");
             this.pictureLibraryRelic.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\AncientLibraryRelic.jpg");
