@@ -8,4 +8,4 @@ And the work of Karls(https://www.thebuddyforum.com/archives/189891-haslassistan
 
 # 20/05/2016
 Updated to v 1.0.1.1
-Still have major Crahses one example is Closing the form wiill crash AB and plugin
+Still have a few major Crash bugs one example is Closing the form wiill crash AB and plugin
