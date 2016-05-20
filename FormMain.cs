@@ -690,7 +690,11 @@ namespace ArcheGrinder
             catch { core.Log("Something wen't wrong: " + core.GetLastError() ); }
             }
 
-     
+        private void chkCrazyEnigmatist_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void UpdateLootOptions()
         {
             lootCompassion.Enabled = !isLooting;

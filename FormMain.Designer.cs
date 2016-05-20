@@ -898,6 +898,7 @@
             this.chkCrazyEnigmatist.TabIndex = 150;
             this.chkCrazyEnigmatist.Text = "Enigmatist combo";
             this.chkCrazyEnigmatist.UseVisualStyleBackColor = true;
+            this.chkCrazyEnigmatist.CheckedChanged += new System.EventHandler(this.chkCrazyEnigmatist_CheckedChanged);
             // 
             // label32
             // 
