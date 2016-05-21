@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{7C45216F-1914-4B9F-893F-2103E345F5D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ArcheGrinder[Alpha] 1.0.1.2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>CompiledBuild\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>CompiledBuild\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>ArcgeGrinder2016</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArcheBuddy">
+      <HintPath>..\ab\ArcheBuddy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArcheGrinder.cs" />
+    <Compile Include="Combat.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loot.cs" />
+    <Compile Include="Preferences.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArcheGrinder.pdb" />
+    <Content Include="Bilder\AncientLibraryRelic.jpg" />
+    <Content Include="Bilder\archeageicon.ico" />
+    <Content Include="Bilder\ArmorIcon.PNG" />
+    <Content Include="Bilder\AyanadDesignScrap.png" />
+    <Content Include="Bilder\BriskDwarvenElixir.jpg" />
+    <Content Include="Bilder\Coinpurse.PNG" />
+    <Content Include="Bilder\DisciplesTear.PNG" />
+    <Content Include="Bilder\DragonBoneChip.PNG" />
+    <Content Include="Bilder\EnchantedSkein.PNG" />
+    <Content Include="Bilder\EternalLibraryTome.jpg" />
+    <Content Include="Bilder\EternalWeapon.jpg" />
+    <Content Include="Bilder\ExperienceGR.png" />
+    <Content Include="Bilder\FadedCompassionToken.jpg" />
+    <Content Include="Bilder\FadedConvictionToken.jpg" />
+    <Content Include="Bilder\FadedCourageToken.jpg" />
+    <Content Include="Bilder\FadedFortitudeToken.jpg" />
+    <Content Include="Bilder\FadedHonorToken.jpg" />
+    <Content Include="Bilder\FadedLoyaltyToken.jpg" />
+    <Content Include="Bilder\FadedSacrificeToken.jpg" />
+    <Content Include="Bilder\Fragezeichen.jpg" />
+    <Content Include="Bilder\FrenzyGR.png" />
+    <Content Include="Bilder\GoldenLibraryIndex.jpg" />
+    <Content Include="Bilder\GreedyDwarvenElixir.jpg" />
+    <Content Include="Bilder\GreedyGR.png" />
+    <Content Include="Bilder\HasteGR.png" />
+    <Content Include="Bilder\HauntedChest.jpg" />
+    <Content Include="Bilder\HonorBoostTonic.jpg" />
+    <Content Include="Bilder\ImmortalXPTonic.jpg" />
+    <Content Include="Bilder\Kingdom%27sHeart.jpg" />
+    <Content Include="Bilder\LuckyQuicksilverTonic.jpg" />
+    <Content Include="Bilder\PromiseGR.png" />
+    <Content Include="Bilder\rsz_1rsz_2ignfa0.png" />
+    <Content Include="Bilder\scratchedsafe.PNG" />
+    <Content Include="Bilder\SpellbookBrickWall.jpg" />
+    <Content Include="Bilder\SpellbookUnstoppableForce.jpg" />
+    <Content Include="Bilder\StolenBag.PNG" />
+    <Content Include="Bilder\StudiousDwarvenElixir.jpg" />
+    <Content Include="Bilder\TyrenosIndex.jpg" />
+    <Content Include="Bilder\VocationExpertiseTonic.jpg" />
+    <Content Include="Bilder\WardGR.png" />
+    <Content Include="Bilder\XPBoostPotion.jpg" />
+    <Content Include="Bilder\ZealGR.png" />
+    <Content Include="DeathRoutes\New Text Document.txt" />
+    <Content Include="Resources\2ignfa0.ico" />
+    <Content Include="Resources\2ignfa0.png" />
+    <Content Include="Resources\Ancient Library Relic.jpg" />
+    <Content Include="Resources\AncientLibraryRelic.jpg" />
+    <Content Include="Resources\archeageicon.ico" />
+    <Content Include="Resources\ArmorIcon.PNG" />
+    <Content Include="Resources\AyanadDesignScrap.png" />
+    <Content Include="Resources\Brisk Dwarven Elixir.jpg" />
+    <Content Include="Resources\BriskDwarvenElixir.jpg" />
+    <Content Include="Resources\Coinpurse.PNG" />
+    <Content Include="Resources\DisciplesTear.PNG" />
+    <Content Include="Resources\DragonBoneChip.PNG" />
+    <Content Include="Resources\EnchantedSkein.PNG" />
+    <Content Include="Resources\EternalLibraryTome.jpg" />
+    <Content Include="Resources\EternalWeapon.jpg" />
+    <Content Include="Resources\ExperienceGR.png" />
+    <Content Include="Resources\FadedCompassionToken.jpg" />
+    <Content Include="Resources\FadedConvictionToken.jpg" />
+    <Content Include="Resources\FadedCourageToken.jpg" />
+    <Content Include="Resources\FadedFortitudeToken.jpg" />
+    <Content Include="Resources\FadedHonorToken.jpg" />
+    <Content Include="Resources\FadedLoyaltyToken.jpg" />
+    <Content Include="Resources\FadedSacrificeToken.jpg" />
+    <Content Include="Resources\Fragezeichen.jpg" />
+    <Content Include="Resources\Frenzy GR.png" />
+    <Content Include="Resources\FrenzyGR.png" />
+    <Content Include="Resources\Golden Library Index.jpg" />
+    <Content Include="Resources\GoldenLibraryIndex.jpg" />
+    <Content Include="Resources\Greedy Dwarven Elixir.jpg" />
+    <Content Include="Resources\Greedy GR.png" />
+    <Content Include="Resources\GreedyDwarvenElixir.jpg" />
+    <Content Include="Resources\GreedyGR.png" />
+    <Content Include="Resources\Haste GR.png" />
+    <Content Include="Resources\HasteGR.png" />
+    <Content Include="Resources\Haunted Chest.jpg" />
+    <Content Include="Resources\HauntedChest.jpg" />
+    <Content Include="Resources\Honor Boost Tonic.jpg" />
+    <Content Include="Resources\HonorBoostTonic.jpg" />
+    <Content Include="Resources\Immortal XP Tonic.jpg" />
+    <Content Include="Resources\ImmortalXPTonic.jpg" />
+    <Content Include="Resources\Kingdom%27s Heart.jpg" />
+    <Content Include="Resources\Kingdom%27sHeart.jpg" />
+    <Content Include="Resources\Lucky Quicksilver Tonic.jpg" />
+    <Content Include="Resources\LuckyQuicksilverTonic.jpg" />
+    <Content Include="Resources\Promise GR.png" />
+    <Content Include="Resources\PromiseGR.png" />
+    <Content Include="Resources\rsz_1rsz_2ignfa0.png" />
+    <Content Include="Resources\rsz_2ignfa0.png" />
+    <Content Include="Resources\scratchedsafe.PNG" />
+    <Content Include="Resources\Spellbook Brick Wall.jpg" />
+    <Content Include="Resources\Spellbook Unstoppable Force.jpg" />
+    <Content Include="Resources\SpellbookBrickWall.jpg" />
+    <Content Include="Resources\SpellbookUnstoppableForce.jpg" />
+    <Content Include="Resources\Stolen Bag.PNG" />
+    <Content Include="Resources\StolenBag.PNG" />
+    <Content Include="Resources\Studious Dwarven Elixir.jpg" />
+    <Content Include="Resources\StudiousDwarvenElixir.jpg" />
+    <Content Include="Resources\Tyrenos Index.jpg" />
+    <Content Include="Resources\TyrenosIndex.jpg" />
+    <Content Include="Resources\Vocation Expertise Tonic.jpg" />
+    <Content Include="Resources\VocationExpertiseTonic.jpg" />
+    <Content Include="Resources\Ward GR.png" />
+    <Content Include="Resources\WardGR.png" />
+    <Content Include="Resources\XP Boost Potion.jpg" />
+    <Content Include="Resources\XPBoostPotion.jpg" />
+    <Content Include="Resources\Zeal GR.png" />
+    <Content Include="Resources\ZealGR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".vs\ArcheGrinder2016\v14\.suo" />
+    <None Include=".vs\ArcheGrinder\v14\.suo" />
+    <None Include="app.config" />
+    <None Include="DeathRoutes\CharachterName1.db3" />
+    <None Include="Readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTAR_08E86330_4835_4B5C_9E5A_61F37AE1A077_DTAR\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
