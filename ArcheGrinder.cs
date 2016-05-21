@@ -19,7 +19,7 @@ namespace ArcheGrinder
 
         public static string GetPluginVersion()
         {
-            return "ArcheGrinder[Alpha] 1.0.1.2";
+            return "1.0.1.3 -Stable";
 
         }
 
