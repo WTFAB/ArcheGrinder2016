@@ -1,9 +1,12 @@
 # ArcheGrinder[Plugin] For ArcheBuddy
 
+# 22/05/2016 Minor Update to Aplha 1.0.1.3 -Stable
+
+ *-Fixed some Exception handling & Implemented a quick and temp Fix for Plugin crash on mount death.
+
 # 20/05/2016 Fixed One Major Crashes
 FormMain Close Crash Fixed
 
-More Testing is needed Still have to fix Mount/Pet Death Crash
 
 # Next on the list
    *-Add Function to attack mob if it aggro's pet & were are using flute or waiting on HP/MP regen
