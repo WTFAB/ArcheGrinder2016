@@ -829,7 +829,7 @@ namespace ArcheGrinder
 
 
 
-            if (GetAggroCount() == 0 && core.buffTime(8000022) == 0 && core.itemCount(8000082) >= 1 && prefs.UseGreedyDwarvenElixir)
+            if (GetAggroCount() == 0 && core.buffTime(_Buff_Greedy_Dwaren_Elixir) == 0 && core.itemCount(_Item_Greedy_Dwaren_Elixir) >= 1 && prefs.UseGreedyDwarvenElixir)
             {
                 core.Log(Time() + "Greedy Dwarven Elixir");
                 core.UseItem(_Item_Greedy_Dwaren_Elixir);
@@ -880,7 +880,7 @@ namespace ArcheGrinder
                 Thread.Sleep(2500); // Rest for 2.5 seconds ( little over the global cooldown )
             }
 
-            if (GetAggroCount() == 0 && core.buffTime(8000009) == 0 && core.itemCount(8000019) >= 1 && prefs.UseQuicksilverTonic)
+            if (GetAggroCount() == 0 && core.buffTime(_Buff_Lucky_Quicksilver_Tonic) == 0 && core.itemCount(_Item_Lucky_Quicksilver_Tonic) >= 1 && prefs.UseQuicksilverTonic)
             {
                 core.Log(Time() + "Using Lucky Quicksilver Tonic");
                 core.UseItem(_Item_Lucky_Quicksilver_Tonic);
@@ -890,14 +890,14 @@ namespace ArcheGrinder
 
 
 
-            if (GetAggroCount() == 0 && core.buffTime(7478) == 0 && core.itemCount(31777) >= 1 && prefs.UseSpellbookUnstoppableForce)
+            if (GetAggroCount() == 0 && core.buffTime(_Buff_Unstoppable_Force) == 0 && core.itemCount(_Item_Unstoppable_Force) >= 1 && prefs.UseSpellbookUnstoppableForce)
             {
                 core.Log(Time() + "Using Spellbook: Unstoppable Force");
                 core.UseItem(_Item_Unstoppable_Force);
                 Thread.Sleep(2500); // Rest for 2.5 seconds ( little over the global cooldown )
             }
 
-            if (GetAggroCount() == 0 && core.buffTime(7477) == 0 && core.itemCount(31776) >= 1 && prefs.UseSpellbookBrickWall)
+            if (GetAggroCount() == 0 && core.buffTime(_Buff_Brick_Wall) == 0 && core.itemCount(_Item_Brick_Wall) >= 1 && prefs.UseSpellbookBrickWall)
             {
                 core.Log(Time() + "Using Spellbook: Brick Wall");
                 core.UseItem(_Item_Brick_Wall);
@@ -920,7 +920,7 @@ namespace ArcheGrinder
                 Thread.Sleep(2500); // Rest for 2.5 seconds ( little over the global cooldown )
             }
 
-            var Tyrian = (core.buffTime(8240) / 1000 / 60);
+            var Tyrian = (core.buffTime(_Buff_Tyrenos_Index) / 1000 / 60);
             var GoldenLibrary = (core.buffTime(_Buff_Golden_Library_Index) / 1000 / 60);
 
             var GreedyDwarvenElixir = (core.buffTime(8000022) / 1000 / 60);
@@ -980,35 +980,48 @@ namespace ArcheGrinder
                 if (mount != null && !core.isAlive(mount) && mount.getBuffs().Any(b => b.id == _BF_TRIPPED))
                 {
                     // rez it
-                    core.Log("Trying to resurrect pet", System.Drawing.Color.PowderBlue);
-
+                    core.Log("Looks Like Our Pet is Dead.", System.Drawing.Color.Orange);
+                    core.Log("<CrashProtection> Attempting to Wait That 3min CoolDown before we resurrect pet.", System.Drawing.Color.Red);
+                    core.Log("<CrashProtection> This is a Temp fix WTFAB will introduce a proper fix soon.", System.Drawing.Color.Red);
+                    Thread.Sleep(18000);
+                    //core.Log("Trying to resurrect pet.", System.Drawing.Color.PowderBlue);
                     // clear mobs within 7m of pet to get a clean resurrect
                     List<Creature> mobs = core.getCreatures();
-                    foreach (Creature mob in mobs)
+                    try
                     {
-                        CheckWeakendBody();
-                        while ((GetAggroCount() == 0 && (core.hpp() < prefs.minHP || core.mpp() < prefs.minMP)) || (WeakendBody == true))
+                        foreach (Creature mob in mobs)
                         {
-                            CheckBuffs();
-                            CheckRegen();
-                            Thread.Sleep(10);
+                            CheckWeakendBody();
+                            while ((GetAggroCount() == 0 && (core.hpp() < prefs.minHP || core.mpp() < prefs.minMP)) || (WeakendBody == true))
+                            {
+                                CheckBuffs();
+                                CheckRegen();
+                                Thread.Sleep(10);
+                            }
+
+                            if (IsValidTarget(mob) && (mount.dist(mob) <= 7 || core.dist(mob) <= 7 || mob.target == core.me))
+                            {
+                                KillMob(mob);
+                            }
                         }
 
-                        if (IsValidTarget(mob) && (mount.dist(mob) <= 7 || core.dist(mob) <= 7 || mob.target == core.me))
+                        core.ComeTo(mount, 1, 1);
+
+                        if (!UseSkillAndWait(_RAISE_BACK_UP, true))
                         {
-                            KillMob(mob);
+                            core.Log("Execption: " + core.GetLastError());
+                            core.DespawnMount();
+                            failedPetRez++;
                         }
                     }
+                    catch (ThreadAbortException) { }
+            catch (Exception ex)
+            {
+                        core.Log("<CrashProtection> _____________Exception Detected_____________", System.Drawing.Color.Red);
+                        core.Log("<CrashProtection>" + " Exception: " + ex.Message + "\n" + ex.StackTrace, System.Drawing.Color.Red);
+                        core.Log("<CrashProtection> ____exception will be patched soon. For now we should keep Grinding____", System.Drawing.Color.Red);
 
-                    core.ComeTo(mount, 1, 1);
-
-                    if (!UseSkillAndWait(_RAISE_BACK_UP, true))
-                    {
-                        core.Log("Pet rez failed: " + core.GetLastError());
-                        core.DespawnMount();
-                        failedPetRez++;
                     }
-
                 }
             }
         }
@@ -1081,7 +1094,7 @@ namespace ArcheGrinder
         {
             if (obj == core.me)
             {
-                core.Log(core.me.name + " died :( Triggering death routine to try to run back to farm spot", System.Drawing.Color.Red);
+                core.Log(core.me.name + " Was Slain Triggering death routine to run back to farm spot", System.Drawing.Color.Red);
 
                 string[] paths = Directory.GetFiles(System.Windows.Forms.Application.StartupPath + "\\Plugins\\ArcheGrinder\\DeathRoutes", core.me.name + "*.db3");
                 if (paths.Length == 0)
@@ -1520,7 +1533,7 @@ namespace ArcheGrinder
                         core.SetTarget(bestMob);
 
                     // check if we need to save pet (disabled while plugin doesn't wait for pet to regen or can re-enable skills)
-                    /*
+                    
                     if (prefs.petId > 0)
                     {
                         Creature pet = core.getMount();
@@ -1530,7 +1543,7 @@ namespace ArcheGrinder
                             core.Log("Pet is about to die, despawning it");
                         }
                     }
-                     * */
+                     
 
                     SelectAndUseHealingSkill();
                     if (prefs.useCC && GetAggroCount() >= 2 && GetRealAggroCount() >= 2)

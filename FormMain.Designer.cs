@@ -226,6 +226,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.labelPetHour = new System.Windows.Forms.Label();
             this.labelPetTotal = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabHelp = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -237,7 +238,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tooltips = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.tabMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUnknownItems)).BeginInit();
@@ -290,8 +290,8 @@
             this.tabGear.SuspendLayout();
             this.tabStats.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tabHelp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabHelp.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -373,6 +373,7 @@
             this.tabMain.Size = new System.Drawing.Size(613, 480);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Loot";
+            this.tabMain.Click += new System.EventHandler(this.tabMain_Click);
             // 
             // pictureUnknownItems
             // 
@@ -583,11 +584,11 @@
             this.Version.AutoSize = true;
             this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Version.Location = new System.Drawing.Point(473, 459);
+            this.Version.Location = new System.Drawing.Point(430, 464);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(137, 16);
+            this.Version.Size = new System.Drawing.Size(183, 16);
             this.Version.TabIndex = 114;
-            this.Version.Text = "Version[Alpha] 1.0.1.2";
+            this.Version.Text = "Version[Alpha] 1.0.1.3 -Stable";
             // 
             // lootScratchedSafe
             // 
@@ -1288,6 +1289,7 @@
             this.tabBuff.Size = new System.Drawing.Size(613, 480);
             this.tabBuff.TabIndex = 6;
             this.tabBuff.Text = "Buff Items";
+            this.tabBuff.Click += new System.EventHandler(this.tabBuff_Click);
             // 
             // label19
             // 
@@ -2387,6 +2389,15 @@
             this.labelPetTotal.TabIndex = 17;
             this.labelPetTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 71);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabHelp
             // 
             this.tabHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -2512,15 +2523,6 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "- Settings are saved whenever you start Loot or Combat";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 71);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2593,9 +2595,9 @@
             this.tabStats.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabHelp.ResumeLayout(false);
             this.tabHelp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

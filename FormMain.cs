@@ -638,7 +638,7 @@ namespace ArcheGrinder
         private void FormMain_Shown(object sender, EventArgs e)
         {
             
-            this.Text = "ArcheGrinder[Alpha] 1.0.1.2 | Current User: " + core.me.name;
+            this.Text = "ArcheGrinder[Alpha] 1.0.1.3 -Stable | Current User: " + core.me.name;
             try { 
             this.Icon                                       = Icon.ExtractAssociatedIcon(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\archeageicon.ico");
             this.pictureLibraryRelic.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\AncientLibraryRelic.jpg");
@@ -688,7 +688,11 @@ namespace ArcheGrinder
 
 
             }
-            catch { core.Log("Something wen't wrong: " + core.GetLastError() ); }
+            catch { core.Log("Error You are Missing The Bilder Folder.This Folder Contians Images ", System.Drawing.Color.OrangeRed);
+                core.Log("Bilder Folder Contians Images used in ArcheGrinder Please Download It From The Forum link in Help", System.Drawing.Color.OrangeRed);
+                core.Log("You need to place the Bilder Folder in the ArcheGrinder Plugin Folder with ArcheGrinder.dll ", System.Drawing.Color.OrangeRed);
+                core.Log(" "+ "''I will patch this out in the future'' " + "--WTFAB ");
+            }
             }
 
         private void chkCrazyEnigmatist_CheckedChanged(object sender, EventArgs e)
@@ -697,6 +701,16 @@ namespace ArcheGrinder
         }
 
         private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabMain_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabBuff_Click(object sender, EventArgs e)
         {
 
         }
