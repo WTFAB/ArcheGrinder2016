@@ -238,6 +238,12 @@ namespace ArcheGrinder
         uint _Buff_Greedy_Grimoire = 14783;
         uint _Item_Greedy_Grimoire = 8000344;
 
+        //for Junk item deltetion
+
+        //lost gargden fadded weapon
+        uint _Item_Lost_Garden_Faded_Weapon = 39316;
+
+
         bool WeakendBody = false;
 
         public string Time()
@@ -282,6 +288,7 @@ namespace ArcheGrinder
         private bool usePotionHP, usePotionMP, useFoodHP, useFoodMP;
         private DateTime lastPotionUsed, lastFoodUsed;
         private Gps gps;
+        private List<Item> inventory;
 
         public Combat(Core c, Preferences p)
         {
@@ -940,7 +947,7 @@ namespace ArcheGrinder
             var AncientLibraryRelic = (core.buffTime(_Buff_Ancient_Library_Relic) / 1000 / 60);
 
 
-           /* if (prefs.UseTyrenosIndex) { core.Log(Time() + "Tyrenos's Index Timer:  " + Tyrian + " Minutes"); }
+           if (prefs.UseTyrenosIndex) { core.Log(Time() + "Tyrenos's Index Timer:  " + Tyrian + " Minutes"); }
             if (prefs.UseGoldenLibraryIndex) { core.Log(Time() + "Golden Library Index Timer:  " + GoldenLibrary + " Minutes"); }
 
             if (prefs.UseGreedyDwarvenElixir) { core.Log(Time() + "Greedy Dwarven Elixir Timer:  " + GreedyDwarvenElixir + " Minutes"); }
@@ -957,7 +964,7 @@ namespace ArcheGrinder
             if (prefs.UseSpellbookBrickWall) { core.Log(Time() + "Spellbook: Brick Wall Timer:  " + Wall + " Minutes"); }
 
             if (prefs.UseKingdomHeart) { core.Log(Time() + "Kingdom's Heart Timer:  " + KingodmHeart + " Minutes"); }
-            if (prefs.UseAncientLibraryRelic) { core.Log(Time() + "Ancient Library Relic Timer:  " + AncientLibraryRelic + " Minutes"); } */
+            if (prefs.UseAncientLibraryRelic) { core.Log(Time() + "Ancient Library Relic Timer:  " + AncientLibraryRelic + " Minutes"); } 
 
             
             
@@ -980,13 +987,11 @@ namespace ArcheGrinder
                 if (mount != null && !core.isAlive(mount) && mount.getBuffs().Any(b => b.id == _BF_TRIPPED))
                 {
                     // rez it
-                    core.Log("Looks Like Our Pet is Dead.", System.Drawing.Color.Orange);
-                    core.Log("<CrashProtection> Attempting to Wait That 3min CoolDown before we resurrect pet.", System.Drawing.Color.Red);
-                    core.Log("<CrashProtection> This is a Temp fix WTFAB will introduce a proper fix soon.", System.Drawing.Color.Red);
-                    Thread.Sleep(18000);
+                    core.Log(Time() + "Looks Like Our Pet is Dead.", System.Drawing.Color.Orange);
+                 
                     //core.Log("Trying to resurrect pet.", System.Drawing.Color.PowderBlue);
                     // clear mobs within 7m of pet to get a clean resurrect
-                    List<Creature> mobs = core.getCreatures();
+                   List<Creature> mobs = core.getCreatures();
                     try
                     {
                         foreach (Creature mob in mobs)
@@ -1004,7 +1009,7 @@ namespace ArcheGrinder
                                 KillMob(mob);
                             }
                         }
-
+                        
                         core.ComeTo(mount, 1, 1);
 
                         if (!UseSkillAndWait(_RAISE_BACK_UP, true))
@@ -1017,9 +1022,9 @@ namespace ArcheGrinder
                     catch (ThreadAbortException) { }
             catch (Exception ex)
             {
-                        core.Log("<CrashProtection> _____________Exception Detected_____________", System.Drawing.Color.Red);
-                        core.Log("<CrashProtection>" + " Exception: " + ex.Message + "\n" + ex.StackTrace, System.Drawing.Color.Red);
-                        core.Log("<CrashProtection> ____exception will be patched soon. For now we should keep Grinding____", System.Drawing.Color.Red);
+                        core.Log(Time() + "<CrashProtection> _____________Exception Detected_____________", System.Drawing.Color.Red);
+                        core.Log(Time() + "<CrashProtection>" + " Exception: " + ex.Message + "\n" + ex.StackTrace, System.Drawing.Color.Red);
+                        core.Log(Time() + "<CrashProtection> ____exception will be patched soon. For now we should keep Grinding____", System.Drawing.Color.Red);
 
                     }
                 }
@@ -1061,7 +1066,7 @@ namespace ArcheGrinder
 
                 return total;
             }
-            catch (Exception e) { core.Log("Exception during GetAggroCount: " + e.Message); }
+            catch (Exception e) { core.Log(Time() + "Exception during GetAggroCount: " + e.Message); }
 
             return total;
         }
@@ -1084,7 +1089,7 @@ namespace ArcheGrinder
                         total++;
                     }
             }
-            catch (Exception e) { core.Log("Exception during GetRealAggroCount: " + e.Message); }
+            catch (Exception e) { core.Log(Time() + "Exception during GetRealAggroCount: " + e.Message); }
 
             return total;
         }
@@ -1094,13 +1099,15 @@ namespace ArcheGrinder
         {
             if (obj == core.me)
             {
-                core.Log(core.me.name + " Was Slain Triggering death routine to run back to farm spot", System.Drawing.Color.Red);
+                core.Log(Time() + core.me.name + " Was Slain Triggering death routine to run back to farm spot", System.Drawing.Color.Red);
 
                 string[] paths = Directory.GetFiles(System.Windows.Forms.Application.StartupPath + "\\Plugins\\ArcheGrinder\\DeathRoutes", core.me.name + "*.db3");
                 if (paths.Length == 0)
                 {
                    
-                    core.Log(core.me.name + " You don't have any routes in the DeathRoutes folder");
+                    core.Log(Time() + core.me.name + " You don't have any routes in the DeathRoutes folder", System.Drawing.Color.LightYellow);
+                    core.Log(Time() + core.me.name + " You Will have to manualy return to the Farm Area", System.Drawing.Color.Yellow);
+                    core.Log(Time() + core.me.name + " See Help tab for More info", System.Drawing.Color.NavajoWhite);
                     return;
                 }
 
@@ -1423,6 +1430,13 @@ namespace ArcheGrinder
                             inventory = core.getAllInvItems();
                             foreach (Item item in inventory)
                             {
+                                //THIS IS WERE OUR BAG EMPTY LOGIC GEOES
+
+
+
+
+                                //=============================================
+
                                 if (purses.Contains(item.id))
                                 {
                                     UseItemAndWait(item.id);
@@ -1533,7 +1547,7 @@ namespace ArcheGrinder
                         core.SetTarget(bestMob);
 
                     // check if we need to save pet (disabled while plugin doesn't wait for pet to regen or can re-enable skills)
-                    
+
                     if (prefs.petId > 0)
                     {
                         Creature pet = core.getMount();
@@ -1543,7 +1557,7 @@ namespace ArcheGrinder
                             core.Log("Pet is about to die, despawning it");
                         }
                     }
-                     
+
 
                     SelectAndUseHealingSkill();
                     if (prefs.useCC && GetAggroCount() >= 2 && GetRealAggroCount() >= 2)
@@ -1580,25 +1594,117 @@ namespace ArcheGrinder
                         if (core.me.dist(bestMob) > 2)
                             core.ComeTo(bestMob, 1);
                         core.PickupAllDrop(bestMob);
-
-                        double diff = (DateTime.UtcNow - startLoot).TotalSeconds;
-                        if (diff > 5 || (GetAggroCount() > 0 && diff > 3))
+                        
+                        inventory = core.getAllInvItems();
+                        core.Log(Time() + "<JunkItemCleaner> " + core.me.name + " Looted Items. Looking for Junk Items ", System.Drawing.Color.Orange);
+                        foreach (Item item in inventory)
                         {
-                            core.Log(core.me.name + " Spent too long trying to loot, giving up");
-                            break;
+                            //THIS IS WERE OUR BAG EMPTY LOGIC GEOES
+                            //core.Log(Time() + " <itemLogger> " + "Attempting to figure out if we need to clean Inventory");
+                            //core.Log(Time() + " <itemLogger> " + item.name);
+
+                            string temp;
+                            //string junk1 = "Lost Garden Faded Weapon";
+                            //string junk2 = "Unidentified Shroudmaster Accessory";
+                            //string junk3 = "Unidentified Astral Ranger Armor";
+                            //string junk4 = "Unidentified Nightblade Armor";
+                            //string junk5 = "Unidentified Scion Armor";
+                            temp = item.name;
+
+                             //Find and delete ALL ARMROR JUNK
+                            if (temp.Contains("Unidentified") & temp.Contains("Armor"))
+                            {
+                                core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + temp, System.Drawing.Color.Orange);
+                                item.DeleteItem();
+
+                            }
+                            //Find and delete ALL WEAPON JUNK
+                            if (temp.Contains("Unidentified") & temp.Contains("Weapon"))
+                            {
+                                core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + temp, System.Drawing.Color.Orange);
+                                item.DeleteItem();
+
+                            }
+
+                            //Find and delete ALL Accessory JUNK
+                            if (temp.Contains("Unidentified") & temp.Contains("Accessory"))
+                            {
+                                core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + temp, System.Drawing.Color.Orange);
+                                item.DeleteItem();
+
+                            }
+
+                            // This is were we find junk items and delte them
+                            // Put if statments inbetween the coments
+
+                            // Find and delete Lost Garden Faded Weapon
+                            // if (temp == junk1)
+                            // {
+                            //     core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + junk1, System.Drawing.Color.Orange);
+                            //    item.DeleteItem();
+
+                            // }
+
+                            // Find and delete Unidentified Shroudmaster Accessory
+                            // if (temp == junk2)
+                            // {
+                            //  core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + junk2, System.Drawing.Color.Orange);
+                            //     item.DeleteItem();
+
+                            // }
+
+                            // Find and delete Unidentified Astral Ranger Armor
+                            //  if (temp == junk3)
+                            // {
+                            //     core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + junk3, System.Drawing.Color.Orange);
+                            //     item.DeleteItem();
+
+                            // }
+
+                            // Find and delete Unidentified Nightblade Armor
+                            //if (temp == junk4)
+                            //{
+                            //   core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + junk4, System.Drawing.Color.Orange);
+                            //   item.DeleteItem();
+
+                            // }
+
+                            // Find and delete Unidentified Scion Armor
+                            //if (temp.Contains("Unidentified") & temp.Contains("Armor"))
+                            //{
+                            //    core.Log(Time() + "<JunkItemCleaner> Junk Item Found. Deleting " + junk5, System.Drawing.Color.Orange);
+                            //    item.DeleteItem();
+
+                            //}
+
+
+                            //======================================================================================================================================
+
+                            {
+
+                            }
+
+                            //=============================================
+
+                            double diff = (DateTime.UtcNow - startLoot).TotalSeconds;
+                            if (diff > 5 || (GetAggroCount() > 0 && diff > 3))
+                            {
+                                core.Log(core.me.name + " Spent too long trying to loot, giving up");
+                                break;
+                            }
                         }
                     }
-                }
 
-                //  if (prefs.lootCorpses && bestMob != null && core.me.dist(bestMob) < 10
-                //  && !core.isAlive(bestMob) && core.isExists(bestMob) && bestMob.type == BotTypes.Npc
-                //  && ((Npc)bestMob).dropAvailable && core.isAlive())
-                //  {
-                // in group, just try once to loot if the corpse is near - hopefully humans do it otherwise!
-                //      core.ComeTo(bestMob, 1);
-                //      core.PickupAllDrop(bestMob);
-                //  }
-                #endregion
+                    //  if (prefs.lootCorpses && bestMob != null && core.me.dist(bestMob) < 10
+                    //  && !core.isAlive(bestMob) && core.isExists(bestMob) && bestMob.type == BotTypes.Npc
+                    //  && ((Npc)bestMob).dropAvailable && core.isAlive())
+                    //  {
+                    // in group, just try once to loot if the corpse is near - hopefully humans do it otherwise!
+                    //      core.ComeTo(bestMob, 1);
+                    //      core.PickupAllDrop(bestMob);
+                    //  }
+                    #endregion
+                }
             }
             catch (ThreadAbortException) { }
             catch (Exception ex)

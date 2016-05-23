@@ -229,6 +229,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabHelp = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.chkDebugBuffs = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -586,9 +592,9 @@
             this.Version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Version.Location = new System.Drawing.Point(430, 464);
             this.Version.Name = "Version";
-            this.Version.Size = new System.Drawing.Size(183, 16);
+            this.Version.Size = new System.Drawing.Size(137, 16);
             this.Version.TabIndex = 114;
-            this.Version.Text = "Version[Alpha] 1.0.1.3 -Stable";
+            this.Version.Text = "Version[Alpha] 1.0.1.4";
             // 
             // lootScratchedSafe
             // 
@@ -2402,6 +2408,12 @@
             // 
             this.tabHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tabHelp.Controls.Add(this.label27);
+            this.tabHelp.Controls.Add(this.label43);
+            this.tabHelp.Controls.Add(this.label42);
+            this.tabHelp.Controls.Add(this.label41);
+            this.tabHelp.Controls.Add(this.label40);
+            this.tabHelp.Controls.Add(this.label39);
+            this.tabHelp.Controls.Add(this.label38);
             this.tabHelp.Controls.Add(this.label26);
             this.tabHelp.Controls.Add(this.chkDebugBuffs);
             this.tabHelp.Controls.Add(this.label11);
@@ -2423,11 +2435,72 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(4, 63);
+            this.label27.Location = new System.Drawing.Point(3, 63);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(167, 15);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "- Thanks to ricepud for testing";
+            this.label27.Size = new System.Drawing.Size(279, 30);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "- Thanks to Karls for Your Code from Haslassistant\r\n- Thanks to Taranira  for You" +
+    "r Code(ArcheGrinder)";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(8, 327);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(376, 144);
+            this.label43.TabIndex = 14;
+            this.label43.Text = resources.GetString("label43.Text");
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(8, 295);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(288, 32);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "In the gps plugin tick auto \r\nnow in game run back to your mob farming area";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(8, 279);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(401, 16);
+            this.label41.TabIndex = 12;
+            this.label41.Text = "place a point were you respawn(Nui statue) and name it: Respawn ";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(8, 263);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(234, 16);
+            this.label40.TabIndex = 11;
+            this.label40.Text = "Enable gps plugin and start gps Editor";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(8, 247);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(357, 16);
+            this.label39.TabIndex = 10;
+            this.label39.Text = "Create Folder in ArcheGrinder Folder named: DeathRoutes";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(8, 213);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(95, 18);
+            this.label38.TabIndex = 9;
+            this.label38.Text = "DeathRoutes";
             // 
             // label26
             // 
@@ -2446,7 +2519,7 @@
             this.chkDebugBuffs.BackColor = System.Drawing.Color.Red;
             this.chkDebugBuffs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDebugBuffs.ForeColor = System.Drawing.Color.White;
-            this.chkDebugBuffs.Location = new System.Drawing.Point(14, 91);
+            this.chkDebugBuffs.Location = new System.Drawing.Point(14, 108);
             this.chkDebugBuffs.Name = "chkDebugBuffs";
             this.chkDebugBuffs.Size = new System.Drawing.Size(117, 19);
             this.chkDebugBuffs.TabIndex = 6;
@@ -2532,6 +2605,7 @@
             this.Controls.Add(this.tabControl);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "ArcheGrinder";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
@@ -2662,7 +2736,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.CheckBox lootScratchedSafe;
         private System.Windows.Forms.CheckBox lootStolenBag;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TabPage tabBuff;
         private System.Windows.Forms.CheckBox chkLuckyQuicksilverTonic;
@@ -2812,5 +2885,12 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label27;
     }
 }

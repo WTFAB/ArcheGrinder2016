@@ -13,7 +13,7 @@ namespace ArcheGrinder
         private Thread thread;
         private Preferences prefs;
         private Core core;
-
+        
         public Loot(Core c, Preferences p)
         {
             prefs = p;
@@ -36,6 +36,9 @@ namespace ArcheGrinder
                 core.Log("Couldn't abort loot thread: " + ex.Message);
             }
         }
+        
+        
+      
 
         public void LootThread()
         {
@@ -43,6 +46,26 @@ namespace ArcheGrinder
             List<uint> purses = new List<uint>() {29203, 29204, 29205, 29206, 29207, 32059, 34915, 34916, 35461 };
             List<uint> StolenBag = new List<uint>() { 34281, 34853, 35462, 35463, 35464, 35465, 35466, 35467, 35468 };
             List<uint> ScratchedSafe = new List<uint>() { 35469, 35470, 35471, 35472, 35473, 35474, 35474, 35475, 35476, 35477 };
+
+            
+try
+            {
+               // core.Log("<Tester> _____________Attempting to log all inv Items_____________", System.Drawing.Color.Red);
+                
+                
+                //string pickup = "";
+                //getInvItems(pickup);
+                //string inbag = "";
+                //core.me.getInvItem(inbag);
+                //core.Log("<Tester> " + pickup, System.Drawing.Color.Green);
+              //  core.Log("<Tester> _____________This is for Debuging donot be worried_____________", System.Drawing.Color.Red);
+               
+            }
+                catch (ThreadAbortException) { }
+            catch (Exception e)
+            {
+                core.Log("Loot Exception: " + e.Message);
+            }
 
 
             try
@@ -154,5 +177,7 @@ namespace ArcheGrinder
                 core.BlockClientDice(false);
             }
         }
+
+        
     }
 }

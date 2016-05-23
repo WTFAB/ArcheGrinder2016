@@ -323,6 +323,18 @@
         rkJggg==
 </value>
   </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Untick auto in gps plugin 
+Select the closest point to your mob grinding area 
+Name it: Pew
+
+Now Save the file with the file name: yourcharachtername1.db3
+you can have multiple DeathRoutes for the same Character
+simply name them Yourcharatername1, Yourcharatername2,
+Yourcharatername3 etc.......
+ 
+</value>
+  </data>
   <metadata name="tooltips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
