@@ -1,0 +1,26 @@
+C:\ArcheGrinder2016\CompiledBuild\ArcheBuddy.dll
+C:\ArcheGrinder2016\CompiledBuild\System.Windows.Interactivity.dll
+C:\ArcheGrinder2016\CompiledBuild\Buddy.Store.dll
+C:\ArcheGrinder2016\CompiledBuild\Buddy.Auth.dll
+C:\ArcheGrinder2016\CompiledBuild\de\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\en\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\es\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\fr\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\it\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\ja\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\ko\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\ru\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\zh-Hans\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\CompiledBuild\zh-Hant\System.Windows.Interactivity.resources.dll
+C:\ArcheGrinder2016\obj\x86\Release\ArcgeGrinder2016.csprojResolveAssemblyReference.cache
+C:\ArcheGrinder2016\obj\x86\Release\ArcheGrinder.FormMain.resources
+C:\ArcheGrinder2016\obj\x86\Release\ArcheGrinder2016.Properties.Resources.resources
+C:\ArcheGrinder2016\obj\x86\Release\ArcgeGrinder2016.csproj.GenerateResource.Cache
+C:\ArcheGrinder2016\CompiledBuild\OpenTK.dll
+C:\ArcheGrinder2016\CompiledBuild\OpenTK.GLControl.dll
+C:\ArcheGrinder2016\CompiledBuild\OpenTK.Compatibility.dll
+C:\ArcheGrinder2016\CompiledBuild\ArcheGrinder[Alpha] 1.0.1.5.dll.config
+C:\ArcheGrinder2016\CompiledBuild\ArcheGrinder[Alpha] 1.0.1.5.dll
+C:\ArcheGrinder2016\CompiledBuild\ArcheGrinder[Alpha] 1.0.1.5.pdb
+C:\ArcheGrinder2016\obj\x86\Release\ArcheGrinder[Alpha] 1.0.1.5.dll
+C:\ArcheGrinder2016\obj\x86\Release\ArcheGrinder[Alpha] 1.0.1.5.pdb

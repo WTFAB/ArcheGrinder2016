@@ -6,8 +6,8 @@
     <ProjectGuid>{7C45216F-1914-4B9F-893F-2103E345F5D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>ArcheGrinder[Alpha] 1.0.1.4</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <AssemblyName>ArcheGrinder[Alpha] 1.0.1.5</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

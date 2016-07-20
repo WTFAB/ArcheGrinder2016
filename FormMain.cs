@@ -26,10 +26,17 @@ namespace ArcheGrinder
 
         private Loot loot;
         private Combat combat;
+        public string Time()
+        {
+            string A = DateTime.Now.ToString("[hh:mm:ss] ");
+            return A;
+        }
 
         private DateTime combatStart;
         private int xp, kills, purses, tokens, petXp;
         List<uint> purseList, tokenList;
+
+        public static int size { get; private set; }
 
         public FormMain(ArcheGrinder main)
         {
@@ -102,7 +109,7 @@ namespace ArcheGrinder
         void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
-            core.Log("Settings Saved");
+            core.Log(Time() + "Settings Saved");
             core.onKeyDown -= core_onKeyDown;
 
             try
@@ -242,7 +249,7 @@ namespace ArcheGrinder
 
         public void LoadSettings()
         {
-            core.Log("Loading settings", System.Drawing.Color.Green);
+            core.Log(Time() + "Loading settings", System.Drawing.Color.Green);
             
             if (File.Exists(Application.StartupPath + ("\\ArcheGrinder"+core.me.name+".xml")))
             {
@@ -517,11 +524,11 @@ namespace ArcheGrinder
                 }
                 catch
                 {
-                    core.Log("Failed parsing flute/lute/pet values, resetting these to Don't use");
+                    core.Log(Time() + "Failed parsing flute/lute/pet values, resetting these to Don't use");
                     prefs.fluteId = prefs.luteId = prefs.petId = 0;
                 }
 
-                core.Log("Saving settings");
+                core.Log(Time() + "Saving settings");
                 try
                 {
                     XmlSerializer mySerializer = new XmlSerializer(typeof(Preferences));
@@ -532,16 +539,16 @@ namespace ArcheGrinder
                 }
                 catch (IOException)
                 {
-                    core.Log("ArcheGrinder"+core.me.name+".xml is already opened, settings saving failed");
+                    core.Log(Time() + "ArcheGrinder" + core.me.name+".xml is already opened, settings saving failed");
                 }
                 catch (Exception e)
                 {
-                    core.Log(e.ToString());
+                    core.Log(Time() + e.ToString());
                 }
             }
             catch (Exception e)
             {
-                core.Log("Failed saving settings: " + e.ToString());
+                core.Log(Time() + "Failed saving settings: " + e.ToString());
             }
         }
 
@@ -688,10 +695,10 @@ namespace ArcheGrinder
 
 
             }
-            catch { core.Log("Error You are Missing The Bilder Folder.This Folder Contians Images ", System.Drawing.Color.OrangeRed);
-                core.Log("Bilder Folder Contians Images used in ArcheGrinder Please Download It From The Forum link in Help", System.Drawing.Color.OrangeRed);
-                core.Log("You need to place the Bilder Folder in the ArcheGrinder Plugin Folder with ArcheGrinder.dll ", System.Drawing.Color.OrangeRed);
-                core.Log(" "+ "''I will patch this out in the future'' " + "--WTFAB ");
+            catch { core.Log(Time() + "Error You are Missing The Bilder Folder.This Folder Contians Images ", System.Drawing.Color.OrangeRed);
+                core.Log(Time() + "Bilder Folder Contians Images used in ArcheGrinder Please Download It From The Forum link in Help", System.Drawing.Color.OrangeRed);
+                core.Log(Time() + "You need to place the Bilder Folder in the ArcheGrinder Plugin Folder with ArcheGrinder.dll ", System.Drawing.Color.OrangeRed);
+                core.Log(Time() + " " + "''I will patch this out in the future'' " + "--WTFAB ");
             }
             }
 
@@ -707,10 +714,70 @@ namespace ArcheGrinder
 
         private void tabMain_Click(object sender, EventArgs e)
         {
-
+            core.Log(Time() + "on loot page page", System.Drawing.Color.Orange);
+            FormMain.ActiveForm.Size = new Size(645, 549);
         }
 
         private void tabBuff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+         
+            if (tabControl.TabPages[0] == tabControl.SelectedTab)
+            {
+               
+                //FormMain.
+            }
+            if (tabControl.TabPages[1] == tabControl.SelectedTab)
+            {
+                core.Log(Time() + "on combat page", System.Drawing.Color.Orange);
+                FormMain.ActiveForm.Size = new Size(645, 549);
+                //FormMain.
+            }
+            if (tabControl.TabPages[2] == tabControl.SelectedTab)
+            {
+                core.Log(Time() + "on buff page", System.Drawing.Color.Orange);
+                FormMain.ActiveForm.Size = new Size(645, 549);
+                //FormMain.
+            }
+            if (tabControl.TabPages[3] == tabControl.SelectedTab)
+            {
+                core.Log(Time() + "on ignored page", System.Drawing.Color.Orange);
+                FormMain.ActiveForm.Size = new Size(645, 549);
+                //FormMain.
+            }
+            if (tabControl.TabPages[4] == tabControl.SelectedTab)
+            {
+                core.Log(Time() + "on gear page", System.Drawing.Color.Orange);
+                FormMain.ActiveForm.Size = new Size(645, 549);
+                //FormMain.
+            }
+            if (tabControl.TabPages[6] == tabControl.SelectedTab)
+            {
+                core.Log(Time() + "on help page", System.Drawing.Color.Orange);
+                FormMain.ActiveForm.Size = new Size(645, 549);
+                //FormMain.
+            }
+            
+
+
+
+            //  else            { ActiveForm.Size = new Size(645, 549); }
+
+        }
+
+        private void tabStats_Click(object sender, EventArgs e)
+        {
+
+            core.Log(Time() + "on main page", System.Drawing.Color.Orange);
+            FormMain.ActiveForm.Size = new Size(527, 210);
+
+        }
+
+        private void chkAssist_CheckedChanged(object sender, EventArgs e)
         {
 
         }

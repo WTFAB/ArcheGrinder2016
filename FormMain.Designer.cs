@@ -90,10 +90,7 @@
             this.textMinHPplayDead = new System.Windows.Forms.TextBox();
             this.chkPlayDeadHP = new System.Windows.Forms.CheckBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.nuralsTrennleistebenutzt = new System.Windows.Forms.ProgressBar();
-            this.nuralsTrennleistebenutzt2 = new System.Windows.Forms.ProgressBar();
             this.label29 = new System.Windows.Forms.Label();
             this.textMinMPplayDead = new System.Windows.Forms.TextBox();
             this.chkPlayDeadMana = new System.Windows.Forms.CheckBox();
@@ -244,6 +241,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tooltips = new System.Windows.Forms.ToolTip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label30 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUnknownItems)).BeginInit();
@@ -311,10 +314,11 @@
             this.tabControl.Controls.Add(this.tabHelp);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(621, 506);
+            this.tabControl.Size = new System.Drawing.Size(622, 509);
             this.tabControl.TabIndex = 0;
             // 
             // tabMain
@@ -376,7 +380,7 @@
             this.tabMain.Location = new System.Drawing.Point(4, 22);
             this.tabMain.Name = "tabMain";
             this.tabMain.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMain.Size = new System.Drawing.Size(613, 480);
+            this.tabMain.Size = new System.Drawing.Size(618, 483);
             this.tabMain.TabIndex = 0;
             this.tabMain.Text = "Loot";
             this.tabMain.Click += new System.EventHandler(this.tabMain_Click);
@@ -590,11 +594,11 @@
             this.Version.AutoSize = true;
             this.Version.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Version.Location = new System.Drawing.Point(430, 464);
+            this.Version.Location = new System.Drawing.Point(478, 464);
             this.Version.Name = "Version";
             this.Version.Size = new System.Drawing.Size(137, 16);
             this.Version.TabIndex = 114;
-            this.Version.Text = "Version[Alpha] 1.0.1.4";
+            this.Version.Text = "Version[Alpha] 1.0.1.5";
             // 
             // lootScratchedSafe
             // 
@@ -858,16 +862,14 @@
             // tabCombat
             // 
             this.tabCombat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabCombat.Controls.Add(this.label30);
             this.tabCombat.Controls.Add(this.chkCrazyEnigmatist);
             this.tabCombat.Controls.Add(this.label32);
             this.tabCombat.Controls.Add(this.label33);
             this.tabCombat.Controls.Add(this.textMinHPplayDead);
             this.tabCombat.Controls.Add(this.chkPlayDeadHP);
             this.tabCombat.Controls.Add(this.label31);
-            this.tabCombat.Controls.Add(this.label30);
             this.tabCombat.Controls.Add(this.label28);
-            this.tabCombat.Controls.Add(this.nuralsTrennleistebenutzt);
-            this.tabCombat.Controls.Add(this.nuralsTrennleistebenutzt2);
             this.tabCombat.Controls.Add(this.label29);
             this.tabCombat.Controls.Add(this.textMinMPplayDead);
             this.tabCombat.Controls.Add(this.chkPlayDeadMana);
@@ -895,7 +897,7 @@
             this.tabCombat.Location = new System.Drawing.Point(4, 22);
             this.tabCombat.Name = "tabCombat";
             this.tabCombat.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCombat.Size = new System.Drawing.Size(613, 480);
+            this.tabCombat.Size = new System.Drawing.Size(618, 483);
             this.tabCombat.TabIndex = 7;
             this.tabCombat.Text = "Combat";
             // 
@@ -903,7 +905,7 @@
             // 
             this.chkCrazyEnigmatist.AutoSize = true;
             this.chkCrazyEnigmatist.ForeColor = System.Drawing.Color.White;
-            this.chkCrazyEnigmatist.Location = new System.Drawing.Point(293, 54);
+            this.chkCrazyEnigmatist.Location = new System.Drawing.Point(324, 12);
             this.chkCrazyEnigmatist.Name = "chkCrazyEnigmatist";
             this.chkCrazyEnigmatist.Size = new System.Drawing.Size(125, 17);
             this.chkCrazyEnigmatist.TabIndex = 150;
@@ -915,7 +917,7 @@
             // 
             this.label32.AutoSize = true;
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(122, 367);
+            this.label32.Location = new System.Drawing.Point(422, 151);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(100, 13);
             this.label32.TabIndex = 149;
@@ -925,7 +927,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(21, 367);
+            this.label33.Location = new System.Drawing.Point(321, 151);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(57, 13);
             this.label33.TabIndex = 148;
@@ -934,7 +936,7 @@
             // textMinHPplayDead
             // 
             this.textMinHPplayDead.ForeColor = System.Drawing.Color.Black;
-            this.textMinHPplayDead.Location = new System.Drawing.Point(85, 364);
+            this.textMinHPplayDead.Location = new System.Drawing.Point(385, 148);
             this.textMinHPplayDead.Name = "textMinHPplayDead";
             this.textMinHPplayDead.Size = new System.Drawing.Size(31, 20);
             this.textMinHPplayDead.TabIndex = 147;
@@ -943,7 +945,7 @@
             // 
             this.chkPlayDeadHP.AutoSize = true;
             this.chkPlayDeadHP.ForeColor = System.Drawing.Color.White;
-            this.chkPlayDeadHP.Location = new System.Drawing.Point(3, 347);
+            this.chkPlayDeadHP.Location = new System.Drawing.Point(303, 131);
             this.chkPlayDeadHP.Name = "chkPlayDeadHP";
             this.chkPlayDeadHP.Size = new System.Drawing.Size(146, 17);
             this.chkPlayDeadHP.TabIndex = 146;
@@ -955,52 +957,27 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(6, 277);
+            this.label31.Location = new System.Drawing.Point(306, 61);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(143, 24);
             this.label31.TabIndex = 145;
             this.label31.Text = "Out of Combat";
             // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(388, 9);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(114, 25);
-            this.label30.TabIndex = 144;
-            this.label30.Text = "Test Area";
-            // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(122, 324);
+            this.label28.Location = new System.Drawing.Point(422, 108);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(100, 13);
             this.label28.TabIndex = 143;
             this.label28.Text = "to use PlayDead";
             // 
-            // nuralsTrennleistebenutzt
-            // 
-            this.nuralsTrennleistebenutzt.Location = new System.Drawing.Point(269, 0);
-            this.nuralsTrennleistebenutzt.Name = "nuralsTrennleistebenutzt";
-            this.nuralsTrennleistebenutzt.Size = new System.Drawing.Size(18, 484);
-            this.nuralsTrennleistebenutzt.TabIndex = 142;
-            // 
-            // nuralsTrennleistebenutzt2
-            // 
-            this.nuralsTrennleistebenutzt2.Location = new System.Drawing.Point(-4, 258);
-            this.nuralsTrennleistebenutzt2.Name = "nuralsTrennleistebenutzt2";
-            this.nuralsTrennleistebenutzt2.Size = new System.Drawing.Size(276, 16);
-            this.nuralsTrennleistebenutzt2.TabIndex = 141;
-            // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(21, 324);
+            this.label29.Location = new System.Drawing.Point(321, 108);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(58, 13);
             this.label29.TabIndex = 140;
@@ -1009,7 +986,7 @@
             // textMinMPplayDead
             // 
             this.textMinMPplayDead.ForeColor = System.Drawing.Color.Black;
-            this.textMinMPplayDead.Location = new System.Drawing.Point(85, 321);
+            this.textMinMPplayDead.Location = new System.Drawing.Point(385, 105);
             this.textMinMPplayDead.Name = "textMinMPplayDead";
             this.textMinMPplayDead.Size = new System.Drawing.Size(31, 20);
             this.textMinMPplayDead.TabIndex = 139;
@@ -1018,7 +995,7 @@
             // 
             this.chkPlayDeadMana.AutoSize = true;
             this.chkPlayDeadMana.ForeColor = System.Drawing.Color.White;
-            this.chkPlayDeadMana.Location = new System.Drawing.Point(3, 304);
+            this.chkPlayDeadMana.Location = new System.Drawing.Point(303, 88);
             this.chkPlayDeadMana.Name = "chkPlayDeadMana";
             this.chkPlayDeadMana.Size = new System.Drawing.Size(160, 17);
             this.chkPlayDeadMana.TabIndex = 137;
@@ -1068,6 +1045,7 @@
             this.chkAssist.TabIndex = 133;
             this.chkAssist.Text = "Assist Mode";
             this.chkAssist.UseVisualStyleBackColor = true;
+            this.chkAssist.CheckedChanged += new System.EventHandler(this.chkAssist_CheckedChanged);
             // 
             // labelMinHP
             // 
@@ -1242,6 +1220,7 @@
             // tabBuff
             // 
             this.tabBuff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabBuff.Controls.Add(this.label44);
             this.tabBuff.Controls.Add(this.label19);
             this.tabBuff.Controls.Add(this.chkGreedyGR);
             this.tabBuff.Controls.Add(this.chkZealGR);
@@ -1292,7 +1271,7 @@
             this.tabBuff.Location = new System.Drawing.Point(4, 22);
             this.tabBuff.Name = "tabBuff";
             this.tabBuff.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBuff.Size = new System.Drawing.Size(613, 480);
+            this.tabBuff.Size = new System.Drawing.Size(614, 483);
             this.tabBuff.TabIndex = 6;
             this.tabBuff.Text = "Buff Items";
             this.tabBuff.Click += new System.EventHandler(this.tabBuff_Click);
@@ -1708,6 +1687,7 @@
             // tabIgnore
             // 
             this.tabIgnore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabIgnore.Controls.Add(this.label47);
             this.tabIgnore.Controls.Add(this.boxIgnoreList);
             this.tabIgnore.Controls.Add(this.label1);
             this.tabIgnore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1715,7 +1695,7 @@
             this.tabIgnore.Location = new System.Drawing.Point(4, 22);
             this.tabIgnore.Name = "tabIgnore";
             this.tabIgnore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabIgnore.Size = new System.Drawing.Size(613, 480);
+            this.tabIgnore.Size = new System.Drawing.Size(618, 483);
             this.tabIgnore.TabIndex = 2;
             this.tabIgnore.Text = "Ignored Mobs";
             // 
@@ -1723,10 +1703,10 @@
             // 
             this.boxIgnoreList.BackColor = System.Drawing.Color.Gray;
             this.boxIgnoreList.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.boxIgnoreList.ForeColor = System.Drawing.Color.White;
-            this.boxIgnoreList.Location = new System.Drawing.Point(3, 23);
+            this.boxIgnoreList.ForeColor = System.Drawing.Color.Black;
+            this.boxIgnoreList.Location = new System.Drawing.Point(3, 26);
             this.boxIgnoreList.Name = "boxIgnoreList";
-            this.boxIgnoreList.Size = new System.Drawing.Size(607, 454);
+            this.boxIgnoreList.Size = new System.Drawing.Size(612, 454);
             this.boxIgnoreList.TabIndex = 1;
             this.boxIgnoreList.Text = "Cused Giant Stone Golem";
             // 
@@ -1742,6 +1722,7 @@
             // tabGear
             // 
             this.tabGear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabGear.Controls.Add(this.label45);
             this.tabGear.Controls.Add(this.dropdownMpFood);
             this.tabGear.Controls.Add(this.dropDownHPFood);
             this.tabGear.Controls.Add(this.dropdownSmallMpPotion);
@@ -1786,7 +1767,7 @@
             this.tabGear.Location = new System.Drawing.Point(4, 22);
             this.tabGear.Name = "tabGear";
             this.tabGear.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGear.Size = new System.Drawing.Size(613, 480);
+            this.tabGear.Size = new System.Drawing.Size(618, 483);
             this.tabGear.TabIndex = 4;
             this.tabGear.Text = "Gear/Consumables";
             // 
@@ -1904,11 +1885,11 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(225, 219);
+            this.label20.Location = new System.Drawing.Point(116, 219);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(114, 25);
+            this.label20.Size = new System.Drawing.Size(368, 25);
             this.label20.TabIndex = 145;
-            this.label20.Text = "Test Area";
+            this.label20.Text = "Developers mess(Non Functional)";
             // 
             // progressBar1
             // 
@@ -2156,10 +2137,11 @@
             this.tabStats.Location = new System.Drawing.Point(4, 22);
             this.tabStats.Name = "tabStats";
             this.tabStats.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStats.Size = new System.Drawing.Size(613, 480);
+            this.tabStats.Size = new System.Drawing.Size(618, 483);
             this.tabStats.TabIndex = 5;
             this.tabStats.Text = "Stats";
             this.tabStats.UseVisualStyleBackColor = true;
+            this.tabStats.Click += new System.EventHandler(this.tabStats_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -2200,7 +2182,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(607, 474);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(612, 477);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label17
@@ -2208,9 +2190,9 @@
             this.label17.AutoSize = true;
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(4, 391);
+            this.label17.Location = new System.Drawing.Point(4, 396);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(194, 82);
+            this.label17.Size = new System.Drawing.Size(196, 80);
             this.label17.TabIndex = 14;
             this.label17.Text = "Tokens/Chips";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2220,9 +2202,9 @@
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(4, 79);
+            this.label12.Location = new System.Drawing.Point(4, 80);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(194, 77);
+            this.label12.Size = new System.Drawing.Size(196, 78);
             this.label12.TabIndex = 0;
             this.label12.Text = "Mob Kills";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2232,9 +2214,9 @@
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(4, 235);
+            this.label13.Location = new System.Drawing.Point(4, 238);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(194, 77);
+            this.label13.Size = new System.Drawing.Size(196, 78);
             this.label13.TabIndex = 1;
             this.label13.Text = "XP Gained";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2244,9 +2226,9 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(205, 1);
+            this.label14.Location = new System.Drawing.Point(207, 1);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 77);
+            this.label14.Size = new System.Drawing.Size(196, 78);
             this.label14.TabIndex = 3;
             this.label14.Text = "Per Hour";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2256,9 +2238,9 @@
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(407, 1);
+            this.label15.Location = new System.Drawing.Point(410, 1);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(196, 77);
+            this.label15.Size = new System.Drawing.Size(198, 78);
             this.label15.TabIndex = 4;
             this.label15.Text = "Total";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2268,9 +2250,9 @@
             this.label16.AutoSize = true;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(4, 313);
+            this.label16.Location = new System.Drawing.Point(4, 317);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(194, 77);
+            this.label16.Size = new System.Drawing.Size(196, 78);
             this.label16.TabIndex = 5;
             this.label16.Text = "Coinpurses";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2280,9 +2262,9 @@
             this.labelKillsHour.AutoSize = true;
             this.labelKillsHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelKillsHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKillsHour.Location = new System.Drawing.Point(205, 79);
+            this.labelKillsHour.Location = new System.Drawing.Point(207, 80);
             this.labelKillsHour.Name = "labelKillsHour";
-            this.labelKillsHour.Size = new System.Drawing.Size(195, 77);
+            this.labelKillsHour.Size = new System.Drawing.Size(196, 78);
             this.labelKillsHour.TabIndex = 6;
             this.labelKillsHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2291,9 +2273,9 @@
             this.labelKillsTotal.AutoSize = true;
             this.labelKillsTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelKillsTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKillsTotal.Location = new System.Drawing.Point(407, 79);
+            this.labelKillsTotal.Location = new System.Drawing.Point(410, 80);
             this.labelKillsTotal.Name = "labelKillsTotal";
-            this.labelKillsTotal.Size = new System.Drawing.Size(196, 77);
+            this.labelKillsTotal.Size = new System.Drawing.Size(198, 78);
             this.labelKillsTotal.TabIndex = 7;
             this.labelKillsTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2302,9 +2284,9 @@
             this.labelXpHour.AutoSize = true;
             this.labelXpHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelXpHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelXpHour.Location = new System.Drawing.Point(205, 235);
+            this.labelXpHour.Location = new System.Drawing.Point(207, 238);
             this.labelXpHour.Name = "labelXpHour";
-            this.labelXpHour.Size = new System.Drawing.Size(195, 77);
+            this.labelXpHour.Size = new System.Drawing.Size(196, 78);
             this.labelXpHour.TabIndex = 8;
             this.labelXpHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2313,9 +2295,9 @@
             this.labelXpTotal.AutoSize = true;
             this.labelXpTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelXpTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelXpTotal.Location = new System.Drawing.Point(407, 235);
+            this.labelXpTotal.Location = new System.Drawing.Point(410, 238);
             this.labelXpTotal.Name = "labelXpTotal";
-            this.labelXpTotal.Size = new System.Drawing.Size(196, 77);
+            this.labelXpTotal.Size = new System.Drawing.Size(198, 78);
             this.labelXpTotal.TabIndex = 9;
             this.labelXpTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2324,9 +2306,9 @@
             this.labelPurseHour.AutoSize = true;
             this.labelPurseHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPurseHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPurseHour.Location = new System.Drawing.Point(205, 313);
+            this.labelPurseHour.Location = new System.Drawing.Point(207, 317);
             this.labelPurseHour.Name = "labelPurseHour";
-            this.labelPurseHour.Size = new System.Drawing.Size(195, 77);
+            this.labelPurseHour.Size = new System.Drawing.Size(196, 78);
             this.labelPurseHour.TabIndex = 10;
             this.labelPurseHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2335,9 +2317,9 @@
             this.labelPurseTotal.AutoSize = true;
             this.labelPurseTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelPurseTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPurseTotal.Location = new System.Drawing.Point(407, 313);
+            this.labelPurseTotal.Location = new System.Drawing.Point(410, 317);
             this.labelPurseTotal.Name = "labelPurseTotal";
-            this.labelPurseTotal.Size = new System.Drawing.Size(196, 77);
+            this.labelPurseTotal.Size = new System.Drawing.Size(198, 78);
             this.labelPurseTotal.TabIndex = 11;
             this.labelPurseTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2346,9 +2328,9 @@
             this.labelTokenHour.AutoSize = true;
             this.labelTokenHour.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTokenHour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTokenHour.Location = new System.Drawing.Point(205, 391);
+            this.labelTokenHour.Location = new System.Drawing.Point(207, 396);
             this.labelTokenHour.Name = "labelTokenHour";
-            this.labelTokenHour.Size = new System.Drawing.Size(195, 82);
+            this.labelTokenHour.Size = new System.Drawing.Size(196, 80);
             this.labelTokenHour.TabIndex = 12;
             this.labelTokenHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2357,9 +2339,9 @@
             this.labelTokenTotal.AutoSize = true;
             this.labelTokenTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTokenTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTokenTotal.Location = new System.Drawing.Point(407, 391);
+            this.labelTokenTotal.Location = new System.Drawing.Point(410, 396);
             this.labelTokenTotal.Name = "labelTokenTotal";
-            this.labelTokenTotal.Size = new System.Drawing.Size(196, 82);
+            this.labelTokenTotal.Size = new System.Drawing.Size(198, 80);
             this.labelTokenTotal.TabIndex = 13;
             this.labelTokenTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2368,9 +2350,9 @@
             this.label18.AutoSize = true;
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(4, 157);
+            this.label18.Location = new System.Drawing.Point(4, 159);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(194, 77);
+            this.label18.Size = new System.Drawing.Size(196, 78);
             this.label18.TabIndex = 15;
             this.label18.Text = "Pet XP Gained";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2379,9 +2361,9 @@
             // 
             this.labelPetHour.AutoSize = true;
             this.labelPetHour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPetHour.Location = new System.Drawing.Point(205, 157);
+            this.labelPetHour.Location = new System.Drawing.Point(207, 159);
             this.labelPetHour.Name = "labelPetHour";
-            this.labelPetHour.Size = new System.Drawing.Size(195, 77);
+            this.labelPetHour.Size = new System.Drawing.Size(196, 78);
             this.labelPetHour.TabIndex = 16;
             this.labelPetHour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2389,9 +2371,9 @@
             // 
             this.labelPetTotal.AutoSize = true;
             this.labelPetTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelPetTotal.Location = new System.Drawing.Point(407, 157);
+            this.labelPetTotal.Location = new System.Drawing.Point(410, 159);
             this.labelPetTotal.Name = "labelPetTotal";
-            this.labelPetTotal.Size = new System.Drawing.Size(196, 77);
+            this.labelPetTotal.Size = new System.Drawing.Size(198, 78);
             this.labelPetTotal.TabIndex = 17;
             this.labelPetTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2400,13 +2382,14 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 72);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
             // tabHelp
             // 
             this.tabHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tabHelp.Controls.Add(this.label46);
             this.tabHelp.Controls.Add(this.label27);
             this.tabHelp.Controls.Add(this.label43);
             this.tabHelp.Controls.Add(this.label42);
@@ -2426,7 +2409,7 @@
             this.tabHelp.Location = new System.Drawing.Point(4, 22);
             this.tabHelp.Name = "tabHelp";
             this.tabHelp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHelp.Size = new System.Drawing.Size(613, 480);
+            this.tabHelp.Size = new System.Drawing.Size(618, 483);
             this.tabHelp.TabIndex = 3;
             this.tabHelp.Text = "Help/About";
             // 
@@ -2596,15 +2579,76 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "- Settings are saved whenever you start Loot or Combat";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 150;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label30.Location = new System.Drawing.Point(478, 464);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(137, 16);
+            this.label30.TabIndex = 151;
+            this.label30.Text = "Version[Alpha] 1.0.1.5";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label44.Location = new System.Drawing.Point(478, 464);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(137, 16);
+            this.label44.TabIndex = 203;
+            this.label44.Text = "Version[Alpha] 1.0.1.5";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label45.Location = new System.Drawing.Point(478, 462);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(137, 16);
+            this.label45.TabIndex = 158;
+            this.label45.Text = "Version[Alpha] 1.0.1.5";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label46.Location = new System.Drawing.Point(478, 464);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(137, 16);
+            this.label46.TabIndex = 115;
+            this.label46.Text = "Version[Alpha] 1.0.1.5";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label47.Location = new System.Drawing.Point(473, 3);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(137, 16);
+            this.label47.TabIndex = 115;
+            this.label47.Text = "Version[Alpha] 1.0.1.5";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(621, 506);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(622, 509);
             this.Controls.Add(this.tabControl);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "ArcheGrinder";
@@ -2705,7 +2749,6 @@
         private System.Windows.Forms.LinkLabel linkForum;
         private System.Windows.Forms.CheckBox chkAutoLoot;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TabPage tabStats;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -2806,10 +2849,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox lootDisciplesTear;
         private System.Windows.Forms.CheckBox lootEnchantedSkein;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.ProgressBar nuralsTrennleistebenutzt;
-        private System.Windows.Forms.ProgressBar nuralsTrennleistebenutzt2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textMinMPplayDead;
         private System.Windows.Forms.Label label32;
@@ -2892,5 +2932,12 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.TabPage tabStats;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
     }
 }

@@ -33,12 +33,16 @@ namespace ArcheGrinder
             catch (ThreadAbortException) { }
             catch (Exception ex)
             {
-                core.Log("Couldn't abort loot thread: " + ex.Message);
+                core.Log(Time() + "Couldn't abort loot thread: " + ex.Message);
             }
         }
-        
-        
-      
+
+        public string Time()
+        {
+            string A = DateTime.Now.ToString("[hh:mm:ss] ");
+            return A;
+        }
+
 
         public void LootThread()
         {
@@ -64,7 +68,7 @@ try
                 catch (ThreadAbortException) { }
             catch (Exception e)
             {
-                core.Log("Loot Exception: " + e.Message);
+                core.Log(Time() + "Loot Exception: " + e.Message);
             }
 
 
@@ -158,9 +162,9 @@ try
                         item.Dice(doRoll);
 
                         if (doRoll)
-                            core.Log("+ Rolling on : " + item.name + " (" + item.id + ")");
+                            core.Log(Time() + "+ Rolling on : " + item.name + " (" + item.id + ")");
                         else
-                            core.Log("- Passing on : " + item.name + " (" + item.id + ")");
+                            core.Log(Time() + "- Passing on : " + item.name + " (" + item.id + ")");
 
                         Thread.Sleep(r.Next(1000, 1500));
                     }
@@ -170,7 +174,7 @@ try
             catch (ThreadAbortException) { }
             catch (Exception e)
             {
-                core.Log("Loot Exception: " + e.Message);
+                core.Log(Time() + "Loot Exception: " + e.Message);
             }
             finally
             {
