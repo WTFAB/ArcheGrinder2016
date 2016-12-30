@@ -1601,6 +1601,7 @@ namespace ArcheGrinder
                 #region looting
                 if (team.Count <= 50 && prefs.lootCorpses)
                 {
+                    
                     DateTime startLoot = DateTime.UtcNow;
                     while (bestMob != null && !core.isAlive(bestMob) && core.isExists(bestMob) && bestMob.type == BotTypes.Npc
                         && ((Npc)bestMob).dropAvailable && core.isAlive())
@@ -1612,6 +1613,8 @@ namespace ArcheGrinder
                       
                         inventory = core.getAllInvItems();
                         core.Log(Time() + "<JunkItemCleaner> " + core.me.name + " Looted Items. Looking for Junk Items ", System.Drawing.Color.Orange);
+                     
+                        
                         foreach (Item item in inventory)
                         {
                             //THIS IS WERE OUR BAG EMPTY LOGIC GEOES
@@ -1934,7 +1937,7 @@ namespace ArcheGrinder
             // pre-pull buffs
             if (!didCast && (hppT == 100 || aggroCount >= 2))
             {
-                if (CanCast(_MAGIC_CIRCLE, true) && dist <= 18)
+                if (CanCast(_MAGIC_CIRCLE, true) )
                     didCast = UseSkillAndWait(_MAGIC_CIRCLE);
                 else if (CanCast(_DEADEYE, true) && dist <= 23)
                     didCast = UseSkillAndWait(_DEADEYE);
@@ -2154,10 +2157,13 @@ namespace ArcheGrinder
 
                 //Spam Songs
 
-      
 
 
 
+                if (CanCast(_MAGIC_CIRCLE))
+                {
+                    UseSkillAndWait(_MAGIC_CIRCLE);
+                }
 
                 if (CanCast(_FLAMEBOLT))
                 {

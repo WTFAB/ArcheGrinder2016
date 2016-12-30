@@ -644,8 +644,10 @@ namespace ArcheGrinder
 
         private void FormMain_Shown(object sender, EventArgs e)
         {
-            
-            this.Text = "ArcheGrinder[Alpha] 1.0.1.4 | Current User: " + core.me.name;
+            long a = core.me.goldCount;
+            string b = a.ToString();
+            b = b.Remove(b.Length - 4);
+            this.Text = "ArcheGrinder[Alpha] 1.0.1.5 | Current User: " + core.me.name + " | Gold: " + b;
             try { 
             this.Icon                                       = Icon.ExtractAssociatedIcon(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\archeageicon.ico");
             this.pictureLibraryRelic.Image                  = Image.FromFile(Application.StartupPath + "\\Plugins\\ArcheGrinder\\Bilder\\AncientLibraryRelic.jpg");
@@ -709,6 +711,9 @@ namespace ArcheGrinder
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            
+
+
 
         }
 
@@ -725,7 +730,13 @@ namespace ArcheGrinder
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-         
+           
+
+
+
+
+
+
             if (tabControl.TabPages[0] == tabControl.SelectedTab)
             {
                
@@ -780,6 +791,19 @@ namespace ArcheGrinder
         private void chkAssist_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            
+            long a = core.me.goldCount;
+            string b = a.ToString();
+                        
+                b = b.Remove(b.Length - 4);
+            
+           
+                this.Text = "ArcheGrinder[Alpha] 1.0.1.5 | Current User: " + core.me.name + " | Gold: " + b;
+           
         }
 
         private void UpdateLootOptions()
@@ -908,6 +932,15 @@ namespace ArcheGrinder
 
             labelPetHour.Text = petH + "k";
             labelPetTotal.Text = pet + "k";
+
+
+            long a = core.me.goldCount;
+            string b = a.ToString();
+
+            b = b.Remove(b.Length - 4);
+
+
+            this.Text = "ArcheGrinder[Alpha] 1.0.1.5 | Current User: " + core.me.name + " | Gold: " + b;
         }
 
         private void linkForum_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

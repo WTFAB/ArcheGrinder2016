@@ -24,3 +24,6 @@ C:\ArcheGrinder2016\CompiledBuild\ArcheGrinder[Alpha] 1.0.1.5.dll
 C:\ArcheGrinder2016\CompiledBuild\ArcheGrinder[Alpha] 1.0.1.5.pdb
 C:\ArcheGrinder2016\obj\x86\Release\ArcheGrinder[Alpha] 1.0.1.5.dll
 C:\ArcheGrinder2016\obj\x86\Release\ArcheGrinder[Alpha] 1.0.1.5.pdb
+C:\ab\Plugins\ArcheGrinder\ArcheGrinder[Alpha] 1.0.1.5.dll.config
+C:\ab\Plugins\ArcheGrinder\ArcheGrinder[Alpha] 1.0.1.5.dll
+C:\ab\Plugins\ArcheGrinder\ArcheGrinder[Alpha] 1.0.1.5.pdb
