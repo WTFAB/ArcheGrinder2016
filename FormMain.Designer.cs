@@ -2559,9 +2559,9 @@
             this.chkDebugBuffs.ForeColor = System.Drawing.Color.White;
             this.chkDebugBuffs.Location = new System.Drawing.Point(14, 108);
             this.chkDebugBuffs.Name = "chkDebugBuffs";
-            this.chkDebugBuffs.Size = new System.Drawing.Size(117, 19);
+            this.chkDebugBuffs.Size = new System.Drawing.Size(176, 19);
             this.chkDebugBuffs.TabIndex = 6;
-            this.chkDebugBuffs.Text = "Debug Buffs\' IDs";
+            this.chkDebugBuffs.Text = "(For Devs) Debug Buffs\' IDs";
             this.chkDebugBuffs.UseVisualStyleBackColor = false;
             // 
             // label11
@@ -2583,9 +2583,10 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(11, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(524, 16);
+            this.label6.Size = new System.Drawing.Size(569, 16);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Plugin developped by many people from Archebuddy community. Current Dev: WTFAB";
+            this.label6.Text = "Plugin developped by many people from Archebuddy community. Current Dev: WTFAB(Sa" +
+    "rge)";
             // 
             // linkDonate
             // 

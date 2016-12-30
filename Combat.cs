@@ -1937,6 +1937,11 @@ namespace ArcheGrinder
             // pre-pull buffs
             if (!didCast && (hppT == 100 || aggroCount >= 2))
             {
+
+                if (CanCast(_INSULATING_LENS))
+                {
+                    UseSkillAndWait(_INSULATING_LENS);
+                }
                 if (CanCast(_MAGIC_CIRCLE, true) )
                     didCast = UseSkillAndWait(_MAGIC_CIRCLE);
                 else if (CanCast(_DEADEYE, true) && dist <= 23)
@@ -2159,6 +2164,10 @@ namespace ArcheGrinder
 
 
 
+                if (CanCast(_INSULATING_LENS))
+                {
+                    UseSkillAndWait(_INSULATING_LENS);
+                }
 
                 if (CanCast(_MAGIC_CIRCLE))
                 {

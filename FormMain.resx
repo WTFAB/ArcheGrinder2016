@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Untick auto in gps plugin 
+Select the closest point to your mob grinding area 
+Name it: Pew
+
+Now Save the file with the file name: yourcharachtername1.db3
+you can have multiple DeathRoutes for the same Character
+simply name them Yourcharatername1, Yourcharatername2,
+Yourcharatername3 etc.......
+ 
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -321,18 +333,6 @@
         JDcVUbIbUajBtSmOuLQkvEJz/MS3/378LmEVikm/ez9xxn94KBXwB/hn4nfJMiaO8yg0f/deif/I4Ldl
         E35rFgU99hQQvjeHCBPdKFwJVcTEWf84fp/oBCZTTPubzybO/v/xD4KQ/wNJ7eWE6+2hugAAAABJRU5E
         rkJggg==
-</value>
-  </data>
-  <data name="label43.Text" xml:space="preserve">
-    <value>Untick auto in gps plugin 
-Select the closest point to your mob grinding area 
-Name it: Pew
-
-Now Save the file with the file name: yourcharachtername1.db3
-you can have multiple DeathRoutes for the same Character
-simply name them Yourcharatername1, Yourcharatername2,
-Yourcharatername3 etc.......
- 
 </value>
   </data>
   <metadata name="tooltips.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
